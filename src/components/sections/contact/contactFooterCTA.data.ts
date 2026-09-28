@@ -1,11 +1,11 @@
 export const contactFooterCTA = {
   heading: {
-    before: "Begin with a",
-    highlight: "diagnosis.",
+    before: "Begin with",
+    highlight: "AI Skin Analysis.",
   },
 
   description:
-    "45-minute consultation · written plan · fixed pricing ",
+    "Build a 4D Model of your face . Guided journey . Fixed Prices ",
 
   button: {
     label: "Book a Consultation",

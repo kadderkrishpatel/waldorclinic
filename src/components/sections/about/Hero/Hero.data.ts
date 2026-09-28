@@ -1,7 +1,7 @@
 import { asset } from "@/src/lib/assets";
 
 export const heroData = {
-  eyebrow: "ABOUT US",
+  eyebrow: "ABOUT",
   before: "Why I",
   highlight: "Built WALDOR",
   description:
