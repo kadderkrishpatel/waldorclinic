@@ -14,6 +14,6 @@ export const whyChooseUsData: WhyChooseUsSectionProps = {
     label: "Schedule Your Appointment",
     href: "/contact",
   },
-  leftImage: asset("/assets/waldor/whychoose-left.png"),
-  rightImage: asset("/assets/waldor/whychoose-right.png"),
+  leftImage: asset("/assets/waldor/decorations/whychoose-left.png"),
+  rightImage: asset("/assets/waldor/decorations/whychoose-right.png"),
 };

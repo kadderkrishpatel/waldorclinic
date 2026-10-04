@@ -20,8 +20,8 @@ export const blogs: Blog[] = [
     subtitle: "and what doesn't.",
     category: "Acne",
 
-    image: asset("/assets/waldor/blog-1.jpg"),
-    bannerImage: asset("/assets/waldor/blog-1.jpg"),
+    image: asset("/assets/waldor/blog/blog-1.jpg"),
+    bannerImage: asset("/assets/waldor/blog/blog-1.jpg"),
 
     excerpt:
       "The common misconception that acne is only for teenagers is far from reality.",
@@ -30,7 +30,7 @@ export const blogs: Blog[] = [
 
     author: "Dr. Elara Vance",
 
-    authorImage: asset("/assets/waldor/blog-1.jpg"),
+    authorImage: asset("/assets/waldor/blog/blog-1.jpg"),
 
     publishedAt: "March 14, 2026",
 
@@ -57,7 +57,7 @@ export const blogs: Blog[] = [
       </p>
 
       <figure>
-        <img src="${asset("/assets/waldor/blog-1.jpg")}" alt="Acne Treatment" />
+        <img src="${asset("/assets/waldor/blog/blog-1.jpg")}" alt="Acne Treatment" />
         <figcaption>
           Hydrated skin cells exhibit higher resilience against microbial triggers.
         </figcaption>
@@ -79,9 +79,9 @@ export const blogs: Blog[] = [
 
     category: "Glass Skin",
 
-    image: asset("/assets/waldor/blog-2.jpg"),
+    image: asset("/assets/waldor/blog/blog-2.jpg"),
 
-    bannerImage: asset("/assets/waldor/blog-2.jpg"),
+    bannerImage: asset("/assets/waldor/blog/blog-2.jpg"),
 
     excerpt:
       "Everything you should know before your first HydraGlass™ treatment.",
@@ -90,7 +90,7 @@ export const blogs: Blog[] = [
 
     author: "Dr. Elara Vance",
 
-    authorImage: asset("/assets/waldor/blog-2.jpg"),
+    authorImage: asset("/assets/waldor/blog/blog-2.jpg"),
 
     publishedAt: "April 2, 2026",
 
@@ -124,9 +124,9 @@ export const blogs: Blog[] = [
 
     category: "Pigmentation",
 
-    image: asset("/assets/waldor/blog-3.jpg"),
+    image: asset("/assets/waldor/blog/blog-3.jpg"),
 
-    bannerImage: asset("/assets/waldor/blog-3.jpg"),
+    bannerImage: asset("/assets/waldor/blog/blog-3.jpg"),
 
     excerpt: "Why personalised pigmentation treatment matters.",
 
@@ -134,7 +134,7 @@ export const blogs: Blog[] = [
 
     author: "Dr. Elara Vance",
 
-    authorImage: asset("/assets/waldor/blog-3.jpg"),
+    authorImage: asset("/assets/waldor/blog/blog-3.jpg"),
 
     publishedAt: "May 8, 2026",
 

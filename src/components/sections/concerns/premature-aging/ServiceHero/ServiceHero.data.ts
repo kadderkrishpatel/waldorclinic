@@ -19,7 +19,7 @@ export const serviceHeroData: ServiceHeroData = {
   before: "Target",
   highlight: "Premature Ageing",
   after: "With Expert Care",
-  image: asset("/assets/waldor/premature-aging-hero.jpg"),
+  image: asset("/assets/waldor/heroes/premature-aging-hero.jpg"),
   description:
     "Accelerated skin ageing can be complex, subtle and frustrating. We assess your skin’s cellular repair efficiency to develop a targeted pathway suited to your needs, with wellness medicine and longevity informing a considered approach to long-term skin health.",
   imageAlt: "Waldor signature treatment",

@@ -1,41 +1,37 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import {
   HeroSection,
   AboutSection,
-  TreatmentSection,
-  WhyChooseUsSection,
-  ExperienceSection,
-  SignatureTreatmentSection,
-  SuccessStoriesSection,
-  HowItWorksSection,
-  BlogSection,
 } from "@/src/components/sections/home";
-import type { BlogPost } from "@/src/components/sections/home/BlogSection/BlogSection.types";
-import { getBlogs } from "@/src/services/blogs";
+// Everything below the hero is split into its own chunks (still server-rendered
+// for SEO), so the hero becomes interactive without waiting for their JS.
+const TreatmentSection = dynamic(
+  () => import("@/src/components/sections/home/TreatmentSection"),
+);
+const WhyChooseUsSection = dynamic(
+  () => import("@/src/components/sections/home/WhyChooseUsSection"),
+);
+const ExperienceSection = dynamic(
+  () => import("@/src/components/sections/home/ExperienceSection"),
+);
+const SuccessStoriesSection = dynamic(
+  () => import("@/src/components/sections/home/SuccessStoriesSection"),
+);
+const SignatureTreatmentSection = dynamic(
+  () => import("@/src/components/sections/home/SignatureTreatmentSection"),
+);
+const HowItWorksSection = dynamic(
+  () => import("@/src/components/sections/home/HowItWorksSection"),
+);
 
 export const metadata: Metadata = {
-  title: "Waldor Clinic | Skin, Hair & Longevity Clinic in London",
+  title: "WALDOR CLINIC",
   description:
     "Bespoke skin, hair and longevity treatments in London, backed by AI-led diagnostics and expert aesthetic medicine. Book your personalised consultation at Waldor Clinic.",
 };
 
 export default async function HomePage() {
-  let posts: BlogPost[] = [];
-  try {
-    const { blogs } = await getBlogs({ page: 1, perPage: 3 });
-    posts = blogs.map((blog) => ({
-      id: blog.id,
-      title: blog.title,
-      subtitle: blog.subtitle,
-      category: blog.category,
-      readTime: blog.readTime,
-      image: blog.image,
-      slug: blog.slug,
-    }));
-  } catch {
-    // WordPress unreachable — BlogSection hides itself when there are no real posts.
-  }
-
   return (
     <>
       <HeroSection />
@@ -57,7 +53,6 @@ export default async function HomePage() {
       <section className="p-2 lg:p-4 overflow-hidden">
         <HowItWorksSection />
       </section>
-      <BlogSection posts={posts} />
     </>
   );
 }

@@ -14,7 +14,7 @@ export default function PatientSafety() {
       <div className="relative overflow-hidden rounded-[40px] bg-[#EFE2D2] pt-[80px] lg:pt-[120px]">
         {/* Decorative Leaf */}
         <Image
-          src={asset("/assets/waldor/service-top-decoration.png")}
+          src={asset("/assets/waldor/decorations/service-top-decoration.png")}
           alt=""
           width={220}
           height={220}

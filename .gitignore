@@ -75,8 +75,6 @@ pnpm-debug.log*
 # =========================================================
 # Public Generated Assets
 # =========================================================
-public/assets/
-public/assets/**
 
 # =========================================================
 # IDE & Editor
@@ -134,9 +132,15 @@ temp/
 *.cache
 
 
-public/assets/
 public/uploads/
 public/images/uploads/
 node_modules/
 dist/
 .env
+
+# Keep local site assets (images/videos served from /public/assets)
+!public/assets/
+!public/assets/**
+!src/app/icon.png
+!src/app/apple-icon.png
+!src/app/favicon.ico

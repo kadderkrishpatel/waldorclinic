@@ -17,7 +17,7 @@ export const serviceHeroData: ServiceHeroData = {
   eyebrow: "SKIN RESTORATION",
   before: "Acne Scar Treatment",
   highlight: "Beyond The Surface",
-  image: asset("/assets/waldor/blog-1.jpg"),
+  image: asset("/assets/waldor/blog/blog-1.jpg"),
   description:
     "Restore smoother skin through clinically tailored acne scar treatments designed around your skin's unique healing response and goals.",
   imageAlt: "Waldor signature treatment",

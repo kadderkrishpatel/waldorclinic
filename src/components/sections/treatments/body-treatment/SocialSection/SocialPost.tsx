@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 
 import type { SocialPost as SocialPostType } from "./types";
 import { asset } from "@/src/lib/assets";
+import useInViewOnce from "@/src/components/hooks/useInViewOnce";
 
 interface Props {
   post: SocialPostType;
@@ -13,6 +14,7 @@ interface Props {
 
 export default function SocialPost({ post }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const inView = useInViewOnce(videoRef);
 
   useEffect(() => {
     if (post.type !== "video" || !videoRef.current) {
@@ -94,13 +96,13 @@ export default function SocialPost({ post }: Props) {
       {post.type === "video" && (
         <video
           ref={videoRef}
-          src={post.image}
+          src={inView ? post.image : undefined}
           poster={post.thumbnail}
           muted
           autoPlay
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           aria-label={post.alt ?? "Social media video"}
           className="
             absolute
@@ -153,7 +155,7 @@ export default function SocialPost({ post }: Props) {
             "
           >
             <Image
-              src={asset("/assets/waldor/video-badge.png")}
+              src={asset("/assets/waldor/icons/video-badge.png")}
               alt="videoBadge"
               width={24}
               height={24}
@@ -190,7 +192,7 @@ export default function SocialPost({ post }: Props) {
             "
             >
               <Image
-                src={asset("/assets/waldor/images-badge.png")}
+                src={asset("/assets/waldor/icons/images-badge.png")}
                 alt="imageBadge"
                 width={24}
                 height={24}

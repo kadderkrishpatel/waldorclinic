@@ -16,7 +16,7 @@ export default function SignatureTreatments() {
           {/* Decorative Leaf */}
           <div className="absolute right-0 top-20 hidden lg:block">
             <Image
-              src={asset("/assets/waldor/exp-leaf-top.png")}
+              src={asset("/assets/waldor/decorations/exp-leaf-top.png")}
               alt=""
               width={200}
               height={200}

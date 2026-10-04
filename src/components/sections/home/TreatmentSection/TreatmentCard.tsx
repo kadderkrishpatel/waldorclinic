@@ -1,12 +1,13 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
+import useInViewOnce from "@/src/components/hooks/useInViewOnce";
 import { ArrowDownRight } from "lucide-react";
 
 export interface TreatmentCardProps {
   title: string;
   description: string;
-  image: string;
+  video: string;
   href: string;
   offset?: boolean;
 }
@@ -14,23 +15,42 @@ export interface TreatmentCardProps {
 export default function TreatmentCard({
   title,
   description,
-  image,
+  video,
   href,
 }: TreatmentCardProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const inView = useInViewOnce(videoRef, "200px");
+
+  const playVideo = () => {
+    videoRef.current?.play().catch(() => {});
+  };
+
+  const pauseVideo = () => {
+    videoRef.current?.pause();
+  };
+
   return (
     <Link
       href={href}
+      onPointerEnter={playVideo}
+      onPointerLeave={pauseVideo}
+      onFocus={playVideo}
+      onBlur={pauseVideo}
       data-reveal
       data-direction="top"
       className="group relative block h-full w-full overflow-hidden rounded-full border-[8px] lg:border-[10px] border-[#D8C2A3] bg-[#D8C2A3]"
     >
-      {/* Image */}
-      <Image
-        src={image}
-        alt={title}
-        fill
-        sizes="(max-width:640px) 85vw, (max-width:1024px) 65vw, (max-width:1280px) 33vw, 420px"
-        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+      {/* Video: shows first frame, plays only on hover */}
+      <video
+        ref={videoRef}
+        src={inView ? `${video}#t=0.001` : undefined}
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label={title}
+        tabIndex={-1}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
 
       {/* Overlay */}

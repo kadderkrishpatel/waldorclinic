@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getBlogPath } from "@/src/lib/blogRoutes";
 import { getBlogs } from "@/src/services/blogs";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://waldorclinic.com";
@@ -37,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const { blogs } = await getBlogs({ page: 1, perPage: 100 });
     blogEntries = blogs.map((blog) => ({
-      url: `${SITE_URL}/blog/${blog.slug}`,
+      url: `${SITE_URL}${getBlogPath(blog.category, blog.slug)}`,
       lastModified: new Date(blog.publishedAt || Date.now()),
       changeFrequency: "monthly",
       priority: 0.6,

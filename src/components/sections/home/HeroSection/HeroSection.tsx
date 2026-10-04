@@ -16,8 +16,8 @@ export default function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <HeroBackgroundVideo
-          src="https://xymgm1c0nsa3pqkd.public.blob.vercel-storage.com/assets/waldor/hero-bg.mp4"
-          poster="https://xymgm1c0nsa3pqkd.public.blob.vercel-storage.com/assets/waldor/hero-bg.png"
+          src="/assets/waldor/videos/hero-bg.mp4"
+          poster="/assets/waldor/heroes/hero-bg.png"
         />
       </div>
 

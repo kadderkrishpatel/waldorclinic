@@ -1,15 +1,25 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Blog, BlogsResponse } from "./BlogListingSection.types";
 import { blogCategories } from "./BlogListingSection.data";
 import { BlogCard } from "@/src/components/ui/Cards";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
-export default function BlogListingSection() {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
+export default function BlogListingSection({
+  initialCategory = "All",
+  initialBlogs,
+  initialTotalPages = 1,
+}: {
+  initialCategory?: string;
+  initialBlogs?: Blog[];
+  initialTotalPages?: number;
+}) {
+  const [blogs, setBlogs] = useState<Blog[]>(initialBlogs ?? []);
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [category, setCategory] = useState("All");
+  const [totalPages, setTotalPages] = useState(initialTotalPages);
+  // The server already rendered page 1 of the initial category.
+  const skipInitialFetch = useRef(Boolean(initialBlogs));
+  const [category, setCategory] = useState(initialCategory);
   const [loading, setLoading] = useState(false);
   const sectionRef = useSectionReveal();
 
@@ -19,6 +29,11 @@ export default function BlogListingSection() {
    * ==========================================
    */
   useEffect(() => {
+    if (skipInitialFetch.current) {
+      skipInitialFetch.current = false;
+      return;
+    }
+
     const fetchBlogs = async () => {
       try {
         setLoading(true);

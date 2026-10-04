@@ -6,6 +6,10 @@ export default function FloatingBookButton() {
   return (
     <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 sm:bottom-5 sm:left-auto sm:right-5 sm:translate-x-0">
       <span className="absolute inset-0 rounded-full bg-[#C5A375]/60 animate-book-ring" />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 rounded-full border-[5px] border-[#C5A375]/45 animate-book-halo"
+      />
 
       <Link
         href={BOOKING_URL}

@@ -23,7 +23,7 @@ export const heroData: HeroSectionProps = {
     
   ],
 
-  backgroundImage: asset("/assets/waldor/hero-bg.png"),
+  backgroundImage: asset("/assets/waldor/heroes/hero-bg.png"),
 
   stats: [
     {

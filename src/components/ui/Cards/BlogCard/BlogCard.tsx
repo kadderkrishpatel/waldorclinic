@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/src/lib/utils";
 import { CardTitle, Eyebrow } from "@/src/components/ui/Typography";
+import { getBlogPath } from "@/src/lib/blogRoutes";
 import { BlogCardProps } from "./BlogCard.types";
 
 export default function BlogCard({
@@ -19,7 +20,7 @@ export default function BlogCard({
       data-direction="left"
       className={cn("group", className)}
     >
-      <Link href={`/blog/${slug}`}>
+      <Link href={getBlogPath(category, slug)}>
         {/* Image */}
         <div className="relative mb-6 aspect-square w-full overflow-hidden rounded-[28px]">
           <Image

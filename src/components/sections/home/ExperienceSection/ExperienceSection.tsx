@@ -1,12 +1,16 @@
 "use client";
+import { useRef } from "react";
 import Image from "next/image";
 import { experienceData } from "./ExperienceSection.data";
 import ExperienceCard from "./ExperienceCard";
 import { Eyebrow, Heading, Description } from "@/src/components/ui/Typography";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
+import useInViewOnce from "@/src/components/hooks/useInViewOnce";
 
 export default function ExperienceSection() {
   const sectionRef = useSectionReveal();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoInView = useInViewOnce(videoRef);
 
   return (
     <section
@@ -33,7 +37,8 @@ export default function ExperienceSection() {
         <div className="relative mt-8 md:mt-10 flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10">
           <div className="relative hidden aspect-4/3 w-full overflow-hidden rounded-[20px] lg:block lg:aspect-auto lg:w-1/2">
             <video
-              src={experienceData.video}
+              ref={videoRef}
+              src={videoInView ? experienceData.video : undefined}
               autoPlay
               muted
               loop

@@ -3,7 +3,7 @@ import { SuccessStoriesSectionProps } from "./SuccessStoriesSection.types";
 
 export const successStoriesData: SuccessStoriesSectionProps = {
   eyebrow: "SUCCESS STORIES",
-  successRightImg: asset("/assets/waldor/success-right.png"),
+  successRightImg: asset("/assets/waldor/decorations/success-right.png"),
   heading: {
     before: "Refined Results,",
     highlight: "Natural Beauty",

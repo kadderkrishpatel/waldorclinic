@@ -1,30 +1,22 @@
+import type { Metadata } from "next";
 import "./globals.css";
-import {
-  Inter,
-  Cormorant_Garamond,
-  Hanken_Grotesk,
-  Fraunces,
-} from "next/font/google";
+import { Hanken_Grotesk, Fraunces } from "next/font/google";
 import AppProviders from "@/src/providers/AppProviders";
 import { Toaster } from "sonner";
 import LocalBusinessSchema from "@/src/components/seo/LocalBusinessSchema";
 
-export const metadata = {
-  title: "Waldor Clinic",
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://waldorclinic.com";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: "WALDOR CLINIC",
   description: "Luxury Skin, Hair and Longevity Clinic",
+  applicationName: "WALDOR CLINIC",
+  openGraph: {
+    siteName: "WALDOR CLINIC",
+    type: "website",
+  },
 };
-
-const inter = Inter({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-inter",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-});
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
@@ -48,9 +40,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${cormorant.variable} ${hanken.variable} ${fraunces.variable}`}
+      className={`${hanken.variable} ${fraunces.variable}`}
     >
-      <body className="max-w-[1920px] mx-auto">
+      <body className="max-w-[1920px] mx-auto ">
         <LocalBusinessSchema />
 
         <Toaster

@@ -3,8 +3,8 @@ import { TreatmentSectionProps } from "./TreatmentSection.types";
 
 export const treatmentData: TreatmentSectionProps = {
   eyebrow: "Target Treatment Path",
-  topDecorationImg: asset("/assets/waldor/begin-top-left.png"),
-  bottomDecorationImg: asset("/assets/waldor/begin-bottom.png"),
+  topDecorationImg: asset("/assets/waldor/decorations/begin-top-left.png"),
+  bottomDecorationImg: asset("/assets/waldor/decorations/begin-bottom.png"),
   heading: {
     before: "What is Your Main Focus",
     highlight: "Today?",
@@ -17,21 +17,21 @@ export const treatmentData: TreatmentSectionProps = {
   treatments: [
     {
       title: "Skin",
-      description: "Dullness, Pigmentation & Texture",
-      image: asset("/assets/waldor/skin-cat.jpg"),
+      description: "Dullness, Acne, Pigmentation, Scarring",
+      video: asset("/assets/waldor/videos/Skin.mp4"),
       href: "/treatments/hydra-glass",
     },
     {
       title: "Body",
-      description: "Muscle Growth & Chiselled Physique",
-      image: asset("/assets/waldor/body-cat.jpg"),
+      description: "Muscle Growth, Contouring, Fat Loss",
+      video: asset("/assets/waldor/videos/Body.mp4"),
       href: "/treatments/body-treatment",
       offset: true,
     },
     {
-      title: "Face",
-      description: "Acne, Scarring & Wrinkles",
-      image: asset("/assets/waldor/face-cat.jpg"),
+      title: "Facial Aesthetics",
+      description: "Volume, Contouring, Wrinkles, Skin Boosters",
+      video: asset("/assets/waldor/videos/Face.mp4"),
       href: "/treatments/waldor-signature",
     },
   ],

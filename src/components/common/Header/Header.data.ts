@@ -8,7 +8,7 @@ export interface HeaderData {
 }
 
 export const headerData: HeaderData = {
-  logo: asset("/assets/waldor/logo.png"),
+  logo: asset("/assets/waldor/brand/logo.png"),
 
   navigation: [
     {
@@ -35,6 +35,11 @@ export const headerData: HeaderData = {
       id: 4,
       label: "Blog",
       href: "/blog",
+    },
+    {
+      id: 7,
+      label: "Press",
+      href: "/press",
     },
   ],
 

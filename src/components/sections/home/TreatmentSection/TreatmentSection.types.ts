@@ -1,7 +1,7 @@
 export interface TreatmentItem {
   title: string;
   description: string;
-  image: string;
+  video: string;
   href: string;
   offset?: boolean;
 }

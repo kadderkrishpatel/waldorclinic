@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
-        display: ["var(--font-cormorant)"],
+        sans: ["var(--font-hanken)"],
+        display: ["var(--font-fraunces)"],
         heading: ["var(--font-fraunces)"],
         hanken: ["var(--font-hanken)"],
       },

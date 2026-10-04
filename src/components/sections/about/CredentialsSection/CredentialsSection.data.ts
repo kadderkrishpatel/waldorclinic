@@ -18,26 +18,26 @@ export const credentials: Credential[] = [
   {
     id: 1,
     name: "CPD",
-    image: asset("/assets/waldor/about-logo-1.png"),
+    image: asset("/assets/waldor/about/about-logo-1.png"),
   },
   {
     id: 2,
     name: "JCCP",
-    image: asset("/assets/waldor/about-logo-2.png"),
+    image: asset("/assets/waldor/about/about-logo-2.png"),
   },
   {
     id: 3,
     name: "Save Face",
-    image: asset("/assets/waldor/about-logo-3.png"),
+    image: asset("/assets/waldor/about/about-logo-3.png"),
   },
   {
     id: 4,
     name: "ACE Group",
-    image: asset("/assets/waldor/about-logo-4.png"),
+    image: asset("/assets/waldor/about/about-logo-4.png"),
   },
   {
     id: 5,
     name: "BACN",
-    image: asset("/assets/waldor/about-logo-5.png"),
+    image: asset("/assets/waldor/about/about-logo-5.png"),
   },
 ];

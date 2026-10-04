@@ -16,7 +16,7 @@ import { serviceHeroData } from "@/src/components/sections/concerns/uneven-skin-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Uneven Skin Tone Treatment | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description: serviceHeroData.description,
 };
 

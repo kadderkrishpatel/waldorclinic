@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import DoctorSection from "@/src/components/sections/home/DoctorSection";
+import DoctorGridSection from "@/src/components/sections/home/DoctorSection/DoctorGridSection";
 
 export const metadata: Metadata = {
-  title: "Our Practitioners | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description:
     "Meet the aestheticians and medical practitioners behind Waldor Clinic — the specialists who deliver every treatment and consultation.",
 };
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function DoctorsPage() {
   return (
     <section className="p-2 lg:p-4 overflow-hidden">
-      <DoctorSection headingAs="h1" layout="grid" />
+      <DoctorGridSection headingAs="h1" />
     </section>
   );
 }

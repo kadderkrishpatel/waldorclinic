@@ -16,7 +16,7 @@ import { serviceHeroData } from "@/src/components/sections/concerns/acne/Service
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Acne Treatment London | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description: serviceHeroData.description,
 };
 

@@ -16,7 +16,7 @@ import { serviceHeroData } from "@/src/components/sections/concerns/wrinkles/Ser
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Fine Lines & Wrinkles Treatment | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description: serviceHeroData.description,
 };
 

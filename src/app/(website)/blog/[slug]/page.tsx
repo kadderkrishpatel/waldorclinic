@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import BlogDetailSection from "@/src/components/sections/blog/BlogDetailSection/BlogDetailSection";
 import RelatedBlogsSection from "@/src/components/sections/blog/RelatedBlogsSection/RelatedBlogsSection";
 import { getBlogBySlug, getBlogs } from "@/src/services/blogs";
+import { getBlogPath } from "@/src/lib/blogRoutes";
 import type { Blog } from "@/src/components/sections/blog/BlogListingSection/BlogListingSection.types";
 
 interface Props {
@@ -16,12 +17,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const blog = await getBlogBySlug(slug);
 
   if (!blog) {
-    return { title: "Blog | Waldor Clinic" };
+    return { title: "WALDOR CLINIC" };
   }
 
   return {
-    title: `${blog.title} | Waldor Clinic`,
+    title: "WALDOR CLINIC",
     description: blog.excerpt,
+    alternates: { canonical: getBlogPath(blog.category, blog.slug) },
   };
 }
 

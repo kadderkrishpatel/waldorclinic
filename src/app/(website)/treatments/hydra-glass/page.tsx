@@ -20,7 +20,7 @@ const pageDescription =
   "Explore WALDOR's HydraGlass™ facial treatments — tailored, non-invasive protocols combining exfoliation and deep hydration to reveal smoother, radiant, glass-skin.";
 
 export const metadata: Metadata = {
-  title: "HydraGlass™ Facial Treatments | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description: pageDescription,
 };
 

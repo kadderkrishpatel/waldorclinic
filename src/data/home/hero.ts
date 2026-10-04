@@ -15,5 +15,5 @@ export const heroData = {
       href: "#",
     },
   ],
-  image: asset("/assets/waldor/hero-bg.png"),
+  image: asset("/assets/waldor/heroes/hero-bg.png"),
 };

@@ -6,5 +6,5 @@ export const aboutData: AboutSectionProps = {
   title: "",
   description:
     "At WALDOR Clinic, science, artistry and bespoke care converge to redefine beauty.",
-  image: asset("/assets/waldor/about-decorative.png"),
+  image: asset("/assets/waldor/decorations/about-decorative.png"),
 };

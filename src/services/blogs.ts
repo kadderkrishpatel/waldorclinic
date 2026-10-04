@@ -36,7 +36,7 @@ async function fetchWithRetry(
 }
 
 /** Used when a WordPress post has no featured image, so cards never render broken. */
-const FALLBACK_BLOG_IMAGE = asset("/assets/waldor/blog-1.jpg");
+const FALLBACK_BLOG_IMAGE = asset("/assets/waldor/blog/blog-1.jpg");
 
 /**
  * WordPress.com-hosted sites (e.g. mysite.wordpress.com) don't expose

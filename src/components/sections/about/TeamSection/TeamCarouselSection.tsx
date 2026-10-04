@@ -47,7 +47,7 @@ export default function TeamCarouselSection() {
       ref={mergedRef}
       className="overflow-hidden lg:rounded-[32px] m-2 lg:m-4 bg-[#3D4844] pt-16 pb-10 md:pt-20 md:pb-12 lg:pt-20 lg:pb-14"
     >
-      <div className="mx-auto px-6 lg:px-[60px]">
+      <div className="mx-auto px-6 lg:px-[60px] overflow-hidden">
         {/* Heading */}
         <div className="mb-10 md:mb-12 lg:mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-[750px] flex flex-col gap-4 md:gap-5 lg:gap-6">
@@ -91,6 +91,7 @@ export default function TeamCarouselSection() {
 
         {/* Swiper */}
         <Swiper
+        
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
             syncNavState(swiper);

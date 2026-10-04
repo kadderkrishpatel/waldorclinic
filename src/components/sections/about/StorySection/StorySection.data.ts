@@ -28,7 +28,7 @@ export const stories: Story[] = [
     title: "The Beginning",
     before: "Technology alone doesn't create great results.",
     highlight: "People do.",
-    image: asset("/assets/waldor/about-hero.jpg"),
+    image: asset("/assets/waldor/about/about-hero.jpg"),
     paragraphs: [
       "You can have the best machines in the world, but if you don't understand the person sitting in front of you, you're simply treating skin. You're not treating the individual.",
       "That's why I built WALDOR. I wanted to create a place where every person is treated differently because every person is different.",
@@ -48,7 +48,7 @@ export const stories: Story[] = [
     title: "The Space & The People",
     before: "But WALDOR has never been about me.",
     highlight: "It's about the people around me.",
-    image: asset("/assets/waldor/story-2.jpg"),
+    image: asset("/assets/waldor/about/story-2.jpg"),
     paragraphs: [
       "The people I work with aren't just colleagues. They're my WALDOR family. They're driven. They're attentive. They're caring. They're special. Most importantly, they genuinely care about people.",
     ],

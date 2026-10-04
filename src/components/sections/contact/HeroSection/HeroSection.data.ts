@@ -3,7 +3,7 @@ import { HeroSectionProps } from "./HeroSection.types";
 
 export const heroData: HeroSectionProps = {
   eyebrow: "GET IN TOUCH",
-  decorationImg: asset("/assets/waldor/contact-decoration.png"),
+  decorationImg: asset("/assets/waldor/decorations/contact-decoration.png"),
   heading: {
     before: "Start the",
     highlight: "Conversation",

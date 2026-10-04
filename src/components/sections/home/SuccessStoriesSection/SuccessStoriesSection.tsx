@@ -29,7 +29,7 @@ export default function SuccessStoriesSection() {
   return (
     <section ref={mergedRef} className="relative">
       <Image
-        src={asset("/assets/waldor/footer-left.png")}
+        src={asset("/assets/waldor/decorations/footer-left.png")}
         alt=""
         width={151}
         height={363}
@@ -38,7 +38,7 @@ export default function SuccessStoriesSection() {
       />
 
       <Image
-        src={asset("/assets/waldor/footer-top-right.png")}
+        src={asset("/assets/waldor/decorations/footer-top-right.png")}
         alt=""
         width={277}
         height={345}

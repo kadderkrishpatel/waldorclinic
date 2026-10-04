@@ -2,9 +2,9 @@ import { asset } from "@/src/lib/assets";
 import { FooterDataProps } from "./Footer.types";
 
 export const footerData: FooterDataProps = {
-  footerImg: asset("/assets/waldor/footer.png"),
-  footerRightImg: asset("/assets/waldor/footer-top-right.png"),
-  footerLeftImg: asset("/assets/waldor/footer-left.png"),
+  footerImg: asset("/assets/waldor/decorations/footer.png"),
+  footerRightImg: asset("/assets/waldor/decorations/footer-top-right.png"),
+  footerLeftImg: asset("/assets/waldor/decorations/footer-left.png"),
   columns: [
     {
       title: "TREATMENTS",
@@ -115,12 +115,12 @@ export const footerData: FooterDataProps = {
   socialLinks: [
     {
       name: "Instagram",
-      icon: asset("/assets/waldor/insta-icon.png"),
+      icon: asset("/assets/waldor/social/insta-icon.png"),
       href: "https://www.instagram.com/waldorclinic",
     },
     {
       name: "Facebook",
-      icon: asset("/assets/waldor/fb-icon.png"),
+      icon: asset("/assets/waldor/social/fb-icon.png"),
       href: "https://www.facebook.com/waldorclinic",
     },
   ],

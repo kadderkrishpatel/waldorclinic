@@ -3,7 +3,7 @@ import { HeroSectionProps } from "./HeroSection.types";
 
 export const heroData: HeroSectionProps = {
   eyebrow: "FROM THE BLOG",
-  decorationImg: asset("/assets/waldor/blog-decoration.png"),
+  decorationImg: asset("/assets/waldor/blog/blog-decoration.png"),
   heading: {
     before: "Skin,",
     highlight: "Explained",

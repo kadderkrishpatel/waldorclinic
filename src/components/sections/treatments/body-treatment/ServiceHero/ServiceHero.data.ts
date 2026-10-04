@@ -17,7 +17,7 @@ export const serviceHeroData: ServiceHeroData = {
   eyebrow: "BESPOKE BODY JOURNEYS",
   before: "Redefining Body",
   highlight: "Contouring Treatments",
-  image: asset("/assets/waldor/body-treatment-hero.jpg"),
+  image: asset("/assets/waldor/heroes/body-treatment-hero.jpg"),
   description:
     "Whether it's cellulite, post-pregnancy recovery or weight-loss sagging skin, every treatment is designed to create visible, confidence-boosting results.",
   imageAlt: "Waldor signature treatment",

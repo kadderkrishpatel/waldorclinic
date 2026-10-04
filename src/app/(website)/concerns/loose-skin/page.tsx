@@ -16,7 +16,7 @@ import { serviceHeroData } from "@/src/components/sections/concerns/loose-skin/S
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Loose & Sagging Skin Treatment | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description: serviceHeroData.description,
 };
 

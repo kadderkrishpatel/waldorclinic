@@ -16,7 +16,7 @@ import { serviceHeroData } from "@/src/components/sections/concerns/dull-skin/Se
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dull Skin Treatment | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description: serviceHeroData.description,
 };
 

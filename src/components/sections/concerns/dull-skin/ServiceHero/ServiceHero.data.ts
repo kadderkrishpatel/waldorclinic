@@ -17,7 +17,7 @@ export const serviceHeroData: ServiceHeroData = {
   eyebrow: "Dull Skin Treatments",
   before: "Press Reset on Your",
   highlight: "Dull Complexion",
-  image: asset("/assets/waldor/dull-skin.jpg"),
+  image: asset("/assets/waldor/categories/dull-skin.jpg"),
   description:
     "Dullness can be persistent, complex and deeply frustrating. We assess your skin, its cellular turnover and environmental influences to develop a treatment approach suited to what your skin needs, within a considered philosophy of wellness medicine, longevity and luminous vitality.",
   imageAlt: "Waldor signature treatment",

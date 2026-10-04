@@ -40,7 +40,6 @@ export default function WhyChooseUsSection() {
             height={310}
             className="h-auto w-full"
             sizes="(max-width:768px) 160px, 271px"
-            priority
           />
         </div>
       )}

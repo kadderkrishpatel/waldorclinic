@@ -16,7 +16,7 @@ import { serviceHeroData } from "@/src/components/sections/concerns/premature-ag
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Premature Ageing Treatment | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description: serviceHeroData.description,
 };
 

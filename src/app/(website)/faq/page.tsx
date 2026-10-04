@@ -5,7 +5,7 @@ import FAQSchema from "@/src/components/seo/FAQSchema";
 import { faqData } from "@/src/components/sections/faq/FaqSection/FaqSection.data";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description:
     "Answers to common questions about treatments, consultations, safety and aftercare at Waldor Clinic, London's luxury skin, hair and longevity clinic.",
 };

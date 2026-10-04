@@ -36,7 +36,6 @@ export default function SuccessStoriesSection() {
         width={320}
         height={371}
         className="absolute right-0 top-5 w-[120px] md:w-[180px] lg:w-[320px]"
-        priority
       />
 
       <div className="rounded-[24px] px-5 lg:rounded-[32px] bg-[#515D59] py-16 md:py-20 lg:py-[120px] overflow-hidden">

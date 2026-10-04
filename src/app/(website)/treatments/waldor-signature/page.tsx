@@ -17,7 +17,7 @@ import ServiceSchema from "@/src/components/seo/ServiceSchema";
 import { treatmentData, treatmentCards } from "@/src/components/sections/treatments/waldor-signature/SignatureTreatments/SignatureTreatments.data";
 
 export const metadata: Metadata = {
-  title: "Signature Treatments | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description: treatmentData.description,
 };
 

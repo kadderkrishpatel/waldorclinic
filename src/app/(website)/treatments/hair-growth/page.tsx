@@ -17,7 +17,7 @@ import { treatmentData, treatmentCards } from "@/src/components/sections/treatme
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hair Growth Treatments | Waldor Clinic",
+  title: "WALDOR CLINIC",
   description: treatmentData.description,
 };
 

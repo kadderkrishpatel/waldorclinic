@@ -5,6 +5,7 @@ import {
   ReactCompareSliderImage,
   ReactCompareSliderHandle,
 } from "react-compare-slider";
+import { optimizedSrc, optimizedSrcSet } from "@/src/lib/optimizedImage";
 
 interface Props {
   beforeImage: string;
@@ -61,7 +62,11 @@ export default function CompareSlider({
         }}
         itemOne={
           <ReactCompareSliderImage
-            src={beforeImage}
+            src={optimizedSrc(beforeImage)}
+            srcSet={optimizedSrcSet(beforeImage)}
+            sizes="(max-width: 768px) 100vw, 650px"
+            loading="lazy"
+            decoding="async"
             alt="Before"
             style={{
               objectFit: "cover",
@@ -73,7 +78,11 @@ export default function CompareSlider({
         }
         itemTwo={
           <ReactCompareSliderImage
-            src={afterImage}
+            src={optimizedSrc(afterImage)}
+            srcSet={optimizedSrcSet(afterImage)}
+            sizes="(max-width: 768px) 100vw, 650px"
+            loading="lazy"
+            decoding="async"
             alt="After"
             style={{
               objectFit: "cover",

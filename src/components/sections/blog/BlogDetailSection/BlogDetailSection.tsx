@@ -19,7 +19,7 @@ export default function BlogDetailSection({ blog }: BlogDetailSectionProps) {
     >
       {/* Decorative Leaf — top right */}
       <Image
-        src={asset("/assets/waldor/exp-leaf-top.png")}
+        src={asset("/assets/waldor/decorations/exp-leaf-top.png")}
         alt=""
         width={254.672}
         height={421.983}
@@ -29,7 +29,7 @@ export default function BlogDetailSection({ blog }: BlogDetailSectionProps) {
 
       {/* Decorative Leaf — bottom left */}
       <Image
-        src={asset("/assets/waldor/exp-leaf-top.png")}
+        src={asset("/assets/waldor/decorations/exp-leaf-top.png")}
         alt=""
         width={254.672}
         height={421.983}
