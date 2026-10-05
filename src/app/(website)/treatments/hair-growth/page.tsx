@@ -5,6 +5,7 @@ import {
   ServiceFAQ,
   ServiceHero,
   ServiceStats,
+  VideoShowcase,
   SignatureTreatments,
   SocialSection,
   SuccessStories,
@@ -35,6 +36,7 @@ export default function HairGrowthPage() {
       />
       <ServiceHero />
       <SignatureTreatments />
+      <VideoShowcase />
       <ServiceStats />
       <PatientSafety />
       <BeforeAfter />
