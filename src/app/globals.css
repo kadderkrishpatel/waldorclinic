@@ -78,6 +78,13 @@
     @apply border-beige/10;
   }
 
+  /* Elements that slide in (translate) must never create a horizontal scrollbar.
+     "clip" (unlike "hidden") keeps position: sticky working. */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-green-dark text-beige font-hanken antialiased selection:bg-gold/30;
     margin: 0;
