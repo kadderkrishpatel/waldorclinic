@@ -10,7 +10,7 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#3D4844] py-16 md:py-20 lg:py-24 xl:py-28 mx-2 lg:m-4"
+      className="relative overflow-hidden bg-[#3D4844] pt-6 pb-16 md:pt-8 md:pb-20 lg:pt-10 lg:pb-24 xl:pt-12 xl:pb-28 mx-2 lg:mx-4 lg:mb-4 lg:mt-0"
     >
       <div className="container mx-auto px-5 sm:px-6 lg:px-[60px]">
         <div className="mx-auto max-w-[1100px] text-center">

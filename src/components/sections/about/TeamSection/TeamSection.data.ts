@@ -21,7 +21,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: "Abbie",
-    designation: "Lead Aesthetician",
+    designation: "Senior Aesthetic Practitioner",
     description:
       "Abbie believes the treatment is only half the result. She is drawn to microneedling and the precision it takes to do it beautifully, and she has a real fondness for congested skin, the kind that needs proper extraction work before anything else can be built on top of it. Clearing acne and blackheads is, in her words, the satisfying part. What follows is the aftercare journey she maps out around it, exactly what your skin needs in the days and weeks afterwards. Clients tend to leave her room understanding their own skin properly, often for the first time.",
     image: asset("/assets/waldor/team/team-1.png"),
@@ -79,7 +79,7 @@ export const teamMembers: TeamMember[] = [
     name: "Emily",
     designation: "Front of House",
     description:
-      "Emily is passionate about skincare and believes that understanding your skin is crucial for achieving the best results. She loves exploring innovative treatments and is particularly interested in the art of chemical peels. For her, the most rewarding aspect is seeing clients transform their skin and confidence. After a treatment, she emphasizes the importance of a tailored aftercare routine, ensuring that each client knows how to maintain their results. Her clients often leave feeling empowered and knowledgeable about their skincare journey.",
+      "Emily brings a warm welcome and a passion for skincare and aesthetics to her role at WALDOR. As part of our front of house team, she helps clients feel comfortable and cared for from the moment they arrive. From arranging appointments to answering questions about the clinic, she is here to make every visit smooth and enjoyable. She loves learning about our treatments and seeing the confidence clients gain throughout their journey. For Emily, the most rewarding part is building relationships and making every client feel welcome.",
     image: asset("/assets/waldor/team/team-8.png"),
   },
   {

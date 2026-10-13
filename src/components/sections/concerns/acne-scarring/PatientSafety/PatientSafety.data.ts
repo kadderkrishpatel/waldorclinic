@@ -8,9 +8,9 @@ export interface SafetyPoint {
 export const safetyData = {
   eyebrow: "COMMON CAUSES",
   before: "What Causes",
-  highlight: "Acne Scarring?",
+  highlight: "Scarring?",
   description:
-    "Acne scarring develops through a combination of biological and external factors. Identifying these influences helps us personalise every stage of your treatment.",
+    "Scarring develops through a combination of biological and external factors. Identifying these influences helps us personalise every stage of your treatment.",
 };
 
 export const safetyPoints: SafetyPoint[] = [
@@ -36,7 +36,7 @@ export const safetyPoints: SafetyPoint[] = [
     id: "recurrent-breakouts",
     title: "Recurrent Breakouts",
     description:
-      "Repeated inflammation in the same area can disrupt the skin’s repair cycle, contributing to more complex patterns of acne scarring.",
+      "Repeated inflammation in the same area can disrupt the skin’s repair cycle, contributing to more complex patterns of scarring.",
   },
   {
     id: "individual-healing-response",
