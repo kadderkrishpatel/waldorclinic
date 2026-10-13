@@ -1,4 +1,5 @@
 export { default as HeroSection } from "./HeroSection";
+export { default as LogoSlider } from "./LogoSlider";
 export { default as AboutSection } from "./AboutSection";
 export { default as TreatmentSection } from "./TreatmentSection";
 export { default as WhyChooseUsSection } from "./WhyChooseUsSection";

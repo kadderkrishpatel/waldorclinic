@@ -58,7 +58,7 @@ export const indications: AcneIndicationItem[] = [
     title: "Red or Brown Marks That Linger",
     subtitle: "Not every post-acne mark is a scar.",
     description:
-      "Persistent pigmentation isn’t always a sign of acne scarring. While red or brown marks often fade over time, true scars involve structural changes beneath the skin. Distinguishing between the two is essential to a plan tailored to your skin.",
+      "Persistent pigmentation isn’t always a sign of scarring. While red or brown marks often fade over time, true scars involve structural changes beneath the skin. Distinguishing between the two is essential to a plan tailored to your skin.",
   },
 ];
 
@@ -105,11 +105,11 @@ export const benefitSections = {
     eyebrow: "CLINICAL INDICATORS",
     heading: {
       before: "Signs You May Have",
-      highlight: "Acne Scarring",
+      highlight: "Scarring",
     },
     tag: "indications",
     description:
-      "Acne scarring is often felt before it is seen. These are the indicators patients most commonly describe at consultation.",
+      "Scarring is often felt before it is seen. These are the indicators patients most commonly describe at consultation.",
     items: indications,
   },
 

@@ -12,7 +12,7 @@ export const doctorSectionData: DoctorSectionProps = {
   doctors: [
     {
       name: "Abbie",
-      role: "Lead Aesthetician",
+      role: "Senior Aesthetic Practitioner",
       image: asset("/assets/waldor/team/team-1.png"),
       slug: "sara-todd",
       description: "Abbie believes the treatment is only half the result. She is drawn to microneedling and the precision it takes to do it beautifully, and she has a real fondness for congested skin, the kind that needs proper extraction work before anything else can be built on top of it. Clearing acne and blackheads is, in her words, the satisfying part. What follows is the aftercare journey she maps out around it, exactly what your skin needs in the days and weeks afterwards. Clients tend to leave her room understanding their own skin properly, often for the first time.",
@@ -64,7 +64,7 @@ export const doctorSectionData: DoctorSectionProps = {
       role: "Front of House",
       image: asset("/assets/waldor/team/team-8.png"),
       slug: "team-member-8",
-      description: "Emily is passionate about skincare and believes that understanding your skin is crucial for achieving the best results. She loves exploring innovative treatments and is particularly interested in the art of chemical peels. For her, the most rewarding aspect is seeing clients transform their skin and confidence.",
+      description: "Emily brings a warm welcome and a passion for skincare and aesthetics to her role at WALDOR. As part of our front of house team, she helps clients feel comfortable and cared for from the moment they arrive. From arranging appointments to answering questions about the clinic, she is here to make every visit smooth and enjoyable. She loves learning about our treatments and seeing the confidence clients gain throughout their journey. For Emily, the most rewarding part is building relationships and making every client feel welcome.",
     },
     {
       name: "Hedieh",

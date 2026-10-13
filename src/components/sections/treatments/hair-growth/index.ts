@@ -1,5 +1,6 @@
 export { default as ServiceHero } from "./ServiceHero";
 export { default as SignatureTreatments } from "./SignatureTreatments";
+export { default as VideoShowcase } from "./VideoShowcase";
 export { default as ServiceStats } from "./ServiceStats";
 export { default as PatientSafety } from "./PatientSafety";
 export { default as BeforeAfter } from "./BeforeAfter";

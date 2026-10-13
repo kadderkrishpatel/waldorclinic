@@ -87,8 +87,8 @@ export const headerData: HeaderData = {
       items: [
         {
           id: 1,
-          label: "Acne Scarring",
-          description: "Reduce visible scars for smoother skin",
+          label: "Scarring",
+          description: "Reduce visible scar such as Acne scarring, C-section scars & more",
           href: "/concerns/acne-scarring",
         },
         {

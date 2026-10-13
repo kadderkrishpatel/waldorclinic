@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import {
   HeroSection,
+  LogoSlider,
   AboutSection,
 } from "@/src/components/sections/home";
 // Everything below the hero is split into its own chunks (still server-rendered
@@ -35,6 +36,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
+      <LogoSlider />
       <AboutSection />
       <section className="p-2 lg:p-4 overflow-hidden">
         <TreatmentSection />

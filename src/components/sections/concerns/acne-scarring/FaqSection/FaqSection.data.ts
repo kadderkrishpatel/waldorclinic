@@ -29,7 +29,7 @@ export const faqData: FAQItem[] = [
     question:
       "Can acne scar treatments be performed on areas other than the face?",
     answer:
-      "Yes. Acne scarring can affect the back, chest, shoulders, and other areas of the body, and many treatments can be adapted accordingly. The choice of treatment depends on the location, scar type, skin quality, and your individual concerns to ensure the safest and most effective outcome.",
+      "Yes. Scarring can affect the back, chest, shoulders, and other areas of the body, and many treatments can be adapted accordingly. The choice of treatment depends on the location, scar type, skin quality, and your individual concerns to ensure the safest and most effective outcome.",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ export const faqData: FAQItem[] = [
     question:
       "Are there any complications or side effects of treatments for acne scars?",
     answer:
-      "Yes. Acne scarring can affect the back, chest, shoulders, and other areas of the body, and many treatments can be adapted accordingly. The choice of treatment depends on the location, scar type, skin quality, and your individual concerns to ensure the safest and most effective outcome.",
+      "Yes. Scarring can affect the back, chest, shoulders, and other areas of the body, and many treatments can be adapted accordingly. The choice of treatment depends on the location, scar type, skin quality, and your individual concerns to ensure the safest and most effective outcome.",
   },
   {
     id: 4,

@@ -5,7 +5,7 @@ export const howItWorksData: HowItWorksSectionProps = {
   eyebrow: "The Methodology",
   heading: {
     before: " Four Steps to Your",
-    highlight: "Metamorphosis", 
+    highlight: "Metamorphosis",
   },
   steps: [
     {
@@ -17,18 +17,18 @@ export const howItWorksData: HowItWorksSectionProps = {
     {
       number: "02",
       title: "Diagnostic",
-      description: "Begin with your 45-minute in-person skin analysis.",
+      description: "Begin with your in-person skin analysis.",
       icon: asset("/assets/waldor/icons/scan-icon.png"),
     },
     {
       number: "03",
       title: "Strategy",
-      description: "Receive your bespoke written treatment plan.",
+      description: "Receive your bespoke treatment plan.",
       icon: asset("/assets/waldor/icons/plan-icon.png"),
     },
     {
       number: "04",
-      title: "Procedure",
+      title: "Treatment",
       description: "Experience your tailored clinical skin transformation.",
       icon: asset("/assets/waldor/icons/treatment-icon.png"),
     },

@@ -1,4 +1,4 @@
-import { asset } from "@/src/lib/assets";
+import { logoSliderData, LogoItem } from "@/src/components/sections/home/LogoSlider/LogoSlider.data";
 
 export const credData = {
   eyebrow: "OUR CREDENTIALS",
@@ -9,35 +9,9 @@ export const credData = {
 };
 
 export interface Credential {
-  id: number;
+  id?: number;
   name: string;
   image: string;
 }
 
-export const credentials: Credential[] = [
-  {
-    id: 1,
-    name: "CPD",
-    image: asset("/assets/waldor/about/about-logo-1.png"),
-  },
-  {
-    id: 2,
-    name: "JCCP",
-    image: asset("/assets/waldor/about/about-logo-2.png"),
-  },
-  {
-    id: 3,
-    name: "Save Face",
-    image: asset("/assets/waldor/about/about-logo-3.png"),
-  },
-  {
-    id: 4,
-    name: "ACE Group",
-    image: asset("/assets/waldor/about/about-logo-4.png"),
-  },
-  {
-    id: 5,
-    name: "BACN",
-    image: asset("/assets/waldor/about/about-logo-5.png"),
-  },
-];
+export const credentialLogos: LogoItem[] = logoSliderData.logos;

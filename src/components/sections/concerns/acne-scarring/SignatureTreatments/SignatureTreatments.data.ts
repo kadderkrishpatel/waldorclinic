@@ -30,7 +30,7 @@ export const serviceStats: ServiceStat[] = [
 export const treatmentData = {
   eyebrow: "UNDERSTAND YOUR CONCERN",
   before: "What is",
-  highlight: "Acne Scarring?",
+  highlight: "Scarring?",
   description:
     "Living with acne scars often means carrying the visible reminders of breakouts long after the acne itself has resolved. While active blemishes may heal within weeks, the changes they leave beneath the skin can remain for years, affecting texture, skin quality and confidence in equal measure.",
   description2:
