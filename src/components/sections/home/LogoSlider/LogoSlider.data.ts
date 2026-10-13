@@ -20,7 +20,7 @@ export interface LogoSliderData {
 }
 
 export const logoSliderData: LogoSliderData = {
-  eyebrow: "AS FEATURED IN",
+  eyebrow: "AS SEEN ON",
   heading: {
     before: "Featured Across Leading",
     highlight: "Publications",

@@ -48,12 +48,24 @@ export default function FloatingTreatmentImage({
             }}
             className="absolute inset-0"
           >
-            <Image
-              src={image}
-              alt=""
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
+            {image?.endsWith(".mp4") ? (
+              <video
+                src={image}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <Image
+                src={image}
+                alt=""
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       </div>
