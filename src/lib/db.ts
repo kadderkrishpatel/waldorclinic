@@ -22,8 +22,10 @@ export async function saveContactSubmission(data: {
     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, NOW(), NOW())
   `;
 
+  const id = generateId();
+
   await pool.query(query, [
-    generateId(),
+    id,
     data.firstName,
     data.lastName,
     data.email,
@@ -32,6 +34,8 @@ export async function saveContactSubmission(data: {
     data.message,
     "new",
   ]);
+
+  return id;
 }
 
 export async function saveCareersSubmission(data: {
@@ -46,8 +50,10 @@ export async function saveCareersSubmission(data: {
     VALUES ($1, $2, $3, $4, $5, $6, $7, NOW(), NOW())
   `;
 
+  const id = generateId();
+
   await pool.query(query, [
-    generateId(),
+    id,
     data.firstName,
     data.lastName,
     data.email,
@@ -55,4 +61,18 @@ export async function saveCareersSubmission(data: {
     data.message,
     "new",
   ]);
+
+  return id;
+}
+
+// Flags a saved enquiry whose notification email could not be sent, so the
+// clinic can find it in the database.
+export async function markSubmissionEmailFailed(
+  table: "contact_submissions" | "careers_submissions",
+  id: string,
+) {
+  await pool.query(
+    `UPDATE ${table} SET status = 'email_failed', "updatedAt" = NOW() WHERE id = $1`,
+    [id],
+  );
 }

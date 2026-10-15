@@ -14,14 +14,22 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const blog = await getBlogBySlug(slug);
+
+  let blog: Blog | null = null;
+  try {
+    blog = await getBlogBySlug(slug);
+  } catch (error) {
+    // WordPress unreachable — fall back to the default metadata. The page
+    // itself still hits the error boundary if it can't load the post.
+    console.error("Blog metadata error:", error);
+  }
 
   if (!blog) {
     return { title: "WALDOR CLINIC" };
   }
 
   return {
-    title: "WALDOR CLINIC",
+    title: `${blog.title} | WALDOR CLINIC`,
     description: blog.excerpt,
     alternates: { canonical: getBlogPath(blog.category, blog.slug) },
   };

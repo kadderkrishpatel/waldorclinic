@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { guardFormRequest } from "@/src/lib/spamGuard";
 import { careersSchema } from "@/src/lib/validations/careers.schema";
-import { saveCareersSubmission } from "@/src/lib/db";
+import {
+  saveCareersSubmission,
+  markSubmissionEmailFailed,
+} from "@/src/lib/db";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -26,6 +30,9 @@ function escapeHtml(value: string): string {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    const blocked = guardFormRequest(req, body);
+    if (blocked) return blocked;
+
     const parsed = careersSchema.safeParse(body);
 
     if (!parsed.success) {
@@ -40,16 +47,22 @@ export async function POST(req: NextRequest) {
 
     const { firstName, lastName, email, subject, message } = parsed.data;
 
-    // Save to database
-    await saveCareersSubmission({
-      firstName,
-      lastName: lastName || null,
-      email,
-      subject,
-      message,
-    });
+    // Save first so the enquiry is never lost. If the save fails we still
+    // try to email the clinic.
+    let submissionId: string | null = null;
+    try {
+      submissionId = await saveCareersSubmission({
+        firstName,
+        lastName: lastName || null,
+        email,
+        subject,
+        message,
+      });
+    } catch (error) {
+      console.error("Failed to save careers submission:", error);
+    }
 
-    const info = await transporter.sendMail({
+    const emailAttempt = transporter.sendMail({
       from: process.env.CONTACT_FROM_EMAIL,
       to: process.env.CONTACT_TO_EMAIL,
       replyTo: email,
@@ -133,11 +146,24 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    return NextResponse.json({
-      success: true,
-      messageId: info.messageId,
-      response: info.response,
-    });
+    try {
+      await emailAttempt;
+    } catch (emailError) {
+      console.error("Failed to send careers email:", emailError);
+
+      // The enquiry is safely stored, so the visitor shouldn't see an error
+      // (and resubmit). Flag the row so the clinic can follow up.
+      if (submissionId) {
+        await markSubmissionEmailFailed("careers_submissions", submissionId).catch(
+          (error) => console.error("Failed to flag submission:", error),
+        );
+        return NextResponse.json({ success: true });
+      }
+
+      throw emailError;
+    }
+
+    return NextResponse.json({ success: true });
   } catch (error) {
     if (error instanceof Error) {
       console.error("Message :", error.message);
@@ -147,8 +173,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message:
-          error instanceof Error ? error.message : "Unable to send email",
+        message: "Something went wrong. Please try again later.",
       },
       {
         status: 500,

@@ -4,6 +4,7 @@ import {
   BlogsResponse,
 } from "@/src/components/sections/blog/BlogListingSection/BlogListingSection.types";
 import { asset } from "@/src/lib/assets";
+import { sanitizeBlogHtml } from "@/src/lib/sanitizeHtml";
 
 const WORDPRESS_URL = process.env.NEXT_PUBLIC_WORDPRESS_BLOGS_URL || "";
 
@@ -21,7 +22,9 @@ async function fetchWithRetry(
 ): Promise<Response> {
   try {
     const response = await fetch(url, init);
-    if (!response.ok && retries > 0) {
+    // 4xx means the request itself is wrong, so retrying can never succeed.
+    const isRetryable = response.status >= 500 || response.status === 429;
+    if (!response.ok && isRetryable && retries > 0) {
       await new Promise((resolve) => setTimeout(resolve, 300));
       return fetchWithRetry(url, init, retries - 1);
     }
@@ -195,7 +198,7 @@ function mapPost(post: WordPressPost): Blog {
     author: author?.name ?? "Waldor Clinic",
     authorImage: author?.avatar_urls?.["96"] ?? "",
     publishedAt: formatPublishedDate(post.date),
-    content: post.content?.rendered ?? "",
+    content: sanitizeBlogHtml(post.content?.rendered ?? ""),
   };
 }
 
@@ -252,6 +255,23 @@ export async function getBlogs({
 
   const url = `${getApiBase()}/posts?${params.toString()}`;
   const response = await fetchWithRetry(url, { next: { revalidate: 60 } });
+
+  // WordPress answers 400 when `page` is past the last page — that's just an
+  // empty result, not a server failure.
+  if (response.status === 400) {
+    return {
+      blogs: [],
+      categories: [],
+      pagination: {
+        page,
+        perPage,
+        total: 0,
+        totalPages: 1,
+        hasNextPage: false,
+        hasPreviousPage: page > 1,
+      },
+    };
+  }
 
   if (!response.ok) {
     throw new Error(`WordPress blog API failed: ${response.status}`);

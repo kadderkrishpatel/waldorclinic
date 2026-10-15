@@ -34,6 +34,10 @@ export default function BlogListingSection({
       return;
     }
 
+    // Cancel the previous request when page/category changes so a slow,
+    // older response can never overwrite the current selection.
+    const controller = new AbortController();
+
     const fetchBlogs = async () => {
       try {
         setLoading(true);
@@ -45,25 +49,34 @@ export default function BlogListingSection({
         }
 
         const url = `/api/blog?${params.toString()}`;
-        const res = await fetch(url, { cache: "no-store" });
+        const res = await fetch(url, {
+          cache: "no-store",
+          signal: controller.signal,
+        });
 
         if (!res.ok) {
           throw new Error("Failed to fetch blogs");
         }
 
         const data: BlogsResponse = await res.json();
+        if (controller.signal.aborted) return;
+
         setBlogs(data.blogs || []);
         setTotalPages(data.pagination.totalPages || 1);
       } catch (error) {
+        if (controller.signal.aborted) return;
+
         console.error("Blog fetch error:", error);
         setBlogs([]);
         setTotalPages(1);
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) setLoading(false);
       }
     };
 
     fetchBlogs();
+
+    return () => controller.abort();
   }, [page, category]);
 
   const handleCategoryChange = (selectedCategory: string) => {

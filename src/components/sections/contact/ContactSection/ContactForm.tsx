@@ -99,6 +99,16 @@ export default function ContactForm({
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-8 mt-20"
       >
+        {/* Honeypot: invisible to people, bots fill it in */}
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute -left-[9999px] h-0 w-0 opacity-0"
+          {...register("website")}
+        />
+
         {/* Name */}
         <div className="flex flex-col gap-8 md:grid md:grid-cols-2">
           <TextField
@@ -130,11 +140,15 @@ export default function ContactForm({
           label="PHONE"
           type="tel"
           placeholder="7000000000"
-          maxLength={10}
+          maxLength={20}
           registration={{
             ...phoneRegistration,
             onChange: (e) => {
-              e.target.value = e.target.value.replace(/\D/g, "").slice(0, 10);
+              // Allow digits, one leading "+", spaces, dashes and brackets
+              e.target.value = e.target.value
+                .replace(/[^\d+\s\-()]/g, "")
+                .replace(/(?!^)\+/g, "")
+                .slice(0, 20);
               return phoneRegistration.onChange(e);
             },
           }}
