@@ -8,7 +8,7 @@ import { cn } from "@/src/lib/utils";
 
 export default function ProductLogoSlider() {
   const sectionRef = useSectionReveal();
-  const { eyebrow, heading, description, logos } = productLogoSliderData;
+  const { eyebrow, logos } = productLogoSliderData;
 
   // Duplicate for seamless 100% infinite marquee loop
   const loopLogos = [...logos, ...logos];
@@ -28,27 +28,6 @@ export default function ProductLogoSlider() {
         {/* Section Header */}
         <div className="relative z-10 mx-auto max-w-2xl text-center flex flex-col items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
           <Eyebrow variant="secondary">{eyebrow}</Eyebrow>
-
-          <h2
-            data-reveal
-            data-direction="up"
-            data-delay="0.05"
-            className="font-fraunces text-2xl sm:text-3xl lg:text-4xl text-[#F3EDE3] font-normal leading-[115%] tracking-[-0.02em]"
-          >
-            {heading.before}{" "}
-            <span className="italic text-[#C5A375] font-normal">
-              {heading.highlight}
-            </span>
-          </h2>
-
-          <p
-            data-reveal
-            data-direction="up"
-            data-delay="0.1"
-            className="font-hanken text-sm sm:text-base text-[#9EA3A1] max-w-lg leading-relaxed"
-          >
-            {description}
-          </p>
         </div>
 
         {/* Slide Bar / Infinite Marquee Track with Pure Alpha Mask (Seamless Merge) */}
