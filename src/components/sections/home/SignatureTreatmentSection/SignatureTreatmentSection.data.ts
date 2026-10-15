@@ -16,8 +16,8 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
       number: "01",
       title: "HydraGlass™ Facial",
       description:
-        "A smoothing dermal treatment that gently refines texture and locks in moisture to instantly unveil a flawless, poreless glass-skin glow.",
-      image: asset("/assets/waldor/categories/service-thumb.jpg"),
+        "Deep cleansing, gentle exfoliation and intense hydration for clearer, smoother, glass-like glowing skin.",
+      image: asset("/assets/waldor/categories/HydraGlass%20Facial.png"),
       slug: "hydraglass-facial",
       href: "/treatments/hydra-glass",
     },
@@ -34,8 +34,8 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
       number: "03",
       title: "Waldor™ Peptide Signature Blends",
       description:
-        "Cellular molecules engineered to trigger collagen production, fortify your skin barrier and drive deep structural regeneration.",
-      image: asset("/assets/waldor/categories/service-thumb.jpg"),
+        "A targeted peptide blend formulated to address specific skin concerns and support advanced skin rejuvenation.",
+      image: asset("/assets/waldor/categories/Salmon%20Sperm%20.png"),
       slug: "waldor-peptide-blends",
       href: "/treatments/waldor-signature",
     },
@@ -43,8 +43,8 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
       number: "04",
       title: "Hair Growth Treatment",
       description:
-        "Advanced biological growth factors awaken resting roots, boosting circulation to deliver visibly thicker, fuller and healthier hair.",
-      image: asset("/assets/waldor/categories/skin-cat.jpg"),
+        "A targeted scalp treatment designed to nourish the scalp, support hair health and promote stronger, healthier-looking hair.",
+      image: asset("/assets/waldor/categories/Hair%20Growth%20Treatment.png"),
       slug: "hair-growth-treatment",
       href: "/treatments/hair-growth",
     },
