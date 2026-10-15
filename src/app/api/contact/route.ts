@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { guardFormRequest } from "@/src/lib/spamGuard";
 import { contactSchema } from "@/src/lib/validations/contact.schema";
-import { saveContactSubmission } from "@/src/lib/db";
+import {
+  saveContactSubmission,
+  markSubmissionEmailFailed,
+} from "@/src/lib/db";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -26,6 +30,9 @@ function escapeHtml(value: string): string {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    const blocked = guardFormRequest(req, body);
+    if (blocked) return blocked;
+
     const parsed = contactSchema.safeParse(body);
 
     if (!parsed.success) {
@@ -42,21 +49,27 @@ export async function POST(req: NextRequest) {
       parsed.data;
     const treatmentList: string[] = treatment ?? [];
 
-    // Save to database
-    await saveContactSubmission({
-      firstName,
-      lastName: lastName || null,
-      email,
-      phone,
-      treatment: treatmentList,
-      message,
-    });
+    // Save first so the enquiry is never lost. If the save fails we still
+    // try to email the clinic.
+    let submissionId: string | null = null;
+    try {
+      submissionId = await saveContactSubmission({
+        firstName,
+        lastName: lastName || null,
+        email,
+        phone,
+        treatment: treatmentList,
+        message,
+      });
+    } catch (error) {
+      console.error("Failed to save contact submission:", error);
+    }
 
-    const info = await transporter.sendMail({
+    const emailAttempt = transporter.sendMail({
       from: process.env.CONTACT_FROM_EMAIL,
       to: process.env.CONTACT_TO_EMAIL,
       replyTo: email,
-      subject: `✨ New Contact Enquiry - ${firstName} ${lastName}`,
+      subject: `✨ New Contact Enquiry - ${[firstName, lastName].filter(Boolean).join(" ")}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -136,11 +149,24 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    return NextResponse.json({
-      success: true,
-      messageId: info.messageId,
-      response: info.response,
-    });
+    try {
+      await emailAttempt;
+    } catch (emailError) {
+      console.error("Failed to send contact email:", emailError);
+
+      // The enquiry is safely stored, so the visitor shouldn't see an error
+      // (and resubmit). Flag the row so the clinic can follow up.
+      if (submissionId) {
+        await markSubmissionEmailFailed("contact_submissions", submissionId).catch(
+          (error) => console.error("Failed to flag submission:", error),
+        );
+        return NextResponse.json({ success: true });
+      }
+
+      throw emailError;
+    }
+
+    return NextResponse.json({ success: true });
   } catch (error) {
     if (error instanceof Error) {
       console.error("Message :", error.message);
@@ -150,8 +176,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message:
-          error instanceof Error ? error.message : "Unable to send email",
+        message: "Something went wrong. Please try again later.",
       },
       {
         status: 500,

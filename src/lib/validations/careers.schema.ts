@@ -13,6 +13,7 @@ export const careersSchema = z.object({
     .string()
     .trim()
     .min(1, "Email is required")
+    .max(100, "Email is too long")
     .email("Please enter a valid email address"),
 
   subject: z
@@ -26,6 +27,9 @@ export const careersSchema = z.object({
     .trim()
     .min(1, "Message is required")
     .max(2000, "Message is too long"),
+
+  // Honeypot: hidden from people, bots fill it in.
+  website: z.string().optional(),
 });
 
 export type CareersFormValues = z.infer<typeof careersSchema>;

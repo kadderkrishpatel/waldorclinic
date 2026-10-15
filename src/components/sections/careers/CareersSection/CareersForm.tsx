@@ -85,6 +85,16 @@ export default function CareersForm({ heading, disclaimer }: Props) {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-8 mt-20"
       >
+        {/* Honeypot: invisible to people, bots fill it in */}
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute -left-[9999px] h-0 w-0 opacity-0"
+          {...register("website")}
+        />
+
         {/* Name */}
         <div className="flex flex-col gap-8 md:grid md:grid-cols-2">
           <TextField

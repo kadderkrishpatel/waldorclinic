@@ -1,26 +1,47 @@
-import { getBlogs, getBlogCategories } from "@/src/services/blogs";
+import { getBlogs } from "@/src/services/blogs";
 import { NextRequest, NextResponse } from "next/server";
+
+const DEFAULT_PAGE = 1;
+const DEFAULT_PER_PAGE = 6;
+const MAX_PAGE = 1000;
+const MAX_PER_PAGE = 50;
+
+/** Parse a positive integer query param; bad input falls back to the default. */
+function parseIntParam(
+  value: string | null,
+  fallback: number,
+  max: number,
+): number {
+  if (value === null || !/^\d+$/.test(value)) return fallback;
+
+  const parsed = Number(value);
+  if (parsed < 1) return fallback;
+
+  return Math.min(parsed, max);
+}
 
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
-    const page = Math.max(1, Number(searchParams.get("page") || "1"));
-    const perPage = Math.max(1, Number(searchParams.get("per_page") || "6"));
+    const page = parseIntParam(searchParams.get("page"), DEFAULT_PAGE, MAX_PAGE);
+    const perPage = parseIntParam(
+      searchParams.get("per_page"),
+      DEFAULT_PER_PAGE,
+      MAX_PER_PAGE,
+    );
     const category = searchParams.get("category") || "All";
 
-    const [blogResponse, categories] = await Promise.all([
-      getBlogs({
-        page,
-        perPage,
-        category,
-      }),
-
-      getBlogCategories(),
-    ]);
+    // The listing UI doesn't use the categories list, so it is no longer
+    // fetched here — a categories outage can't empty the blog listing.
+    const blogResponse = await getBlogs({
+      page,
+      perPage,
+      category,
+    });
 
     return NextResponse.json({
       blogs: blogResponse.blogs,
-      categories,
+      categories: [],
       pagination: blogResponse.pagination,
     });
   } catch (error) {
@@ -32,7 +53,7 @@ export async function GET(request: NextRequest) {
         categories: [],
         pagination: {
           page: 1,
-          perPage: 6,
+          perPage: DEFAULT_PER_PAGE,
           total: 0,
           totalPages: 1,
           hasNextPage: false,
