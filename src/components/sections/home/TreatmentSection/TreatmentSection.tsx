@@ -69,6 +69,28 @@ export default function TreatmentSection() {
         {/* MOBILE + TABLET HORIZONTAL */}
         {/* ============================= */}
         <div className="block lg:hidden overflow-hidden">
+          {/* Prev / Next arrows */}
+          <div className="mb-6 flex items-center justify-end gap-3">
+            <button
+              type="button"
+              aria-label="Previous treatment"
+              disabled={atStart}
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#29302D]/30 bg-[#29302D] text-[#EBE0D1] shadow-md transition-all duration-300 hover:bg-[#C5A375] hover:text-[#29302D] active:scale-95 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-[#29302D]/30 disabled:shadow-none"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next treatment"
+              disabled={atEnd}
+              onClick={() => swiperRef.current?.slideNext()}
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#29302D]/30 bg-[#29302D] text-[#EBE0D1] shadow-md transition-all duration-300 hover:bg-[#C5A375] hover:text-[#29302D] active:scale-95 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-[#29302D]/30 disabled:shadow-none"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
+
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
@@ -108,28 +130,6 @@ export default function TreatmentSection() {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* Prev / Next arrows */}
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <button
-              type="button"
-              aria-label="Previous treatment"
-              disabled={atStart}
-              onClick={() => swiperRef.current?.slidePrev()}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#29302D]/30 bg-[#29302D] text-[#EBE0D1] shadow-md transition-all duration-300 hover:bg-[#C5A375] hover:text-[#29302D] active:scale-95 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-[#29302D]/30 disabled:shadow-none"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              type="button"
-              aria-label="Next treatment"
-              disabled={atEnd}
-              onClick={() => swiperRef.current?.slideNext()}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#29302D]/30 bg-[#29302D] text-[#EBE0D1] shadow-md transition-all duration-300 hover:bg-[#C5A375] hover:text-[#29302D] active:scale-95 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-[#29302D]/30 disabled:shadow-none"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
         </div>
 
         {/* ============================= */}
