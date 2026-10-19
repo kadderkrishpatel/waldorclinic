@@ -16,14 +16,8 @@ const WhyChooseUsSection = dynamic(
 const ExperienceSection = dynamic(
   () => import("@/src/components/sections/home/ExperienceSection"),
 );
-const SuccessStoriesSection = dynamic(
-  () => import("@/src/components/sections/home/SuccessStoriesSection"),
-);
 const SignatureTreatmentSection = dynamic(
   () => import("@/src/components/sections/home/SignatureTreatmentSection"),
-);
-const HowItWorksSection = dynamic(
-  () => import("@/src/components/sections/home/HowItWorksSection"),
 );
 
 export const metadata: Metadata = {
@@ -45,16 +39,7 @@ export default async function HomePage() {
         <WhyChooseUsSection />
         <ExperienceSection />
       </section>
-      <section
-        id="success-stories"
-        className="relative scroll-mt-24 overflow-hidden rounded-[24px] lg:scroll-mt-32 lg:rounded-[40px] bg-[#3D4844] m-2 lg:m-4"
-      >
-        <SuccessStoriesSection />
-      </section>
       <SignatureTreatmentSection />
-      <section className="p-2 lg:p-4 overflow-hidden">
-        <HowItWorksSection />
-      </section>
     </>
   );
 }

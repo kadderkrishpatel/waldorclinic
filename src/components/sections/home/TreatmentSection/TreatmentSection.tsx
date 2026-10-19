@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { treatmentData } from "./TreatmentSection.data";
@@ -18,6 +19,13 @@ export default function TreatmentSection() {
   const mergedRef = useMergedRefs(sectionRef, sectionRevealRef);
   const swiperRef = useRef<SwiperType | null>(null);
   const [ready, setReady] = useState(false);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  const syncEdges = (swiper: SwiperType) => {
+    setAtStart(swiper.isBeginning);
+    setAtEnd(swiper.isEnd);
+  };
 
   useHorizontalScroll({
     section: sectionRef,
@@ -61,11 +69,36 @@ export default function TreatmentSection() {
         {/* MOBILE + TABLET HORIZONTAL */}
         {/* ============================= */}
         <div className="block lg:hidden overflow-hidden">
+          {/* Prev / Next arrows */}
+          <div className="mb-6 flex items-center justify-end gap-3">
+            <button
+              type="button"
+              aria-label="Previous treatment"
+              disabled={atStart}
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#29302D]/30 bg-[#29302D] text-[#EBE0D1] shadow-md transition-all duration-300 hover:bg-[#C5A375] hover:text-[#29302D] active:scale-95 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-[#29302D]/30 disabled:shadow-none"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next treatment"
+              disabled={atEnd}
+              onClick={() => swiperRef.current?.slideNext()}
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#29302D]/30 bg-[#29302D] text-[#EBE0D1] shadow-md transition-all duration-300 hover:bg-[#C5A375] hover:text-[#29302D] active:scale-95 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-[#29302D]/30 disabled:shadow-none"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
+
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
+              syncEdges(swiper);
               //setReady(true);
             }}
+            onSlideChange={syncEdges}
+            onResize={syncEdges}
             allowTouchMove={true}
             slidesPerView={1.05}
             spaceBetween={20}
