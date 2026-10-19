@@ -12,7 +12,7 @@ export default function SignatureTreatmentSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [imageTop, setImageTop] = useState(0);
 
-  const rowRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const activeTreatment = signatureTreatmentData.treatments[activeIndex];
 
   const activeIndexRef = useRef(activeIndex);
