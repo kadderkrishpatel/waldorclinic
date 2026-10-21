@@ -101,21 +101,12 @@ export default function Footer({
 
             <span>·</span>
 
-            <Link
-              href="/privacy-policy"
-              className="transition-colors hover:text-white"
-            >
-              Privacy Policy
-            </Link>
+            {/* Not clickable until the policy pages exist */}
+            <span>Privacy Policy</span>
 
             <span>·</span>
 
-            <Link
-              href="/terms-and-conditions"
-              className="transition-colors hover:text-white"
-            >
-              Terms & Conditions
-            </Link>
+            <span>Terms & Conditions</span>
 
             <span>·</span>
 
