@@ -4,7 +4,6 @@ import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "@/src/components/ui/Button";
 import { Heading } from "@/src/components/ui/Typography";
-import Link from "next/link";
 import {
   TextField,
   TextAreaField,
@@ -192,12 +191,8 @@ export default function ContactForm({
           <p className="max-w-full text-xs leading-6 text-[#7E8582]">
             {parts[0]}
 
-            <Link
-              href="/privacy-policy"
-              className="text-[#E4E6E5] underline underline-offset-4 transition-colors hover:text-[#D6B98B]"
-            >
-              Privacy Policy
-            </Link>
+            {/* Not clickable until the policy page exists */}
+            <span className="text-[#E4E6E5]">Privacy Policy</span>
 
             {parts[1]}
           </p>
