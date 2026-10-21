@@ -17,7 +17,7 @@ export const heroData: HeroSectionProps = {
   buttons: [
     {
       label: "Start the Conversation",
-      href: "/contact",
+      href: "/contact-us",
       variant: "primary",
     },
     

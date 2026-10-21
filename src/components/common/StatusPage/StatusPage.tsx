@@ -25,7 +25,7 @@ const quickLinks = [
   { label: "Concerns", href: "/concerns/acne" },
   { label: "Doctors", href: "/doctors" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 /**

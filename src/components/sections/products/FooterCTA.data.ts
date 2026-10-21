@@ -8,6 +8,6 @@ export const productsFooterCTA = {
     " Every complexion has its own needs and history. Discover WALDOR’s considered skincare collection, created to meet skin’s changing needs with care, precision and understanding. ",
   button: {
     label: "Schedule Your Consultation Now",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

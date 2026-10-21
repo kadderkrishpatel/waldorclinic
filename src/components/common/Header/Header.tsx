@@ -328,7 +328,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
           <div className="hidden xl:block">
             <Button
               variant="primary"
-              href="/contact"
+              href="/contact-us"
               className="rounded-full px-8 py-5"
             >
               Book Now
@@ -505,7 +505,7 @@ export default function Header({ bg = "bg-white/10" }: HeaderProps) {
 
               {/* Mobile CTA */}
               <Link
-                href="/contact"
+                href="/contact-us"
                 onClick={closeMobileMenu}
                 className={cn(
                   "mt-5",

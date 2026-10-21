@@ -7,7 +7,7 @@ export const treatmentData = {
   description:
     "Every treatment includes a complimentary, personalised consultation with one of WALDOR's expert aestheticians. For selected treatments, this is enhanced with a state-of-the-art 4D AI skin analysis from Japan.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

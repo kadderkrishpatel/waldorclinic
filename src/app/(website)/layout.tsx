@@ -39,7 +39,7 @@ const footerCTAByRoute: {
     bg: "bg-black/30",
   },
   {
-    match: "/contact",
+    match: "/contact-us",
     cta: defaultFooterCTA,
     bg: "bg-black/30",
   },

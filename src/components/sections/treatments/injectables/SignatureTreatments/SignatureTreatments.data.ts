@@ -7,7 +7,7 @@ export const treatmentData = {
   description:
     "All injectable treatments are performed exclusively by qualified doctors.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

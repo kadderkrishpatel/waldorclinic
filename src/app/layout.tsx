@@ -4,6 +4,7 @@ import { Hanken_Grotesk, Fraunces } from "next/font/google";
 import AppProviders from "@/src/providers/AppProviders";
 import { Toaster } from "sonner";
 import LocalBusinessSchema from "@/src/components/seo/LocalBusinessSchema";
+import GoogleTags from "@/src/components/seo/GoogleTags";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://waldorclinic.com";
 
@@ -44,6 +45,7 @@ export default function RootLayout({
     >
       <body className="max-w-[1920px] mx-auto ">
         <LocalBusinessSchema />
+        <GoogleTags />
 
         <Toaster
           position="top-center"

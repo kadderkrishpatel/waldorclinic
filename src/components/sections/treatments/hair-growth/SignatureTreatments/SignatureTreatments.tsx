@@ -59,7 +59,7 @@ export default function SignatureTreatments() {
                 description={`For optimal outcomes and consistent results, treatments are recommended as a course of six sessions.\n\nThese can be:\n• Six sessions of a single treatment.\n• A tailored combination based on your scalp condition and response.`}
                 offerDescription="Exclusive Discount Offer: Purchase a course of 5 treatments and enjoy your 6th session on us."
                 buttonText="Start Your Hair Restoration Plan"
-                buttonHref="/contact"
+                buttonHref="/contact-us"
               />
             </div>
 

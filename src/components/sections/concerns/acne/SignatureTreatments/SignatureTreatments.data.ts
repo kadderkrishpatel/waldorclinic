@@ -36,7 +36,7 @@ export const treatmentData = {
   description2:
     "It can appear as blackheads, whiteheads, inflamed spots or deeper blemishes, with severity and triggers varying between individuals and changing over time.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

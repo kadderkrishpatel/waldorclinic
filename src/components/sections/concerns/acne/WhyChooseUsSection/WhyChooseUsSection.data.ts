@@ -12,7 +12,7 @@ export const whyChooseUsData: WhyChooseUsSectionProps = {
     "True resolution of acne requires looking beyond current flare-ups to address the structural conditions that allow them to recur. At WALDOR, our approach works simultaneously on two fronts: calming immediate surface inflammation and re-educating the skin at a cellular level. Through clinical diagnostic mapping, we pinpoint your specific triggers, designing progressive protocols that regulate oil, refine pore structure and prevent post-inflammatory discolouration.",
   button: {
     label: "Schedule Your Appointment",
-    href: "/contact",
+    href: "/contact-us",
   },
   leftImage: asset("/assets/waldor/decorations/whychoose-left.png"),
   rightImage: asset("/assets/waldor/decorations/whychoose-right.png"),

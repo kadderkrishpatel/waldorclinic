@@ -9,6 +9,6 @@ export const homeFooterCTA = {
 
   button: {
     label: "Book Your Glow Session",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

@@ -28,11 +28,11 @@ WALDOR Clinic is located at 35 Great Portland Street, London W1W 8QQ, open Monda
 
 ## Other Pages
 
-- [About](https://waldorclinic.com/about): The clinic's story, practitioners and values.
+- [About](https://waldorclinic.com/about-us): The clinic's story, practitioners and values.
 - [Our Practitioners](https://waldorclinic.com/doctors): Meet the aestheticians and medical practitioners behind Waldor Clinic.
-- [FAQ](https://waldorclinic.com/faq): Answers to common questions about treatments, consultations and aftercare.
+- [FAQ](https://waldorclinic.com/faqs): Answers to common questions about treatments, consultations and aftercare.
 - [Blog](https://waldorclinic.com/blog): Skincare tips and treatment insights from WALDOR practitioners.
-- [Contact](https://waldorclinic.com/contact): 35 Great Portland Street, London W1W 8QQ.
+- [Contact](https://waldorclinic.com/contact-us): 35 Great Portland Street, London W1W 8QQ.
 
 ## What makes WALDOR distinct
 

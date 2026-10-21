@@ -9,6 +9,6 @@ export const contactFooterCTA = {
 
   button: {
     label: "Book a Consultation",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

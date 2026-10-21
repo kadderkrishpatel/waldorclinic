@@ -8,7 +8,7 @@ export const heroData = {
   buttons: [
     {
       label: "Book a Consultation",
-      href: "/contact",
+      href: "/contact-us",
     },
     {
       label: "Explore Plans",

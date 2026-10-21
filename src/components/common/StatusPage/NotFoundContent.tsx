@@ -12,7 +12,7 @@ export default function NotFoundContent() {
         { label: "Back to home", href: "/" },
         {
           label: "Book a consultation",
-          href: "/contact",
+          href: "/contact-us",
           variant: "secondary",
         },
       ]}

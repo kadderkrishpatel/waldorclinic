@@ -25,6 +25,6 @@ export const serviceHeroData: ServiceHeroData = {
   imageAlt: "Waldor signature treatment",
   cta: {
     label: "Schedule Your Consultation",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

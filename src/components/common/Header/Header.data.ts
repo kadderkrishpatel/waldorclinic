@@ -29,7 +29,7 @@ export const headerData: HeaderData = {
     {
       id: 3,
       label: "About",
-      href: "/about",
+      href: "/about-us",
     },
     {
       id: 4,

@@ -9,7 +9,7 @@ export const treatmentData = {
   description2:
     "To further enhance effectiveness, every treatment begins with a complimentary High Frequency scalp therapy. This stimulates circulation, oxygenates the scalp, reduces bacteria, and primes the follicles — creating the ideal environment for advanced treatments like PRP, Exosomes, and Polynucleotides to work at their best.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };
