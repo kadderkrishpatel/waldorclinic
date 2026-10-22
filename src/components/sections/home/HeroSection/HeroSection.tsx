@@ -12,7 +12,7 @@ export default function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <HeroBackgroundVideo
-          src={asset("/assets/waldor/videos/hero-bg.mp4")}
+          src={asset("/assets/waldor/videos/hero-bg-hd.mp4")}
           poster={asset("/assets/waldor/heroes/hero-bg-poster.jpg")}
         />
       </div>
