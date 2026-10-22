@@ -10,7 +10,13 @@ const PRODUCTION_HOST = new URL(SITE_URL).hostname;
  */
 export default async function robots(): Promise<MetadataRoute.Robots> {
   const headersList = await headers();
-  const hostname = headersList.get("host")?.split(":")[0] ?? "";
+  // Firebase Hosting forwards to Cloud Run with the run.app host, and keeps the
+  // domain the visitor typed in x-forwarded-host.
+  const hostname =
+    (headersList.get("x-forwarded-host") ?? headersList.get("host"))
+      ?.split(",")[0]
+      ?.trim()
+      .split(":")[0] ?? "";
   const isProduction =
     hostname === PRODUCTION_HOST || hostname === `www.${PRODUCTION_HOST}`;
 
