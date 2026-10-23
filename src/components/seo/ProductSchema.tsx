@@ -6,6 +6,7 @@ interface ProductEntry {
   price: number;
   image: string;
   href: string;
+  soldOut?: boolean;
 }
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://waldorclinic.com";
@@ -33,7 +34,9 @@ export default function ProductSchema({ products }: { products: ProductEntry[] }
           "@type": "Offer",
           price: product.price,
           priceCurrency: "GBP",
-          availability: "https://schema.org/InStock",
+          availability: product.soldOut
+            ? "https://schema.org/OutOfStock"
+            : "https://schema.org/InStock",
         },
       },
     })),

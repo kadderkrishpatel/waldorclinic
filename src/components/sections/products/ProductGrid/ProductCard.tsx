@@ -40,7 +40,9 @@ export default function ProductCard({ product, onOpenDetails }: Props) {
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className={
-            product.secondImage
+            product.soldOut
+              ? "object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+              : product.secondImage
               ? "object-cover transition-transform duration-500 ease-out group-hover:-translate-x-full"
               : "object-cover transition-transform duration-500 group-hover:scale-105"
           }
@@ -56,7 +58,13 @@ export default function ProductCard({ product, onOpenDetails }: Props) {
           />
         )}
 
-        {product.badge && (
+        {product.soldOut && (
+          <span className="absolute left-3 top-3 rounded-full bg-[#ECE0D1] px-3 py-1 font-hanken text-[10px] font-semibold uppercase tracking-[0.08em] text-[#1F2422]">
+            Sold out
+          </span>
+        )}
+
+        {!product.soldOut && product.badge && (
           <span className="absolute left-3 top-3 rounded-full bg-[#1F2422]/80 px-3 py-1 font-hanken text-[10px] font-semibold uppercase tracking-[0.08em] text-[#ECE0D1]">
             {product.badge}
           </span>
@@ -84,8 +92,14 @@ export default function ProductCard({ product, onOpenDetails }: Props) {
           }}
           className="mt-4 flex items-center justify-center gap-2 rounded-full border border-[#3D4844] py-2.5 font-hanken text-sm font-medium text-[#ECE0D1] transition-colors duration-200 hover:border-[#C5A375] hover:bg-[#C5A375] hover:text-[#1F2422]"
         >
-          <ShoppingCart size={16} strokeWidth={1.75} />
-          Add to cart
+          {product.soldOut ? (
+            "View details"
+          ) : (
+            <>
+              <ShoppingCart size={16} strokeWidth={1.75} />
+              Add to cart
+            </>
+          )}
         </button>
       </div>
     </div>

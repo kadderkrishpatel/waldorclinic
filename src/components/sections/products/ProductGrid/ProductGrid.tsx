@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
 import ProductCard from "./ProductCard";
 import ProductDetailsModal from "./ProductDetailsModal";
@@ -9,8 +10,17 @@ import { cn } from "@/src/lib/utils";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
 export default function ProductGrid() {
-  const sectionRef = useSectionReveal();
-  const [activeCategory, setActiveCategory] = useState<ProductFilter>("skin-care");
+  const sectionRef = useSectionReveal("products");
+  const pathname = usePathname();
+  const activeCategory: ProductFilter = pathname.endsWith("/skin-care")
+    ? "skin-care"
+    : pathname.endsWith("/merch")
+      ? "merch"
+      : "all";
+  const setActiveCategory = (category: ProductFilter) => {
+    const path = category === "all" ? "/products" : `/products/${category}`;
+    if (path !== pathname) window.history.pushState(null, "", path);
+  };
   const [sortBy, setSortBy] = useState<SortOption>("featured");
   const [sortOpen, setSortOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);

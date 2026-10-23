@@ -12,6 +12,8 @@ export interface Product {
   category: ProductCategory;
   href: string;
   badge?: string;
+  /** Out of stock: card shows a Sold out state and the schema reports OutOfStock. */
+  soldOut?: boolean;
   /** e.g. "5ml · two-part system" — shown next to the price in the details modal. */
   variantLabel?: string;
   /** Product-specific description, one paragraph per entry. */
