@@ -10,6 +10,7 @@ interface TransformationCardProps {
   duration: string;
   beforeImage: string;
   afterImage: string;
+  objectPosition?: string;
   swiper: MutableRefObject<SwiperType | null>;
 }
 
@@ -17,6 +18,7 @@ export default function TransformationCard({
   duration,
   beforeImage,
   afterImage,
+  objectPosition,
   swiper,
 }: TransformationCardProps) {
   return (
@@ -26,6 +28,7 @@ export default function TransformationCard({
         <BeforeAfterSlider
           beforeImage={beforeImage}
           afterImage={afterImage}
+          objectPosition={objectPosition}
           swiper={swiper}
         />
       </div>
