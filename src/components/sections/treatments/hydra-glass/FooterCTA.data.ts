@@ -10,6 +10,6 @@ export const hydraGlassFooterCTA = {
   highlightcolor: "#c5a375",
   button: {
     label: "Schedule Your Consultation Now",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

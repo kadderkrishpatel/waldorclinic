@@ -36,7 +36,7 @@ export const treatmentData = {
   description2:
     "Living with acne scars often means carrying the visible reminders of breakouts long after the acne itself has resolved. While active blemishes may heal within weeks, the changes they leave beneath the skin can remain for years, affecting texture, skin quality and confidence in equal measure.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

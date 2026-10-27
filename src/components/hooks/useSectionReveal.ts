@@ -37,9 +37,12 @@ function clearInlineStyles(el: HTMLElement) {
  * (it composes with any existing `transform`), so no animation library or
  * per-element scroll listeners are needed.
  */
-export default function useSectionReveal() {
+export default function useSectionReveal(rerunKey?: string) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const pathname = usePathname();
+  // Sections whose URL changes in place (e.g. filter tabs) pass a fixed key so
+  // the reveal runs once instead of replaying on every change.
+  const effectKey = rerunKey ?? pathname;
 
   useLayoutEffect(() => {
     const root = sectionRef.current;
@@ -101,7 +104,7 @@ export default function useSectionReveal() {
       observer.disconnect();
       elements.forEach(clearInlineStyles);
     };
-  }, [pathname]);
+  }, [effectKey]);
 
   return sectionRef;
 }

@@ -53,7 +53,24 @@ pnpm-debug.log*
 # =========================================================
 # Images
 # =========================================================
-# (tracked via Git LFS — see .gitattributes)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.webp
+*.svg
+*.ico
+*.avif
+*.tif
+*.tiff
+*.heic
+*.heif
+*.jfif
+*.raw
+*.psd
+*.ai
+*.eps
 
 # =========================================================
 # Public Generated Assets

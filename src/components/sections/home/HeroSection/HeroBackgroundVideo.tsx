@@ -17,22 +17,16 @@ export default function HeroBackgroundVideo({
   const userPausedRef = useRef(false);
   const [isPlaying, setIsPlaying] = useState(true);
   const [showControls, setShowControls] = useState(false);
-  const [videoSrc, setVideoSrc] = useState<string | undefined>();
 
   // The poster is the first thing painted, so fetch it with top priority.
   if (poster) preload(poster, { as: "image", fetchPriority: "high" });
 
-  // Start downloading the video only once the page itself has finished
-  // loading, so it does not compete with the poster, fonts and scripts.
+  // The src is rendered in the server HTML so the browser's preload scanner
+  // starts fetching the video immediately. React does not serialise `muted`,
+  // so nudge playback once hydrated in case autoplay was skipped.
   useEffect(() => {
-    if (document.readyState === "complete") {
-      setVideoSrc(src);
-      return;
-    }
-    const onLoad = () => setVideoSrc(src);
-    window.addEventListener("load", onLoad, { once: true });
-    return () => window.removeEventListener("load", onLoad);
-  }, [src]);
+    videoRef.current?.play().catch(() => {});
+  }, []);
 
   // Pause while scrolled out of view to save CPU/GPU and memory.
   useEffect(() => {
@@ -76,7 +70,7 @@ export default function HeroBackgroundVideo({
     >
       <video
         ref={videoRef}
-        src={videoSrc}
+        src={src}
         poster={poster}
         autoPlay
         muted

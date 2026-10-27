@@ -21,6 +21,6 @@ export const serviceHeroData: ServiceHeroData = {
     "Discover personalised skin journeys combining advanced Korean and Japanese innovations with clinical expertise for naturally radiant, lasting skin health.",
   cta: {
     label: "Book An Appointment",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

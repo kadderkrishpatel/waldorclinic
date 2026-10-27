@@ -9,6 +9,6 @@ export const hairTreatmentFooterCTA = {
 
   button: {
     label: "Schedule Your Consultation Now",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

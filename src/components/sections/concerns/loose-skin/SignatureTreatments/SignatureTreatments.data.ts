@@ -36,7 +36,7 @@ export const treatmentData = {
   description2:
     "While subtle changes in elasticity begin internally, visible skin laxity becomes noticeable as key structural proteins in the deep dermis and underlying fascia degrade.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

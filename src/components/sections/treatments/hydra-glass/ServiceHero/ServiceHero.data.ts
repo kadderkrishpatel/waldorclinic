@@ -23,6 +23,6 @@ export const serviceHeroData: ServiceHeroData = {
   imageAlt: "HydraGlass™ facial treatment",
   cta: {
     label: "Book An Appointment",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

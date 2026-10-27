@@ -247,7 +247,9 @@ export default function ProductDetailsModal({ product, onClose }: Props) {
               {formatPrice(product.price)}
             </p>
             <p className="font-hanken text-[11px] text-[#7D8582]">
-              Sold &amp; shipped by WALDOR.skin
+              {product.soldOut
+                ? "Currently sold out"
+                : "Sold & shipped by WALDOR.skin"}
             </p>
           </div>
 
@@ -257,7 +259,7 @@ export default function ProductDetailsModal({ product, onClose }: Props) {
             rel="noopener noreferrer"
             className="flex shrink-0 items-center gap-2 rounded-full bg-[#C5A375] px-6 py-3 font-hanken text-xs font-bold uppercase tracking-[0.08em] text-[#1F2422] transition-colors hover:bg-[#D5B98D]"
           >
-            Buy Now on WALDOR.skin
+            {product.soldOut ? "View on WALDOR.skin" : "Buy Now on WALDOR.skin"}
             <span aria-hidden>↗</span>
           </a>
         </div>

@@ -23,6 +23,6 @@ export const serviceHeroData: ServiceHeroData = {
   imageAlt: "Waldor signature treatment",
   cta: {
     label: "Book an Appointment",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

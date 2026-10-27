@@ -36,7 +36,7 @@ export const treatmentData = {
   description2:
     "While natural intrinsic ageing unfolds gradually, extrinsic premature ageing occurs when external stressors, lifestyle habits and cellular degradation prematurely deplete collagen networks and compromise the dermal scaffold.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

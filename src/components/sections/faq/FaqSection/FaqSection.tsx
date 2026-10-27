@@ -67,7 +67,7 @@ export default function FaqSection() {
               type="button"
               size="sm"
               variant="outline"
-              onClick={() => router.push(`/faq/${filter.value}`)}
+              onClick={() => router.push(`/faqs/${filter.value}`)}
               className={clsx(
                 "!min-h-[48px] !px-6 !py-3 !tracking-[1.6px] transition-all duration-300",
                 activeFilter === filter.value

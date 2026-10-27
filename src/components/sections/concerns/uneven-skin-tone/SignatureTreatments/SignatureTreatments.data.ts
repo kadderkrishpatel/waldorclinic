@@ -36,7 +36,7 @@ export const treatmentData = {
   description2:
     "Depending on your skin’s unique cellular response, this may result in localized sun spots, diffuse melasma patches, lingering post-inflammatory marks or persistent facial redness.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

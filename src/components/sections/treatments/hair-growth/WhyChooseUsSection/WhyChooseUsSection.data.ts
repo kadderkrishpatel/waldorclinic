@@ -12,7 +12,7 @@ export const whyChooseUsData: WhyChooseUsSectionProps = {
     "Every hair loss journey is unique, which is why no two treatment plans should be the same. At WALDOR, we carefully assess your scalp and hair health before combining evidence-based regenerative treatments with personalised planning to encourage healthier, stronger hair growth over time.",
   button: {
     label: "Schedule Your Appointment",
-    href: "/contact",
+    href: "/contact-us",
   },
   leftImage: asset("/assets/waldor/decorations/whychoose-left.png"),
   rightImage: asset("/assets/waldor/decorations/whychoose-right.png"),

@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Hanken_Grotesk, Fraunces } from "next/font/google";
 import AppProviders from "@/src/providers/AppProviders";
 import { Toaster } from "sonner";
 import LocalBusinessSchema from "@/src/components/seo/LocalBusinessSchema";
+import GoogleTags from "@/src/components/seo/GoogleTags";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://waldorclinic.com";
 
@@ -16,6 +17,13 @@ export const metadata: Metadata = {
     siteName: "WALDOR CLINIC",
     type: "website",
   },
+};
+
+// The site is dark-only: tell the browser so scrollbars, form controls and the
+// mobile address bar render dark instead of following the visitor's OS theme.
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#3d4844",
 };
 
 const hanken = Hanken_Grotesk({
@@ -44,6 +52,7 @@ export default function RootLayout({
     >
       <body className="max-w-[1920px] mx-auto ">
         <LocalBusinessSchema />
+        <GoogleTags />
 
         <Toaster
           position="top-center"

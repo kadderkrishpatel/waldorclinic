@@ -1,12 +1,7 @@
 "use client";
 
-import { RefObject } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { RefObject, useEffect } from "react";
 import type { Swiper as SwiperType } from "swiper";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
   section: RefObject<HTMLElement | null>;
@@ -19,33 +14,100 @@ interface Props {
   enabled?: boolean;
 }
 
-export default function useHorizontalScroll({
-  section,
-  track,
-  swiper,
-  enabled = true,
-}: Props) {
-  useGSAP(() => {
-    const sectionEl = section.current;
+type Gsap = typeof import("gsap").default;
+type ScrollTriggerType = typeof import("gsap/ScrollTrigger").ScrollTrigger;
 
-    if (!enabled) return;
-    if (!sectionEl) return;
+// GSAP + ScrollTrigger (~115 KB) are loaded on demand, once the browser is
+// idle, so they never compete with the hero for bandwidth or the main thread.
+async function loadGsap() {
+  const [{ default: gsap }, { ScrollTrigger }] = await Promise.all([
+    import("gsap"),
+    import("gsap/ScrollTrigger"),
+  ]);
+  gsap.registerPlugin(ScrollTrigger);
+  return { gsap, ScrollTrigger };
+}
 
-    /**
-     * ---------------------------------------
-     * Swiper Mode
-     * ---------------------------------------
-     */
-    if (swiper?.current) {
-      const swiperInstance = swiper.current;
+function whenIdle(cb: () => void) {
+  if (typeof window.requestIdleCallback === "function") {
+    const id = window.requestIdleCallback(cb, { timeout: 2000 });
+    return () => window.cancelIdleCallback(id);
+  }
+  const id = globalThis.setTimeout(cb, 200);
+  return () => globalThis.clearTimeout(id);
+}
 
-      const trigger = ScrollTrigger.create({
+function setupScroll(
+  gsap: Gsap,
+  ScrollTrigger: ScrollTriggerType,
+  sectionEl: HTMLElement,
+  track?: HTMLDivElement | null,
+  swiperInstance?: SwiperType | null,
+): (() => void) | undefined {
+  /**
+   * ---------------------------------------
+   * Swiper Mode
+   * ---------------------------------------
+   */
+  if (swiperInstance) {
+    const trigger = ScrollTrigger.create({
+      trigger: sectionEl,
+
+      start: "top top",
+
+      end: () => "+=" + window.innerHeight * (swiperInstance.slides.length + 1),
+
+      pin: true,
+
+      scrub: 1,
+
+      anticipatePin: 1,
+
+      invalidateOnRefresh: true,
+
+      onUpdate(self) {
+        const totalSlides = swiperInstance.slides.length - 1;
+
+        const index = Math.min(
+          totalSlides,
+          Math.round(self.progress * totalSlides),
+        );
+
+        if (swiperInstance.activeIndex !== index) {
+          swiperInstance.slideTo(index);
+        }
+      },
+    });
+
+    requestAnimationFrame(() => ScrollTrigger.refresh());
+
+    return () => {
+      trigger.kill();
+    };
+  }
+
+  /**
+   * ---------------------------------------
+   * Normal Horizontal Track
+   * ---------------------------------------
+   */
+  if (track) {
+    const getDistance = () =>
+      Math.max(0, track.scrollWidth - sectionEl.clientWidth);
+
+    const tween = gsap.to(track, {
+      x: () => -getDistance(),
+
+      ease: "none",
+
+      invalidateOnRefresh: true,
+
+      scrollTrigger: {
         trigger: sectionEl,
 
         start: "top top",
 
-        end: () =>
-          "+=" + window.innerHeight * (swiperInstance.slides.length + 1),
+        end: () => "+=" + (getDistance() + window.innerHeight),
 
         pin: true,
 
@@ -54,69 +116,50 @@ export default function useHorizontalScroll({
         anticipatePin: 1,
 
         invalidateOnRefresh: true,
+      },
+    });
 
-        onUpdate(self) {
-          const totalSlides = swiperInstance.slides.length - 1;
+    requestAnimationFrame(() => ScrollTrigger.refresh());
 
-          const index = Math.min(
-            totalSlides,
-            Math.round(self.progress * totalSlides),
-          );
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+  }
+}
 
-          if (swiperInstance.activeIndex !== index) {
-            swiperInstance.slideTo(index);
-          }
-        },
+export default function useHorizontalScroll({
+  section,
+  track,
+  swiper,
+  enabled = true,
+}: Props) {
+  useEffect(() => {
+    const sectionEl = section.current;
+
+    if (!enabled) return;
+    if (!sectionEl) return;
+
+    let cancelled = false;
+    let cleanup: (() => void) | undefined;
+
+    const cancelIdle = whenIdle(() => {
+      loadGsap().then(({ gsap, ScrollTrigger }) => {
+        if (cancelled) return;
+        cleanup = setupScroll(
+          gsap,
+          ScrollTrigger,
+          sectionEl,
+          track?.current,
+          swiper?.current,
+        );
       });
+    });
 
-      requestAnimationFrame(() => ScrollTrigger.refresh());
-
-      return () => {
-        trigger.kill();
-      };
-    }
-
-    /**
-     * ---------------------------------------
-     * Normal Horizontal Track
-     * ---------------------------------------
-     */
-    if (track?.current) {
-      const trackEl = track.current;
-
-      const getDistance = () =>
-        Math.max(0, trackEl.scrollWidth - sectionEl.clientWidth);
-
-      const tween = gsap.to(trackEl, {
-        x: () => -getDistance(),
-
-        ease: "none",
-
-        invalidateOnRefresh: true,
-
-        scrollTrigger: {
-          trigger: sectionEl,
-
-          start: "top top",
-
-          end: () => "+=" + (getDistance() + window.innerHeight),
-
-          pin: true,
-
-          scrub: 1,
-
-          anticipatePin: 1,
-
-          invalidateOnRefresh: true,
-        },
-      });
-
-      requestAnimationFrame(() => ScrollTrigger.refresh());
-
-      return () => {
-        tween.scrollTrigger?.kill();
-        tween.kill();
-      };
-    }
-  }, [enabled]);
+    return () => {
+      cancelled = true;
+      cancelIdle();
+      cleanup?.();
+    };
+  }, [enabled, section, track, swiper]);
 }

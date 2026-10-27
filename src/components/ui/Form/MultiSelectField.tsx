@@ -26,22 +26,33 @@ export default function MultiSelectField({
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Keep the latest onBlur without re-subscribing the listener every render
+  // (the parent passes a fresh inline function each time).
+  const onBlurRef = useRef(onBlur);
+  useEffect(() => {
+    onBlurRef.current = onBlur;
+  });
+
   useEffect(() => {
     if (!open) return;
 
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (
         containerRef.current &&
         !containerRef.current.contains(event.target as Node)
       ) {
         setOpen(false);
-        onBlur?.();
+        onBlurRef.current?.();
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [open, onBlur]);
+    document.addEventListener("touchstart", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [open]);
 
   const toggleOption = (option: string) => {
     if (value.includes(option)) {
@@ -75,11 +86,10 @@ export default function MultiSelectField({
         <button
           type="button"
           onClick={() => {
-            setOpen((prev) => {
-              const next = !prev;
-              if (prev) onBlur?.();
-              return next;
-            });
+            // Side effects must stay out of the setState updater (it can run
+            // during render / twice in Strict Mode).
+            setOpen(!open);
+            if (open) onBlur?.();
           }}
           aria-haspopup="listbox"
           aria-expanded={open}

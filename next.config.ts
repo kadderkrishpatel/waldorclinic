@@ -31,14 +31,15 @@ const wordpressHostname = (() => {
  */
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   // Blog HTML can reference WordPress / Gravatar images directly.
   "img-src 'self' data: blob: https:",
   `media-src 'self' blob: ${assetOrigin}`.trim(),
   `font-src 'self' data: ${assetOrigin}`.trim(),
-  `connect-src 'self'${isDev ? " ws: wss:" : ""}`,
-  "frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com",
+  // Google Ads / Analytics (gtag.js) send their measurement requests from here.
+  `connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://www.google.com${isDev ? " ws: wss:" : ""}`,
+  "frame-src https://www.google.com https://td.doubleclick.net https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -61,20 +62,59 @@ const securityHeaders = [
   },
 ];
 
+/**
+ * Redirect map from the old website (and the earlier URLs of this site) to the
+ * current URLs, so bookmarks and search results never end in a 404.
+ * Source: "Old URL / New URL" redirect sheet. Paths that stay the same in the
+ * sheet ("/", "/about-us", "/contact-us", "/careers") need no redirect.
+ */
+const legacyRedirects: { source: string; destination: string }[] = [
+  // Old home page variants -> Home
+  { source: "/home", destination: "/" },
+  { source: "/home-v2", destination: "/" },
+  { source: "/home-1", destination: "/" },
+  { source: "/cart", destination: "/" },
+  // Old menu / treatment pages -> new treatment pages
+  { source: "/menu", destination: "/treatments/waldor-signature" },
+  { source: "/treatments-1", destination: "/treatments/waldor-signature" },
+  { source: "/cocktail-menu", destination: "/treatments/hydra-glass" },
+  { source: "/body-menu", destination: "/treatments/body-treatment" },
+  { source: "/injectables-menu", destination: "/treatments/injectables" },
+  { source: "/hair-growth", destination: "/treatments/hair-growth" },
+  { source: "/treatments", destination: "/treatments/waldor-signature" },
+  // Old appointment page -> Contact
+  { source: "/appointments", destination: "/contact-us" },
+  // Earlier URLs of this site (renamed to match the old website's URLs)
+  { source: "/about", destination: "/about-us" },
+  { source: "/contact", destination: "/contact-us" },
+  { source: "/faq", destination: "/faqs" },
+  { source: "/faq/:category", destination: "/faqs/:category" },
+];
+
 const nextConfig: NextConfig = {
+  async redirects() {
+    return legacyRedirects.map((route) => ({ ...route, permanent: true }));
+  },
   // /<category> shows the blog listing pre-filtered to that category and
   // /<category>/<slug> shows the blog detail page (URL stays as typed)
   async rewrites() {
-    return Object.entries(categoryRoutes).flatMap(([category, prefix]) => [
+    return [
+      // FAQ category filters (/faqs/concerns ...) render the FAQ page
       {
-        source: `/${prefix}`,
-        destination: `/blog?category=${encodeURIComponent(category)}`,
+        source: "/faqs/:category(treatments|concerns|clinic)",
+        destination: "/faqs",
       },
-      {
-        source: `/${prefix}/:slug`,
-        destination: "/blog/:slug",
-      },
-    ]);
+      ...Object.entries(categoryRoutes).flatMap(([category, prefix]) => [
+        {
+          source: `/${prefix}`,
+          destination: `/blog?category=${encodeURIComponent(category)}`,
+        },
+        {
+          source: `/${prefix}/:slug`,
+          destination: "/blog/:slug",
+        },
+      ]),
+    ];
   },
   poweredByHeader: false,
   images: {

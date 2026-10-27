@@ -5,7 +5,7 @@ export const treatmentData = {
   before: "Explore Our",
   highlight: "HydraGlass™ Facial Treatments",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

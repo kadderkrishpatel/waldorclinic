@@ -12,18 +12,18 @@ export const transformationData: TransformationSectionProps = {
     "Real patient results, unretouched, shown with consent. Individual results vary.",
   transformations: [
     {
-      title: "HydraGlass™ Skin Transformation",
-      category: "GLASS SKIN",
-      beforeImage: asset("/assets/waldor/before-after/before-1.png"),
-      afterImage: asset("/assets/waldor/before-after/after-1.png"),
-      duration: "AFTER · WEEK 12",
+      title: "Natural Facial Rejuvenation",
+      category: "INJECTABLES",
+      beforeImage: asset("/assets/waldor/before-after/Injectables-Treatment-Before.png"),
+      afterImage: asset("/assets/waldor/before-after/Injectables-Treatment-After-aligned.png"),
+      duration: "AFTER · 2 WEEKS",
     },
     {
-      title: "Pigmentation Correction",
-      category: "PIGMENTATION",
-      beforeImage: asset("/assets/waldor/before-after/before-2.png"),
-      afterImage: asset("/assets/waldor/before-after/after-2.png"),
-      duration: "8 WEEK PROGRAM",
+      title: "Subtle Facial Balancing",
+      category: "INJECTABLES",
+      beforeImage: asset("/assets/waldor/before-after/Injectables-Before.png"),
+      afterImage: asset("/assets/waldor/before-after/Injectables-After.png"),
+      duration: "AFTER · 4 WEEKS",
     },
   ],
 };

@@ -1,23 +1,19 @@
-"use client";
+import { asset } from "@/src/lib/assets";
 import { heroData } from "./HeroSection.data";
 import HeroBackgroundVideo from "./HeroBackgroundVideo";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
-import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 import Button from "@/src/components/ui/Button";
 
 export default function HeroSection() {
-  const sectionRef = useSectionReveal();
-
   return (
     <section
-      ref={sectionRef}
       className="relative overflow-hidden bg-[#3D4844] rounded-2xl lg:rounded-[32px] m-2 lg:m-4 min-h-[700px] sm:min-h-[760px] lg:min-h-screen"
     >
       {/* Background */}
       <div className="absolute inset-0">
         <HeroBackgroundVideo
-          src="/assets/waldor/videos/hero-bg.mp4"
-          poster="/assets/waldor/heroes/hero-bg.png"
+          src={asset("/assets/waldor/videos/hero-bg-hd.mp4")}
+          poster={asset("/assets/waldor/heroes/hero-bg-poster.jpg")}
         />
       </div>
 

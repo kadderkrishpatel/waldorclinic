@@ -7,7 +7,7 @@ export const treatmentData = {
   description:
     "At WALDOR Clinic, we offer bespoke body packages tailored to your unique needs. Whether you’re looking to address cellulite, enhance post-pregnancy recovery, achieve weight loss, or focus on body contouring, our personalized consultations ensure treatments designed exclusively for you.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

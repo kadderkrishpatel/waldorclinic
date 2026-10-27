@@ -12,7 +12,7 @@ export const whyChooseUsData: WhyChooseUsSectionProps = {
     "True reversal of visible fine lines requires looking beyond surface-level creases to rebuild the structural foundation beneath. At WALDOR, our clinical approach works simultaneously on two fronts: relaxing excessive muscle tension and stimulating deep cellular collagen regeneration. Through diagnostic skin mapping, we evaluate your specific structural needs, designing progressive protocols that restore skin density, improve elasticity and refine fine lines naturally.",
   button: {
     label: "Schedule Your Appointment",
-    href: "/contact",
+    href: "/contact-us",
   },
   leftImage: asset("/assets/waldor/decorations/whychoose-left.png"),
   rightImage: asset("/assets/waldor/decorations/whychoose-right.png"),

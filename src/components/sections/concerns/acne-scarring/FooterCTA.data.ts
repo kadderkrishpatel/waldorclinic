@@ -9,6 +9,6 @@ export const acneScarringFooterCTA = {
   highlightcolor: "#c5a375",
   button: {
     label: "Book An Appointment Now",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

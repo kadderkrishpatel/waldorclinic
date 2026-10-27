@@ -36,7 +36,7 @@ export const treatmentData = {
   description2:
     "While surface fatigue can fluctuate day to day, persistent dullness occurs when dead skin cell build-up, micro-circulatory sluggishness and structural dehydration prevent light from reflecting evenly across your face.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

@@ -36,7 +36,7 @@ export const treatmentData = {
   description2:
     "While subtle surface dehydration lines may appear early, progressive deep-set creases form when structural support in the underlying dermis degrades over time.",
   cta: {
-    href: "/contact",
+    href: "/contact-us",
     label: "Book an appointment",
   },
 };

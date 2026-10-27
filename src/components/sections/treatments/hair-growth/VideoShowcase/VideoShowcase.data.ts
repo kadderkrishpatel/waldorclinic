@@ -31,6 +31,6 @@ export const videoShowcaseData: VideoShowcaseData = {
   ],
   cta: {
     label: "Book an Appointment",
-    href: "/contact",
+    href: "/contact-us",
   },
 };

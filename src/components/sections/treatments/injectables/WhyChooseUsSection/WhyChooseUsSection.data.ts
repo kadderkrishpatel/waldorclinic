@@ -12,7 +12,7 @@ export const whyChooseUsData: WhyChooseUsSectionProps = {
     "At WALDOR, cosmetic injectables are approached as a balance of medical precision, facial artistry and deep anatomical understanding. Every recommendation is intentional, every enhancement measured and every result designed to preserve your individuality.",
   button: {
     label: "Schedule Your Appointment",
-    href: "/contact",
+    href: "/contact-us",
   },
   leftImage: asset("/assets/waldor/decorations/whychoose-left.png"),
   rightImage: asset("/assets/waldor/decorations/whychoose-right.png"),

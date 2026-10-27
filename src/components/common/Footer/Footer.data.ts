@@ -73,7 +73,7 @@ export const footerData: FooterDataProps = {
       links: [
         {
           label: "About",
-          href: "/about",
+          href: "/about-us",
         },
         {
           label: "Products",
@@ -89,11 +89,11 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Contact Us",
-          href: "/contact",
+          href: "/contact-us",
         },
         {
           label: "FAQ",
-          href: "/faq",
+          href: "/faqs",
         },
         {
           label: "Careers",
@@ -101,7 +101,7 @@ export const footerData: FooterDataProps = {
         },
         {
           label: "Book a Consultation",
-          href: "/contact",
+          href: "/contact-us",
         },
       ],
     },

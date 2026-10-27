@@ -11,6 +11,7 @@ const CompareSlider = dynamic(() => import("./CompareSlider"), {
 interface Props {
   beforeImage: string;
   afterImage: string;
+  objectPosition?: string;
   swiper: any;
 }
 

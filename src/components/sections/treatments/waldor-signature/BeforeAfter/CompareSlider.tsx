@@ -10,12 +10,14 @@ import { optimizedSrc, optimizedSrcSet } from "@/src/lib/optimizedImage";
 interface Props {
   beforeImage: string;
   afterImage: string;
+  objectPosition?: string;
   swiper: any;
 }
 
 export default function CompareSlider({
   beforeImage,
   afterImage,
+  objectPosition = "center",
   swiper,
 }: Props) {
   const [mobile, setMobile] = useState(false);
@@ -70,7 +72,7 @@ export default function CompareSlider({
             alt="Before"
             style={{
               objectFit: "cover",
-              objectPosition: "center",
+              objectPosition,
               height: "100%",
               aspectRatio: "1/1",
             }}
@@ -86,7 +88,7 @@ export default function CompareSlider({
             alt="After"
             style={{
               objectFit: "cover",
-              objectPosition: "center",
+              objectPosition,
             }}
           />
         }
