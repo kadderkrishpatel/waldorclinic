@@ -1,8 +1,13 @@
 "use client";
 import Image from "next/image";
 import { Description, Eyebrow, Heading } from "@/src/components/ui/Typography";
-import { treatmentCards, treatmentData } from "./SignatureTreatments.data";
+import {
+  treatmentCards,
+  infoCards,
+  treatmentData,
+} from "./SignatureTreatments.data";
 import TreatmentGrid from "./TreatmentGrid";
+import InfoCard from "./InfoCard";
 import { asset } from "@/src/lib/assets";
 import Button from "@/src/components/ui/Button";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
@@ -45,6 +50,13 @@ export default function SignatureTreatments() {
             {/* Cards */}
             <div className="mt-16">
               <TreatmentGrid cards={treatmentCards} />
+            </div>
+
+            {/* Bottom Cards */}
+            <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:[&>*:last-child:nth-child(odd)]:col-span-2">
+              {infoCards.map((card) => (
+                <InfoCard key={card.id} card={card} />
+              ))}
             </div>
 
             <div

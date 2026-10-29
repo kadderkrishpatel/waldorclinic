@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import { Eyebrow, Heading } from "@/src/components/ui/Typography";
-import { treatmentRows, treatmentData } from "./SignatureTreatments.data";
+import { treatmentCards, treatmentData } from "./SignatureTreatments.data";
+import TreatmentGrid from "./TreatmentGrid";
 import { asset } from "@/src/lib/assets";
 import Button from "@/src/components/ui/Button";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
@@ -38,31 +39,8 @@ export default function SignatureTreatments() {
             </div>
 
             {/* Cards */}
-            <div className="mt-16 grid gap-6 lg:grid-cols-2">
-              {treatmentRows.map((row) => (
-                <div
-                  key={row.id}
-                  data-reveal
-                  data-direction="left"
-                  className="rounded-[24px] bg-[#1F2422] p-8"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-[22px] leading-snug text-[#ECE0D1]">
-                      {row.title}
-                    </h3>
-
-                    <p className="shrink-0 font-fraunces text-[18px] text-[#C5A375]">
-                      {row.price}
-                    </p>
-                  </div>
-
-                  {row.description && (
-                    <p className="mt-3 text-[15px] leading-6 text-[#9EA3A1]">
-                      {row.description}
-                    </p>
-                  )}
-                </div>
-              ))}
+            <div className="mt-16">
+              <TreatmentGrid cards={treatmentCards} />
             </div>
 
             <div

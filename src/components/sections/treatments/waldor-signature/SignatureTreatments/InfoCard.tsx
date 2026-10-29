@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Clock } from "lucide-react";
 import type { InfoCard as InfoCardType } from "./types";
 
 interface Props {
@@ -18,6 +19,25 @@ export default function InfoCard({ card }: Props) {
         <p className="mt-5 text-[15px] leading-7 text-[#BEC2C1]">
           {card.description}
         </p>
+
+        {(card.price || card.duration) && (
+          <div className="mt-7 flex items-center justify-between gap-4 border-t border-[#C5A375]/30 pt-6">
+            {card.duration ? (
+              <span className="flex items-center gap-2 text-[14px] text-[#9EA3A1]">
+                <Clock size={16} className="text-[#C5A375]" />
+                {card.duration}
+              </span>
+            ) : (
+              <span />
+            )}
+
+            {card.price && (
+              <span className="font-fraunces text-[26px] leading-none text-[#ECE0D1]">
+                {card.price}
+              </span>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Optional decorative gradient */}

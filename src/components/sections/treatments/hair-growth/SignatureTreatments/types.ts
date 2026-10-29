@@ -3,6 +3,7 @@ export interface TreatmentRow {
   title: string;
   description?: string;
   price: string;
+  duration?: string;
   href?: string;
 }
 

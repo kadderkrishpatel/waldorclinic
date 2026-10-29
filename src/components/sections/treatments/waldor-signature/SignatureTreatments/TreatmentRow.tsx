@@ -1,6 +1,6 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Clock } from "lucide-react";
 import type { TreatmentRow as TreatmentRowType } from "./types";
 import clsx from "clsx";
 
@@ -33,14 +33,23 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
           hasDescription && "cursor-pointer",
         )}
       >
-        <h4
-          className={clsx(
-            "text-[20px] font-medium",
-            isOpen ? "text-[#C5A375]" : "text-[#ECE0D1]",
+        <div className="flex flex-col gap-1.5">
+          <h4
+            className={clsx(
+              "text-[20px] font-medium",
+              isOpen ? "text-[#C5A375]" : "text-[#ECE0D1]",
+            )}
+          >
+            {row.title}
+          </h4>
+
+          {row.duration && (
+            <span className="flex items-center gap-1.5 text-[13px] text-[#9EA3A1]">
+              <Clock size={14} className="text-[#C5A375]" />
+              {row.duration}
+            </span>
           )}
-        >
-          {row.title}
-        </h4>
+        </div>
 
         <div
           className={clsx(

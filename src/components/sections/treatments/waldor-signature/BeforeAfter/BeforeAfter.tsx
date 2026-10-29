@@ -74,22 +74,22 @@ export default function BeforeAfter() {
             },
 
             768: {
-              slidesPerView: 1.15,
+              slidesPerView: 1.5,
               spaceBetween: 22,
             },
 
             1024: {
-              slidesPerView: 1.2,
+              slidesPerView: 1.7,
               spaceBetween: 24,
             },
 
             1280: {
-              slidesPerView: 1.2,
+              slidesPerView: 2,
               spaceBetween: 24,
             },
 
             1536: {
-              slidesPerView: 1.2,
+              slidesPerView: 2.2,
               spaceBetween: 28,
             },
           }}

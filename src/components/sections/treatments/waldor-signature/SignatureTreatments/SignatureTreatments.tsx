@@ -53,7 +53,7 @@ export default function SignatureTreatments() {
             </div>
 
             {/* Bottom Cards */}
-            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:[&>*:last-child:nth-child(odd)]:col-span-2">
               {infoCards.map((card) => (
                 <InfoCard key={card.id} card={card} />
               ))}

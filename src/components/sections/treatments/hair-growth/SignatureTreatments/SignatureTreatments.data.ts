@@ -26,6 +26,7 @@ export const treatmentCards: TreatmentCard[] = [
         id: "prp-therapy-item",
         title: "PRP Hair",
         price: "£495",
+        duration: "30 min",
         description:
           "Our PRP Hair Restoration treatment uses your body’s own platelet-rich plasma, rich in growth factors, to naturally stimulate hair follicles and encourage regrowth. The plasma is microneedled into the scalp to revitalise thinning areas and support stronger, denser hair over time.",
       },
@@ -39,11 +40,12 @@ export const treatmentCards: TreatmentCard[] = [
       "A breakthrough regenerative treatment delivering powerful cellular messengers to repair and rejuvenate follicles, accelerating natural growth.",
     rows: [
       {
-        id: "exosomes-for-hair-item",
-        title: "Exosomes for Hair",
+        id: "microneedling-x-hair-growth-exosomer",
+        title: "Microneedling X Hair Growth Exosome",
         price: "£495",
+        duration: "30 min",
         description:
-          "Our Exosome Hair treatment uses tiny, cell-derived messengers in a targeted approach to thinning hair. Designed to support scalp health and the environment around the follicles, the treatment aims to encourage healthier, fuller-looking hair over time.",
+          "Our Exosome Hair Regeneration treatment delivers billions of stem-cell–derived exosomes to awaken dormant follicles, reduce inflammation, and promote thicker, healthier hair. The exosome serum is microneedled into the scalp to enhance absorption and accelerate visible results.",
       },
     ],
   },
@@ -58,8 +60,26 @@ export const treatmentCards: TreatmentCard[] = [
         id: "polynucleotides-for-hair-item",
         title: "Polynucleotides (Hair)",
         price: "£495",
+        duration: "30 min",
         description:
-          "Our Polynucleotide Hair Revitalisation treatment uses regenerative DNA-based molecules to repair the scalp and stimulate healthier, stronger hair growth. The formula is microneedled into the scalp to boost cell renewal, improve circulation, and strengthen follicles from within.",
+          "Our Polynucleotide Hair Revitalisation treatment uses regenerative DNA-based molecules to repair the scalp and stimulate healthier, stronger hair growth. The formula is microneedled into the scalp to boost cell renewal, improve circulation, and strengthen follicles from within. ",
+      },
+    ],
+  },
+
+  {
+    id: "ai-scalp-analysis",
+    title: "AI Scalp Analysis",
+    description:
+      "Advanced scalp treatment combining intelligent analysis, precision microneedling and a specialised exosome cocktail to support healthier-looking hair.",
+    rows: [
+      {
+        id: "ai-scalp-analysis-hair-growth-microneedling",
+        title: "AI Scalp Analysis + Hair Growth Microneedling",
+        price: "£495",
+        duration: "40 min",
+        description:
+          "A personalized scalp and hair treatment combining AI analysis with microneedling and a specialized exosome cocktail. The analysis helps assess scalp condition, hair characteristics and growth patterns, while microneedling creates controlled microchannels to support scalp renewal and delivery of the exosome formula for healthier-looking hair. Results vary and suitability is confirmed in clinic.",
       },
     ],
   },
