@@ -16,7 +16,7 @@ export const socialProfile: SocialProfile = {
   handle: "@waldor.clinic",
   avatar: `${asset("/assets/waldor/team/waldor-profile.jpg")}`,
   posts: "69",
-  followers: "6K",
+  followers: "6.1K",
   href: "https://www.instagram.com/waldorclinic",
 };
 

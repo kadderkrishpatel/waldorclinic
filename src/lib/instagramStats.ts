@@ -24,35 +24,89 @@ function parseCount(raw: string): number | null {
 }
 
 /**
- * Reads the public follower / post counts from the profile's og:description
- * ("6,054 Followers, 2 Following, 69 Posts - ..."). Cached with ISR; returns
- * `fallback` on any failure so the page never breaks.
+ * Official Instagram Graph API (Business / Creator account). Works from any
+ * server including Vercel. Needs INSTAGRAM_ACCESS_TOKEN + INSTAGRAM_USER_ID.
  */
-export async function getInstagramStats(
+async function fetchFromGraphApi(): Promise<InstagramStats | null> {
+  const token = process.env.INSTAGRAM_ACCESS_TOKEN;
+  const userId = process.env.INSTAGRAM_USER_ID;
+  if (!token || !userId) return null;
+
+  try {
+    const url = new URL(`https://graph.facebook.com/v21.0/${userId}`);
+    url.searchParams.set("fields", "followers_count,media_count");
+    url.searchParams.set("access_token", token);
+
+    const res = await fetch(url, {
+      next: { revalidate: REVALIDATE_SECONDS },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) {
+      console.error("[instagramStats] Graph API error", res.status);
+      return null;
+    }
+
+    const data = (await res.json()) as {
+      followers_count?: number;
+      media_count?: number;
+    };
+    if (
+      typeof data.followers_count !== "number" ||
+      typeof data.media_count !== "number"
+    ) {
+      return null;
+    }
+
+    return {
+      followers: formatCount(data.followers_count),
+      posts: formatCount(data.media_count),
+    };
+  } catch (error) {
+    console.error("[instagramStats] Graph API request failed", error);
+    return null;
+  }
+}
+
+/** Best-effort read of the public profile page (often blocked on cloud hosts). */
+async function fetchFromPublicPage(
   username: string,
-  fallback: InstagramStats,
-): Promise<InstagramStats> {
+): Promise<InstagramStats | null> {
   try {
     const res = await fetch(`https://www.instagram.com/${username}/`, {
       next: { revalidate: REVALIDATE_SECONDS },
       signal: AbortSignal.timeout(8000),
     });
-    if (!res.ok) return fallback;
+    if (!res.ok) return null;
 
     const html = await res.text();
     const desc = html.match(
       /<meta[^>]+property="og:description"[^>]+content="([^"]*)"/i,
     )?.[1];
-    if (!desc) return fallback;
+    if (!desc) return null;
 
     const followers = desc.match(/([\d.,]+[KkMm]?)\s+Followers/i)?.[1];
     const posts = desc.match(/([\d.,]+[KkMm]?)\s+Posts/i)?.[1];
     const f = followers ? parseCount(followers) : null;
     const p = posts ? parseCount(posts) : null;
-    if (f === null || p === null) return fallback;
+    if (f === null || p === null) return null;
 
     return { followers: formatCount(f), posts: formatCount(p) };
   } catch {
-    return fallback;
+    return null;
   }
+}
+
+/**
+ * Live follower / post counts, cached (ISR) for 6 hours.
+ * Order: Graph API (if configured) -> public page -> `fallback`.
+ */
+export async function getInstagramStats(
+  username: string,
+  fallback: InstagramStats,
+): Promise<InstagramStats> {
+  return (
+    (await fetchFromGraphApi()) ??
+    (await fetchFromPublicPage(username)) ??
+    fallback
+  );
 }
