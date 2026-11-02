@@ -17,7 +17,7 @@ export default function PatientSafety() {
           src={asset("/assets/waldor/decorations/service-top-decoration.png")}
           alt=""
           width={220}
-          height={220}
+          height={177}
           className="pointer-events-none absolute right-10 top-0 opacity-90"
         />
 

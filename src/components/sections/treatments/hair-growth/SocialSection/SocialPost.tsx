@@ -16,29 +16,33 @@ export default function SocialPost({ post }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const inView = useInViewOnce(videoRef);
 
+  // Play the video only while it is actually on screen (works on mobile
+  // browsers, which block autoplay unless the video is muted + inline and
+  // play() is called once the source is ready), and pause it when it leaves.
   useEffect(() => {
-    if (post.type !== "video" || !videoRef.current) {
+    const video = videoRef.current;
+
+    if (post.type !== "video" || !video || !inView) {
       return;
     }
 
-    const video = videoRef.current;
-
     video.muted = true;
 
-    const playVideo = async () => {
-      try {
-        await video.play();
-      } catch {
+    const playVideo = () => {
+      video.play().catch(() => {
         // Autoplay can be blocked by the browser.
-      }
+      });
     };
 
+    // `src` is attached lazily, so play once the source is actually ready.
     playVideo();
+    video.addEventListener("canplay", playVideo);
 
     return () => {
+      video.removeEventListener("canplay", playVideo);
       video.pause();
     };
-  }, [post.type, post.image]);
+  }, [post.type, post.image, inView]);
 
   return (
     <Link
@@ -73,13 +77,9 @@ export default function SocialPost({ post }: Props) {
           src={post.image}
           alt={post.alt ?? ""}
           fill
-          sizes="
-            (max-width: 639px) 350px,
-            (max-width: 767px) 350px,
-            (max-width: 1023px) 450px,
-            (max-width: 1279px) 450px,
-            200px
-          "
+          sizes="(max-width: 1023px) 340px, 430px"
+          quality={85}
+          style={{ objectPosition: post.objectPosition }}
           className="
             object-cover
             transition-transform

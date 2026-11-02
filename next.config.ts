@@ -31,14 +31,14 @@ const wordpressHostname = (() => {
  */
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://googleads.g.doubleclick.net${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   // Blog HTML can reference WordPress / Gravatar images directly.
   "img-src 'self' data: blob: https:",
   `media-src 'self' blob: ${assetOrigin}`.trim(),
   `font-src 'self' data: ${assetOrigin}`.trim(),
   // Google Ads / Analytics (gtag.js) send their measurement requests from here.
-  `connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://www.google.com${isDev ? " ws: wss:" : ""}`,
+  `connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://ad.doubleclick.net https://analytics.google.com https://www.google.com${isDev ? " ws: wss:" : ""}`,
   "frame-src https://www.google.com https://td.doubleclick.net https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com",
   "object-src 'none'",
   "base-uri 'self'",
@@ -118,6 +118,8 @@ const nextConfig: NextConfig = {
   },
   poweredByHeader: false,
   images: {
+    // 75 (default) plus 85 for sharper hero/social imagery.
+    qualities: [75, 85],
     // Only optimise images from our own WordPress / Gravatar, never arbitrary hosts.
     remotePatterns: [
       { protocol: "https", hostname: wordpressHostname },

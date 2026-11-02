@@ -440,3 +440,16 @@
   font-size: 17px;
   line-height: 1.9;
 }
+.international-bullet {
+  width: 40px;
+  height: 8px;
+  background: #7E8582;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.international-bullet-active {
+  width: 80px;
+  background: #C6A26D;
+}

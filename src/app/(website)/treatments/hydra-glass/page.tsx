@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   BeforeAfter,
+  International,
   PatientSafety,
   Practitioners,
   ServiceFAQ,
@@ -19,12 +20,20 @@ import { treatmentData, treatmentRows } from "@/src/components/sections/treatmen
 const pageDescription =
   "Explore WALDOR's HydraGlass™ facial treatments — tailored, non-invasive protocols combining exfoliation and deep hydration to reveal smoother, radiant, glass-skin.";
 
+import { getInstagramStats } from "@/src/lib/instagramStats";
+import { socialProfile } from "@/src/components/sections/treatments/hydra-glass/SocialSection/SocialSection.data";
+
 export const metadata: Metadata = {
   title: "WALDOR CLINIC",
   description: pageDescription,
 };
 
-export default function HydraGlassPage() {
+export default async function HydraGlassPage() {
+  const stats = await getInstagramStats("waldorclinic", {
+    posts: socialProfile.posts,
+    followers: socialProfile.followers,
+  });
+
   return (
     <>
       <ServiceSchema
@@ -40,6 +49,7 @@ export default function HydraGlassPage() {
       <SignatureTreatments />
       <ServiceStats />
       <PatientSafety />
+      <International />
       <BeforeAfter />
       <WhyChooseUs />
       <TreatmentApproach />
@@ -47,7 +57,7 @@ export default function HydraGlassPage() {
       <Practitioners />
       <SuccessStories />
       <ServiceFAQ />
-      <SocialSection />
+      <SocialSection stats={stats} />
     </>
   );
 }

@@ -21,7 +21,7 @@ export default function SignatureTreatments() {
               src={asset("/assets/waldor/decorations/exp-leaf-top.png")}
               alt=""
               width={200}
-              height={200}
+              height={437}
               priority={false}
             />
           </div>

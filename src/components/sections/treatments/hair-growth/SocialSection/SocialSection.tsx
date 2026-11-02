@@ -5,7 +5,11 @@ import SocialFeed from "./SocialFeed";
 import { socialProfile, socialSectionData } from "./SocialSection.data";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
-export default function SocialSection() {
+interface Props {
+  stats?: { posts: string; followers: string };
+}
+
+export default function SocialSection({ stats }: Props) {
   const sectionRef = useSectionReveal();
 
   return (
@@ -29,7 +33,7 @@ export default function SocialSection() {
           </div>
 
           {/* Social Profile */}
-          <SocialProfile profile={socialProfile} />
+          <SocialProfile profile={{ ...socialProfile, ...stats }} />
 
           {/* Social Feed */}
           <SocialFeed />

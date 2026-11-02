@@ -43,7 +43,7 @@ export default function TreatmentSection() {
         src={treatmentData.topDecorationImg}
         alt=""
         width={131}
-        height={174}
+        height={151}
         className="absolute top-0 left-1/2 -translate-x-1/2 lg:left-[12%] lg:translate-x-0 pointer-events-none z-0"
       />
 
@@ -152,7 +152,7 @@ export default function TreatmentSection() {
         src={treatmentData.bottomDecorationImg}
         alt=""
         width={277}
-        height={299}
+        height={246}
         className="absolute right-0 bottom-0 hidden lg:block pointer-events-none"
       />
     </section>

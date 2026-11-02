@@ -65,7 +65,7 @@ export default function ExperienceSection() {
         src={experienceData.bottomDecorationImage}
         alt=""
         width={200}
-        height={216}
+        height={185}
         className="pointer-events-none absolute right-0 bottom-0 w-[110px] opacity-70 md:w-[160px] lg:w-[200px]"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
       />

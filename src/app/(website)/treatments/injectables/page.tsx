@@ -16,12 +16,20 @@ import ServiceSchema from "@/src/components/seo/ServiceSchema";
 import { treatmentData, treatmentCards } from "@/src/components/sections/treatments/injectables/SignatureTreatments/SignatureTreatments.data";
 import type { Metadata } from "next";
 
+import { getInstagramStats } from "@/src/lib/instagramStats";
+import { socialProfile } from "@/src/components/sections/treatments/injectables/SocialSection/SocialSection.data";
+
 export const metadata: Metadata = {
   title: "WALDOR CLINIC",
   description: treatmentData.description,
 };
 
-export default function InjectablesPage() {
+export default async function InjectablesPage() {
+  const stats = await getInstagramStats("waldorclinic", {
+    posts: socialProfile.posts,
+    followers: socialProfile.followers,
+  });
+
   return (
     <>
       <ServiceSchema
@@ -44,7 +52,7 @@ export default function InjectablesPage() {
       <Practitioners />
       <SuccessStories />
       <ServiceFAQ />
-      <SocialSection />
+      <SocialSection stats={stats} />
     </>
   );
 }
