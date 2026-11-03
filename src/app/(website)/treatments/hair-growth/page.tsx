@@ -5,7 +5,6 @@ import {
   ServiceStats,
   VideoShowcase,
   SignatureTreatments,
-  SocialSection,
   SuccessStories,
   TreatmentApproach,
   TreatmentBenefits,
@@ -15,8 +14,6 @@ import ServiceSchema from "@/src/components/seo/ServiceSchema";
 import { treatmentData, treatmentCards } from "@/src/components/sections/treatments/hair-growth/SignatureTreatments/SignatureTreatments.data";
 import type { Metadata } from "next";
 
-import { getInstagramStats } from "@/src/lib/instagramStats";
-import { socialProfile } from "@/src/components/sections/treatments/hair-growth/SocialSection/SocialSection.data";
 
 export const metadata: Metadata = {
   title: "WALDOR CLINIC",
@@ -24,11 +21,6 @@ export const metadata: Metadata = {
 };
 
 export default async function HairGrowthPage() {
-  const stats = await getInstagramStats("waldorclinic", {
-    posts: socialProfile.posts,
-    followers: socialProfile.followers,
-  });
-
   return (
     <>
       <ServiceSchema
@@ -50,7 +42,6 @@ export default async function HairGrowthPage() {
       <TreatmentBenefits />
       <Practitioners />
       <SuccessStories />
-      <SocialSection stats={stats} />
     </>
   );
 }
