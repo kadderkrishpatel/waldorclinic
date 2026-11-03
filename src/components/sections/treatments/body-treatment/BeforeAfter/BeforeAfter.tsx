@@ -75,22 +75,22 @@ export default function BeforeAfter() {
 
             768: {
               slidesPerView: 1.5,
-              spaceBetween: 28,
+              spaceBetween: 22,
             },
 
             1024: {
-              slidesPerView: 2,
-              spaceBetween: 32,
+              slidesPerView: 1.7,
+              spaceBetween: 24,
             },
 
             1280: {
               slidesPerView: 2,
-              spaceBetween: 40,
+              spaceBetween: 24,
             },
 
             1536: {
-              slidesPerView: 2,
-              spaceBetween: 48,
+              slidesPerView: 2.2,
+              spaceBetween: 28,
             },
           }}
           className="!overflow-visible"
