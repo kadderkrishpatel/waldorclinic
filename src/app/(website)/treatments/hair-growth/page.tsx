@@ -1,8 +1,6 @@
 import {
   BeforeAfter,
-  PatientSafety,
   Practitioners,
-  ServiceFAQ,
   ServiceHero,
   ServiceStats,
   VideoShowcase,
@@ -46,14 +44,12 @@ export default async function HairGrowthPage() {
       <SignatureTreatments />
       <VideoShowcase />
       <ServiceStats />
-      <PatientSafety />
       <BeforeAfter />
       <WhyChooseUs />
       <TreatmentApproach />
       <TreatmentBenefits />
       <Practitioners />
       <SuccessStories />
-      <ServiceFAQ />
       <SocialSection stats={stats} />
     </>
   );

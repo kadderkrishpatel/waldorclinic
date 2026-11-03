@@ -2,15 +2,12 @@ import type { Metadata } from "next";
 import {
   BeforeAfter,
   International,
-  PatientSafety,
   Practitioners,
-  ServiceFAQ,
   ServiceHero,
   ServiceStats,
   SignatureTreatments,
   SocialSection,
   SuccessStories,
-  TreatmentApproach,
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/treatments/hydra-glass";
@@ -48,15 +45,12 @@ export default async function HydraGlassPage() {
       <ServiceHero />
       <SignatureTreatments />
       <ServiceStats />
-      <PatientSafety />
       <International />
       <BeforeAfter />
       <WhyChooseUs />
-      <TreatmentApproach />
       <TreatmentBenefits />
       <Practitioners />
       <SuccessStories />
-      <ServiceFAQ />
       <SocialSection stats={stats} />
     </>
   );

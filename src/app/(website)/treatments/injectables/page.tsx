@@ -1,8 +1,6 @@
 import {
   BeforeAfter,
-  PatientSafety,
   Practitioners,
-  ServiceFAQ,
   ServiceHero,
   ServiceStats,
   SignatureTreatments,
@@ -44,14 +42,12 @@ export default async function InjectablesPage() {
       <ServiceHero />
       <SignatureTreatments />
       <ServiceStats />
-      <PatientSafety />
       <BeforeAfter />
       <WhyChooseUs />
       <TreatmentApproach />
       <TreatmentBenefits />
       <Practitioners />
       <SuccessStories />
-      <ServiceFAQ />
       <SocialSection stats={stats} />
     </>
   );

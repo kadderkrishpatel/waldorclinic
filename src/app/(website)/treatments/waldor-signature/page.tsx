@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import {
   BeforeAfter,
-  PatientSafety,
   Practitioners,
-  ServiceFAQ,
   ServiceHero,
   ServiceStats,
   SignatureTreatments,
@@ -43,14 +41,12 @@ export default async function WaldorSIgnaturePage() {
       <ServiceHero />
       <SignatureTreatments />
       <ServiceStats />
-      <PatientSafety />
       <BeforeAfter />
       <WhyChooseUs />
       <TreatmentApproach />
       <TreatmentBenefits />
       <Practitioners />
       <SuccessStories />
-      <ServiceFAQ />
       <SocialSection stats={stats} />
     </>
   );

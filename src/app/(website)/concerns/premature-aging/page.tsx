@@ -2,7 +2,6 @@ import {
   BeforeAfter,
   PatientSafety,
   Practitioners,
-  ServiceFAQ,
   ServiceHero,
   SignatureTreatments,
   SuccessStories,
@@ -10,8 +9,6 @@ import {
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/concerns/premature-aging";
-import FAQSchema from "@/src/components/seo/FAQSchema";
-import { faqData } from "@/src/components/sections/concerns/premature-aging/FaqSection/FaqSection.data";
 import { serviceHeroData } from "@/src/components/sections/concerns/premature-aging/ServiceHero/ServiceHero.data";
 import type { Metadata } from "next";
 
@@ -23,7 +20,6 @@ export const metadata: Metadata = {
 export default function unevenSkinTonePage() {
   return (
     <>
-      <FAQSchema items={faqData} />
       <ServiceHero />
       <SignatureTreatments />
       <PatientSafety />
@@ -33,7 +29,6 @@ export default function unevenSkinTonePage() {
       <TreatmentApproach />
       <TreatmentBenefits items="preventions" />
       <SuccessStories />
-      <ServiceFAQ />
       <Practitioners />
     </>
   );
