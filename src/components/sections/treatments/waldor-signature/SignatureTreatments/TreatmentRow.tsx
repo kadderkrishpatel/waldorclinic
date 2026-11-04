@@ -57,7 +57,7 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
             isOpen ? "text-[#C5A375]" : "text-[#ECE0D1]",
           )}
         >
-          <p>{row.price}</p>
+          {row.price && <p>{row.price}</p>}
 
           {hasDescription &&
             (isOpen ? (

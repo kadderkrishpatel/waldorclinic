@@ -8,8 +8,8 @@ interface Props {
   card: TreatmentCardType;
 }
 
-const priceValue = (price: string) =>
-  parseFloat(price.replace(/[^0-9.]/g, "")) || 0;
+const priceValue = (price?: string) =>
+  parseFloat((price ?? "").replace(/[^0-9.]/g, "")) || 0;
 
 export default function TreatmentCard({ card }: Props) {
   // Services sorted by price, low to high (stable for equal prices)

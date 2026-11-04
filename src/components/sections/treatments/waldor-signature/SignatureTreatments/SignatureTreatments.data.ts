@@ -427,9 +427,21 @@ export const treatmentCards: TreatmentCard[] = [
     ],
   },
 
+  {
+    id: "xerf-structural-tightening",
+    title: "XERF Structural Tightening",
+    description:
+      "A next-generation, non-invasive treatment using dual-frequency radiofrequency to target multiple layers of the skin, stimulate collagen and improve laxity.",
 
-
-
+    rows: [
+      {
+        id: "xerf-structural-tightening-details",
+        title: "XERF Structural Tightening",
+        description:
+          "A next-generation, non-invasive treatment using dual-frequency radiofrequency to target multiple layers of the skin, stimulate collagen and improve laxity. Creates firmer, smoother and more lifted contours with no needles, no numbing and no downtime.",
+      },
+    ],
+  },
 ];
 
 export const infoCards: InfoCard[] = [
