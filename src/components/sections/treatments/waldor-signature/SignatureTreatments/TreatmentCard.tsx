@@ -8,7 +8,15 @@ interface Props {
   card: TreatmentCardType;
 }
 
+const priceValue = (price: string) =>
+  parseFloat(price.replace(/[^0-9.]/g, "")) || 0;
+
 export default function TreatmentCard({ card }: Props) {
+  // Services sorted by price, low to high (stable for equal prices)
+  const sortedRows = [...card.rows].sort(
+    (a, b) => priceValue(a.price) - priceValue(b.price),
+  );
+
   // First accordion open by default
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -21,7 +29,7 @@ export default function TreatmentCard({ card }: Props) {
       data-reveal
       data-direction="left"
       className={clsx(
-        "rounded-[32px] bg-[#29302D] h-full overflow-hidden",
+        "flex h-full flex-col overflow-hidden rounded-[32px] bg-[#29302D]",
         card.fullWidth && "lg:col-span-2 h-auto",
       )}
     >
@@ -65,15 +73,29 @@ export default function TreatmentCard({ card }: Props) {
         )}
       </div>
 
-      <div className="scrollbar-hide max-h-[420px] overflow-y-auto">
-        {card.rows.map((row, index) => (
-          <TreatmentRow
-            key={row.id}
-            row={row}
-            isOpen={openIndex === index}
-            onToggle={() => handleToggle(index)}
-          />
-        ))}
+      {/* On desktop the list fills whatever height remains in the card (set by the
+          taller neighbour) and scrolls inside it, so there is no empty gap below. */}
+      <div
+        className={clsx(
+          "relative min-h-0 flex-1",
+          !card.fullWidth && "lg:min-h-[320px]",
+        )}
+      >
+        <div
+          className={clsx(
+            "scrollbar-hide max-h-[420px] overflow-y-auto",
+            !card.fullWidth && "lg:absolute lg:inset-0 lg:max-h-none",
+          )}
+        >
+          {sortedRows.map((row, index) => (
+            <TreatmentRow
+              key={row.id}
+              row={row}
+              isOpen={openIndex === index}
+              onToggle={() => handleToggle(index)}
+            />
+          ))}
+        </div>
       </div>
     </article>
   );

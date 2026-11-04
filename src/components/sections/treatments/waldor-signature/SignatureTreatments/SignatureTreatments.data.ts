@@ -14,6 +14,96 @@ export const treatmentData = {
 
 export const treatmentCards: TreatmentCard[] = [
   {
+    id: "hydraglass",
+    title: "HydraGlass™",
+    description:
+      "An advanced facial that deeply cleanses, gently exfoliates and intensely hydrates, revealing smooth, radiant, glass-like skin.",
+
+    rows: [
+      {
+        id: "premium",
+        title: "HydraGlass™ Premium",
+        price: "£225",
+        duration: "60 min",
+        description:
+          "A lavish facial combining gentle exfoliation, precise extractions, and deep hydration, enhanced with targeted boosters, advanced masks, and specialised steps to address your individual skin concerns. Compared with our standard HydraGlass, HydraGlass Premium includes an additional 10 minutes for extra steps and technologies, selected according to your skin condition and concerns. This treatment delivers a profoundly nourished, refined, and radiant complexion for those seeking the ultimate skin experience.",
+      },
+      {
+        id: "clear-back",
+        title: "HydraGlass™ Clear Back",
+        price: "£275",
+        duration: "75 min",
+        description:
+          "A bespoke HydraGlass treatment for the upper back, designed to deeply cleanse, refine, and rebalance the skin. Combining exfoliation, precise extractions, hydration, and calming care, it targets congestion and uneven texture while restoring clarity, smoothness, and a healthier-looking glow.",
+      },
+      {
+        id: "longevity",
+        title: "HydraGlass™ Longevity",
+        price: "£295",
+        duration: "70 min",
+        description:
+          "HydraGlass™ Longevity is WALDOR Clinic’s advanced skin longevity facial, designed to regenerate, protect, and support long-term skin health while delivering our signature HydraGlass glow. This bespoke treatment combines deep hydration, gentle exfoliation, precision extractions, and refined manual techniques, enhanced with customised longevity cocktails containing high-grade regenerative ingredients such as NAD, polynucleotides, growth factors, and bioactive peptides. The focus is improved cellular repair, a stronger skin barrier, and visible radiance, leaving skin hydrated, luminous, resilient, and youthful.",
+      },
+      {
+        id: "lumi-x",
+        title: "HydraGlass™ Lumi X",
+        price: "£495",
+        duration: "100 min",
+        description:
+          "Our signature Korean glass-skin facial, powered by light. HydraGlass™ Lumi X combines gentle exfoliation, precise extractions and deep hydration with our Korean Baby Glass Laser or BPLaser, selected to suit your skin. “Lumi” brings a new dimension to your glow, pairing our signature glass finish with targeted care for concerns such as pigmentation, acne, acne scars, uneven tone and texture. For suitable clients, melasma may also be addressed as part of a personalised treatment plan. A tailored approach to a clearer, smoother and more luminous complexion.",
+      },
+      {
+        id: "lymphatic-sculpt",
+        title: "HydraGlass™ Lymphatic Sculpt",
+        price: "£295",
+        duration: "75 min",
+        description:
+          "A tailored HydraGlass facial enhanced with specialised lymphatic drainage massage techniques to help reduce puffiness, improve circulation, and encourage natural detoxification. Combining gentle exfoliation, deep hydration, and sculpting massage movements, this treatment leaves the skin looking refreshed, lifted, and radiant with more defined facial contours.",
+      },
+      {
+        id: "pregnancy",
+        title: "HydraGlass™ Pregnancy",
+        price: "£245",
+        duration: "60 min",
+        description:
+          "HydraGlass (Pregnancy & Breastfeeding Safe): A soothing, bespoke manual facial tailored for expecting and breastfeeding clients, featuring gentle exfoliation, precise extractions, and rich hydration to rejuvenate and illuminate the skin.",
+      },
+      {
+        id: "hydra-glass",
+        title: "HydraGlass™",
+        price: "£195",
+        duration: "50 min",
+        description:
+          "A tailored facial delivering gentle exfoliation, precise extractions, deep hydration, and a dedicated step to target your individual skin concerns, leaving your complexion rejuvenated, balanced, and radiant.",
+      },
+      {
+        id: "premium-fnd",
+        title: "HydraGlass™ Premium Face, Neck & Décolletage",
+        price: "£335",
+        duration: "75 min",
+        description:
+          "A tailored facial extending beyond the face to include the neck and décolleté, combining gentle exfoliation, precise extractions, and deep hydration with targeted treatments for your individual skin concerns. Designed to rejuvenate, smooth, and restore radiance across all areas, leaving your skin balanced, refined, and visibly refreshed.",
+      },
+      {
+        id: "ai-skin",
+        title: "HydraGlass™ & AI Skin Analysis",
+        price: "£295",
+        duration: "70 min",
+        description:
+          "Your treatment begins with our advanced 4D AI Skin Analysis, providing a detailed assessment of your skin’s condition and concerns. Using these results, your facial is tailored with gentle exfoliation, precise extractions, deep hydration, and targeted treatment steps designed specifically for your skin, leaving your complexion rejuvenated, balanced, and radiant.",
+      },
+      {
+        id: "lifting",
+        title: "HydraGlass™ Lifting",
+        price: "£379",
+        duration: "90 min",
+        description:
+          "A targeted facial designed to lift, firm, and sculpt the skin. Combining gentle exfoliation, precise extractions, deep hydration, and specialised steps focused on enhancing elasticity and contour, this treatment leaves your complexion visibly lifted, toned, and radiant. This treatment includes a complimentary AI skin analysis, providing a detailed assessment of your skin’s condition to fully personalise and optimise your facial for the best results.",
+      },
+    ],
+  },
+
+  {
     id: "facelift",
     title: "23D Skin Tightening Facelift",
     description:
@@ -50,166 +140,6 @@ export const treatmentCards: TreatmentCard[] = [
           "Our next-gen 23D HIFU Face treatment is a non-surgical facelift using high-intensity focused ultrasound to target the deeper layers of the skin for natural lifting, contouring, and tightening. No needles, no to little downtime, and long-lasting results.",
       },
      
-    ],
-  },
-
-  {
-    id: "ems-rf-contouring",
-    title: "EMS + RF Contouring",
-    description:
-      "A combination of electrical muscle stimulation and radiofrequency to tone facial muscles, tighten skin, and enhance definition.",
-
-    rows: [
-      {
-        id: "",
-        title: " EMS + RFacelift",
-        price: "£295",
-        duration: "30 min",
-        description:"Our EMS with Radio Frequency Face Treatment combines muscle stimulation and deep dermal heating to lift, tighten, and define facial contours. EMS technology works to tone and strengthen facial muscles, while radio frequency boosts collagen and elastin for smoother, firmer, more radiant skin. Ideal for achieving an instant lift and long-term firmness with no downtime."
-      },
-    ],
-  },
-
-  {
-    id: "co2-laser",
-    title: "CO2 Laser",
-    description:
-      "This resurfacing laser reduces deep wrinkles, scars, and pigmentation, revealing smoother, rejuvenated skin.",
-
-    rows: [
-      {
-        id: "small-area-co2-laser",
-        title: "CO2 Laser - Small Area",
-        price: "£295",
-        duration: "30 min",
-        description:
-          "Our advanced CO₂ laser treatment resurfaces the skin to improve texture, tone, and firmness. It targets fine lines, wrinkles, scarring, and sun damage by stimulating collagen and cell renewal for smoother, tighter, and more radiant skin. Ideal for smaller, delicate areas such as the eyes, upper lip, or chin.",
-      },
-      {
-        id: "medium-area-co2-laser",
-        title: "CO2 Laser - Medium Area",
-        price: "£495",
-        duration: "45 min",
-        description:
-          "Our advanced CO₂ laser treatment resurfaces the skin to improve texture, tone, and firmness. It targets fine lines, wrinkles, scarring, and sun damage by stimulating collagen and cell renewal for smoother, tighter, and more radiant skin. Ideal for medium areas such as the cheeks, jawline, or half face.",
-      },
-      {
-        id: "large-area-co2-laser",
-        title: "CO2 Laser - Large Area",
-        price: "£695",
-        duration: "60 min",
-        description:
-          "Our advanced CO₂ laser treatment resurfaces the skin to improve texture, tone, and firmness. It targets fine lines, wrinkles, scarring, and sun damage by stimulating collagen and cell renewal for smoother, tighter, and more radiant skin. Ideal for full-face rejuvenation.",
-      },
-      
-    ],
-  },
-
-  {
-    id: "chemical-peels",
-    title: "Chemical Peel",
-    description:
-      "Advanced skin resurfacing treatments that use carefully selected acids to exfoliate the outer layers of the skin, stimulate collagen production, and accelerate cellular renewal. They help improve skin texture, pigmentation, fine lines, acne, and overall skin radiance, revealing a smoother, brighter, and more youthful complexion.",
-
-    rows: [
-      {
-        id: "red-carpet-peel",
-        title: "ZO® Stimulator Peel",
-        price: "£129",
-        duration: "35 min",
-        description:"Our ZO® Stimulator Peel delivers instant glow and refinement with no downtime. This mild yet powerful blend of lactic, citric, and glycolic acids exfoliates dead skin cells, brightens tone, and smooths texture. Perfect before events or as a regular skin refresh to restore clarity and radiance."
-      },
-      {
-        id: "red-red-carpet-peel",
-        title: "ZO® Red Carpet Peel",
-        price: "£129",
-        duration: "35 min",
-        description:"Our ZO® Restorative Peel is a professional-strength chemical peel designed to deeply renew and strengthen the skin. It targets uneven tone, texture, and early signs of ageing while stimulating collagen for long-term skin health. Expect mild peeling as the skin regenerates, revealing a clearer, smoother, and more youthful complexion."
-      },
-      {
-        id: "moderate-peel",
-        title: "Moderate Peel",
-        price: "£239",
-        duration: "30 min",
-        description:
-          "Advanced skin resurfacing treatments that use carefully selected acids to exfoliate the outer layers of the skin, stimulate collagen production, and accelerate cellular renewal. They help improve skin texture, pigmentation, fine lines, acne, and overall skin radiance, revealing a smoother, brighter, and more youthful complexion. Mild to Moderate peeling for 3 to 5 days.",
-      },
-      {
-        id: "advanced-peel",
-        title: "Advanced Peel",
-        price: "£339",
-        duration: "30 min",
-        description:
-          "Advanced skin resurfacing treatments that use carefully selected acids to exfoliate the outer layers of the skin, stimulate collagen production, and accelerate cellular renewal. They help improve skin texture, pigmentation, fine lines, acne, and overall skin radiance, revealing a smoother, brighter, and more youthful complexion. Moderate to intensive peeling for 5 to 7 days.",
-      },
-    ],
-  },
-
-  {
-    id: "baby-korean-glass-laser",
-    title: "Baby Korean Glass Laser",
-    description:
-      "A gentle yet effective laser treatment designed to refine skin texture, reduce fine lines, and enhance radiance.",
-
-    rows: [
-      {
-        id: "small-area-laser",
-        title: "Baby Korean Glass Laser - Small Area",
-        price: "£250",
-        duration: "20 min",
-        description:
-          "Our Baby Korean Glass Laser uses advanced fractional laser technology to deeply rejuvenate the skin, refine texture, and restore a smooth, radiant, ‘glass-skin’ glow. Ideal for smaller areas such as the forehead, nose, or chin. A 48-hour patch test is required before proceeding with any laser treatment to ensure skin safety and suitability.",
-      },
-      {
-        id: "medium-area-laser",
-        title: "Baby Korean Glass Laser - Medium Area",
-        price: "£350",
-        duration: "40 min",
-        description:
-          "Our Baby Korean Glass Laser uses advanced fractional laser technology to deeply rejuvenate the skin, refine texture, and restore a smooth, radiant, ‘glass-skin’ glow. Ideal for cheeks, half face, or jawline. A 48-hour patch test is required before proceeding with any laser treatment to ensure skin safety and suitability.",
-      },
-      {
-        id: "large-area-laser",
-        title: "Baby Korean Glass Laser - Large Area",
-        price: "£450",
-        duration: "50 min",
-        description:
-          "Our Baby Korean Glass Laser uses advanced fractional laser technology to deeply rejuvenate the skin, refine texture, and restore a smooth, radiant, ‘glass-skin’ glow. Ideal for full-face rejuvenation. A 48-hour patch test is required before proceeding with any laser treatment to ensure skin safety and suitability.",
-      },
-      {
-        id: "laser-patch-test",
-        title: "Laser Patch Test",
-        price: "£0",
-        duration: "15 min",
-        description:
-          "A mandatory 48-hour patch test required before any laser treatment. This quick safety check ensures your skin responds well to the laser settings used for treatments such as resurfacing, pigmentation, or rejuvenation. Helps personalise your treatment plan for safe and effective results.",
-      },
-    ],
-  },
-
-  {
-    id: "broad-pulse-light",
-    title: "BPLaser",
-    description:
-      "A transformative light-therapy treatment that uses Intense Pulsed Light to reduce pigmentation, calm redness and refine skin texture. Leaves skin brighter, more even-toned and radiant.",
-
-    rows: [
-       {
-        id: "medium-area-bpl",
-        title: "BPLaser - Body Medium Area",
-        price: "£245",
-        duration: "30 min",
-        description:"Our advanced next-generation Intense Pulsed Light system uses intelligent light technology to target pigmentation, redness, and uneven tone while stimulating collagen for visibly clearer, smoother, and more luminous skin."
-      },
-     
-      {
-        id: "small-area-bpl",
-        title: "BPLaser - Body Large Area",
-        price: "£295",
-        duration: "40 min",
-        description:"Our advanced next-generation Intense Pulsed Light system uses intelligent light technology to target pigmentation, redness, and uneven tone while stimulating collagen for visibly clearer, smoother, and more luminous skin."
-      },
-
     ],
   },
 
@@ -304,6 +234,166 @@ export const treatmentCards: TreatmentCard[] = [
   },
 
   {
+    id: "co2-laser",
+    title: "CO2 Laser",
+    description:
+      "This resurfacing laser reduces deep wrinkles, scars, and pigmentation, revealing smoother, rejuvenated skin.",
+
+    rows: [
+      {
+        id: "small-area-co2-laser",
+        title: "CO2 Laser - Small Area",
+        price: "£295",
+        duration: "30 min",
+        description:
+          "Our advanced CO₂ laser treatment resurfaces the skin to improve texture, tone, and firmness. It targets fine lines, wrinkles, scarring, and sun damage by stimulating collagen and cell renewal for smoother, tighter, and more radiant skin. Ideal for smaller, delicate areas such as the eyes, upper lip, or chin.",
+      },
+      {
+        id: "medium-area-co2-laser",
+        title: "CO2 Laser - Medium Area",
+        price: "£495",
+        duration: "45 min",
+        description:
+          "Our advanced CO₂ laser treatment resurfaces the skin to improve texture, tone, and firmness. It targets fine lines, wrinkles, scarring, and sun damage by stimulating collagen and cell renewal for smoother, tighter, and more radiant skin. Ideal for medium areas such as the cheeks, jawline, or half face.",
+      },
+      {
+        id: "large-area-co2-laser",
+        title: "CO2 Laser - Large Area",
+        price: "£695",
+        duration: "60 min",
+        description:
+          "Our advanced CO₂ laser treatment resurfaces the skin to improve texture, tone, and firmness. It targets fine lines, wrinkles, scarring, and sun damage by stimulating collagen and cell renewal for smoother, tighter, and more radiant skin. Ideal for full-face rejuvenation.",
+      },
+      
+    ],
+  },
+
+  {
+    id: "baby-korean-glass-laser",
+    title: "Baby Korean Glass Laser",
+    description:
+      "A gentle yet effective laser treatment designed to refine skin texture, reduce fine lines, and enhance radiance.",
+
+    rows: [
+      {
+        id: "small-area-laser",
+        title: "Baby Korean Glass Laser - Small Area",
+        price: "£250",
+        duration: "20 min",
+        description:
+          "Our Baby Korean Glass Laser uses advanced fractional laser technology to deeply rejuvenate the skin, refine texture, and restore a smooth, radiant, ‘glass-skin’ glow. Ideal for smaller areas such as the forehead, nose, or chin. A 48-hour patch test is required before proceeding with any laser treatment to ensure skin safety and suitability.",
+      },
+      {
+        id: "medium-area-laser",
+        title: "Baby Korean Glass Laser - Medium Area",
+        price: "£350",
+        duration: "40 min",
+        description:
+          "Our Baby Korean Glass Laser uses advanced fractional laser technology to deeply rejuvenate the skin, refine texture, and restore a smooth, radiant, ‘glass-skin’ glow. Ideal for cheeks, half face, or jawline. A 48-hour patch test is required before proceeding with any laser treatment to ensure skin safety and suitability.",
+      },
+      {
+        id: "large-area-laser",
+        title: "Baby Korean Glass Laser - Large Area",
+        price: "£450",
+        duration: "50 min",
+        description:
+          "Our Baby Korean Glass Laser uses advanced fractional laser technology to deeply rejuvenate the skin, refine texture, and restore a smooth, radiant, ‘glass-skin’ glow. Ideal for full-face rejuvenation. A 48-hour patch test is required before proceeding with any laser treatment to ensure skin safety and suitability.",
+      },
+      {
+        id: "laser-patch-test",
+        title: "Laser Patch Test",
+        price: "£0",
+        duration: "15 min",
+        description:
+          "A mandatory 48-hour patch test required before any laser treatment. This quick safety check ensures your skin responds well to the laser settings used for treatments such as resurfacing, pigmentation, or rejuvenation. Helps personalise your treatment plan for safe and effective results.",
+      },
+    ],
+  },
+
+  {
+    id: "broad-pulse-light",
+    title: "BPLaser",
+    description:
+      "A transformative light-therapy treatment that uses Intense Pulsed Light to reduce pigmentation, calm redness and refine skin texture. Leaves skin brighter, more even-toned and radiant.",
+
+    rows: [
+       {
+        id: "medium-area-bpl",
+        title: "BPLaser - Body Medium Area",
+        price: "£245",
+        duration: "30 min",
+        description:"Our advanced next-generation Intense Pulsed Light system uses intelligent light technology to target pigmentation, redness, and uneven tone while stimulating collagen for visibly clearer, smoother, and more luminous skin."
+      },
+     
+      {
+        id: "small-area-bpl",
+        title: "BPLaser - Body Large Area",
+        price: "£295",
+        duration: "40 min",
+        description:"Our advanced next-generation Intense Pulsed Light system uses intelligent light technology to target pigmentation, redness, and uneven tone while stimulating collagen for visibly clearer, smoother, and more luminous skin."
+      },
+
+    ],
+  },
+
+  {
+    id: "chemical-peels",
+    title: "Chemical Peel",
+    description:
+      "Advanced skin resurfacing treatments that use carefully selected acids to exfoliate the outer layers of the skin, stimulate collagen production, and accelerate cellular renewal. They help improve skin texture, pigmentation, fine lines, acne, and overall skin radiance, revealing a smoother, brighter, and more youthful complexion.",
+
+    rows: [
+      {
+        id: "red-carpet-peel",
+        title: "ZO® Stimulator Peel",
+        price: "£129",
+        duration: "35 min",
+        description:"Our ZO® Stimulator Peel delivers instant glow and refinement with no downtime. This mild yet powerful blend of lactic, citric, and glycolic acids exfoliates dead skin cells, brightens tone, and smooths texture. Perfect before events or as a regular skin refresh to restore clarity and radiance."
+      },
+      {
+        id: "red-red-carpet-peel",
+        title: "ZO® Red Carpet Peel",
+        price: "£129",
+        duration: "35 min",
+        description:"Our ZO® Restorative Peel is a professional-strength chemical peel designed to deeply renew and strengthen the skin. It targets uneven tone, texture, and early signs of ageing while stimulating collagen for long-term skin health. Expect mild peeling as the skin regenerates, revealing a clearer, smoother, and more youthful complexion."
+      },
+      {
+        id: "moderate-peel",
+        title: "Moderate Peel",
+        price: "£239",
+        duration: "30 min",
+        description:
+          "Advanced skin resurfacing treatments that use carefully selected acids to exfoliate the outer layers of the skin, stimulate collagen production, and accelerate cellular renewal. They help improve skin texture, pigmentation, fine lines, acne, and overall skin radiance, revealing a smoother, brighter, and more youthful complexion. Mild to Moderate peeling for 3 to 5 days.",
+      },
+      {
+        id: "advanced-peel",
+        title: "Advanced Peel",
+        price: "£339",
+        duration: "30 min",
+        description:
+          "Advanced skin resurfacing treatments that use carefully selected acids to exfoliate the outer layers of the skin, stimulate collagen production, and accelerate cellular renewal. They help improve skin texture, pigmentation, fine lines, acne, and overall skin radiance, revealing a smoother, brighter, and more youthful complexion. Moderate to intensive peeling for 5 to 7 days.",
+      },
+    ],
+  },
+
+  {
+    id: "ems-rf-contouring",
+    title: "EMS + RF Contouring",
+    description:
+      "A combination of electrical muscle stimulation and radiofrequency to tone facial muscles, tighten skin, and enhance definition.",
+
+    rows: [
+      {
+        id: "",
+        title: " EMS + RFacelift",
+        price: "£295",
+        duration: "30 min",
+        description:"Our EMS with Radio Frequency Face Treatment combines muscle stimulation and deep dermal heating to lift, tighten, and define facial contours. EMS technology works to tone and strengthen facial muscles, while radio frequency boosts collagen and elastin for smoother, firmer, more radiant skin. Ideal for achieving an instant lift and long-term firmness with no downtime."
+      },
+    ],
+  },
+
+  {
     id: "cavitation-rf",
     title: "Cavitation + RF",
     description:
@@ -337,101 +427,9 @@ export const treatmentCards: TreatmentCard[] = [
     ],
   },
 
-  {
-    id: "face-dissolving",
-    title: "Face Dissolving",
-    description:
-      "Targeted facial contouring treatment designed to refine localised areas and enhance definition for a more sculpted, harmonious appearance.",
 
-    rows: [
-      {
-        id: "fat-dissolving-face",
-        title: "Fat Dissolving - Face",
-        price: "£350",
-        duration: "45 min",
-        description:
-          "Our Fat Dissolving Injection for the face targets small, stubborn pockets of fat to contour and refine areas such as the double chin, jowls. The solution breaks down fat cells naturally, allowing the body to eliminate them over time. Ideal for achieving a more defined, sculpted facial contour without surgery.",
-      },
-    ],
-  },
 
-  {
-    id: "polynucleotides",
-    title: "Polynucleotides",
-    description:
-      "A restorative skin treatment that works with the skin’s natural renewal pathways to enhance resilience, suppleness, hydration and a healthy-looking glow.",
 
-    rows: [
-      {
-        id: "polynucleotides-eyes",
-        title: "Polynucleotides (Eyes)",
-        price: "£500",
-        duration: "25 min",
-        description:
-          "Our Polynucleotide Eye Revitalisation treatment uses regenerative DNA-based molecules to repair, firm, and brighten the delicate under-eye area. It helps reduce fine lines, puffiness, and dark circles while restoring hydration and elasticity. Perfect for tired or aging eyes needing a refreshed, lifted look.",
-      },
-      {
-        id: "polynucleotides-face",
-        title: "Polynucleotides (Face)",
-        price: "£500",
-        duration: "25 min",
-        description:
-          "Our Polynucleotide Face Rejuvenation treatment harnesses bio-regenerative DNA technology to repair skin at a cellular level. It boosts collagen, elastin, and hydration for smoother, firmer, and more radiant skin. Ideal for restoring glow and improving overall skin quality, it can also be used to treat the neck, décolletage, and for full-face rejuvenation.",
-      },
-    ],
-  },
-
-  {
-    id: "rejuran",
-    title: "Rejuran",
-    description:
-      "Korean polynucleotide therapy designed to revitalise skin from within, enhancing texture, firmness and luminosity for a refined, youthful-looking complexion.",
-
-    rows: [
-      {
-        id: "rejuran-face-neck",
-        title: "Rejuran | The Korean Skin Revival Face/Neck Polynucleotide",
-        price: "£650",
-        duration: "30 min",
-        description:
-          "A Korean approach to skin that looks healthy, luminous and beautifully cared for. Made with purified polynucleotides, Rejuran supports the skin’s natural renewal process to improve the appearance of fine lines, uneven texture and loss of firmness across the face and neck. Expect a gradual refinement in skin quality and radiance.",
-      },
-      {
-        id: "rejuran-i",
-        title: "Rejuran I | The Korean Eye Revival Polynucleotide",
-        price: "£650",
-        duration: "30 min",
-        description:
-          "The eye area is often the first place to show signs of tiredness. Rejuran I brings Korea’s renowned polynucleotide treatment to this delicate skin, helping it look smoother, more supple and refreshed. A beautifully targeted choice for fine lines, crepey texture and under-eyes that have lost their glow.",
-      },
-      {
-        id: "rejuran-s",
-        title: "Rejuran S | The Korean Scar Refinement Polynucleotide",
-        price: "£650",
-        duration: "30 min",
-        description:
-          "For scars that leave more than a mark. Rejuran S is the targeted treatment in the Korean Rejuran range, designed for indented scars, including atrophic acne scars. It supports renewal in the scarred area, helping uneven texture and visible depressions appear softer and smoother over time.",
-      },
-    ],
-  },
-
-  {
-    id: "prp",
-    title: "PRP",
-    description:
-      "A regenerative facial treatment harnessing your own platelet-rich plasma to revitalise skin quality, support collagen and reveal a smoother, firmer, more luminous complexion.",
-
-    rows: [
-      {
-        id: "prp-face",
-        title: "PRP Face",
-        price: "£500",
-        duration: "30 min",
-        description:
-          "Our PRP Face treatment harnesses your body’s own platelet-rich plasma, packed with natural growth factors to repair, renew, and rejuvenate the skin. PRP is injected into the skin to stimulates collagen and elastin production, improving texture, tone, and firmness. Ideal for dull, tired, or aging skin, it helps restore a fresher, smoother, and more radiant complexion over time.",
-      },
-    ],
-  },
 ];
 
 export const infoCards: InfoCard[] = [

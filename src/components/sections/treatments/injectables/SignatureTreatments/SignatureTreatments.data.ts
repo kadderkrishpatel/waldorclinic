@@ -285,6 +285,103 @@ export const treatmentCards: TreatmentCard[] = [
       
     ],
   },
+
+  {
+    id: "fat-dissolving",
+    title: "Fat Dissolving",
+    description:
+      "Targeted facial contouring treatment designed to refine localised areas and enhance definition for a more sculpted, harmonious appearance.",
+
+    rows: [
+      {
+        id: "fat-dissolving-face",
+        title: "Fat Dissolving - Face",
+        price: "£350",
+        duration: "45 min",
+        description:
+          "Our Fat Dissolving Injection for the face targets small, stubborn pockets of fat to contour and refine areas such as the double chin, jowls. The solution breaks down fat cells naturally, allowing the body to eliminate them over time. Ideal for achieving a more defined, sculpted facial contour without surgery.",
+      },
+    ],
+  },
+
+  {
+    id: "polynucleotides",
+    title: "Polynucleotides",
+    description:
+      "A restorative skin treatment that works with the skin’s natural renewal pathways to enhance resilience, suppleness, hydration and a healthy-looking glow.",
+
+    rows: [
+      {
+        id: "polynucleotides-eyes",
+        title: "Polynucleotides (Eyes)",
+        price: "£500",
+        duration: "25 min",
+        description:
+          "Our Polynucleotide Eye Revitalisation treatment uses regenerative DNA-based molecules to repair, firm, and brighten the delicate under-eye area. It helps reduce fine lines, puffiness, and dark circles while restoring hydration and elasticity. Perfect for tired or aging eyes needing a refreshed, lifted look.",
+      },
+      {
+        id: "polynucleotides-face",
+        title: "Polynucleotides (Face)",
+        price: "£500",
+        duration: "25 min",
+        description:
+          "Our Polynucleotide Face Rejuvenation treatment harnesses bio-regenerative DNA technology to repair skin at a cellular level. It boosts collagen, elastin, and hydration for smoother, firmer, and more radiant skin. Ideal for restoring glow and improving overall skin quality, it can also be used to treat the neck, décolletage, and for full-face rejuvenation.",
+      },
+    ],
+  },
+
+  {
+    id: "rejuran",
+    title: "Rejuran",
+    description:
+      "Korean polynucleotide therapy designed to revitalise skin from within, enhancing texture, firmness and luminosity for a refined, youthful-looking complexion.",
+
+    rows: [
+      {
+        id: "rejuran-face-neck",
+        title: "Rejuran | The Korean Skin Revival Face/Neck Polynucleotide",
+        price: "£650",
+        duration: "30 min",
+        description:
+          "A Korean approach to skin that looks healthy, luminous and beautifully cared for. Made with purified polynucleotides, Rejuran supports the skin’s natural renewal process to improve the appearance of fine lines, uneven texture and loss of firmness across the face and neck. Expect a gradual refinement in skin quality and radiance.",
+      },
+      {
+        id: "rejuran-i",
+        title: "Rejuran I | The Korean Eye Revival Polynucleotide",
+        price: "£650",
+        duration: "30 min",
+        description:
+          "The eye area is often the first place to show signs of tiredness. Rejuran I brings Korea’s renowned polynucleotide treatment to this delicate skin, helping it look smoother, more supple and refreshed. A beautifully targeted choice for fine lines, crepey texture and under-eyes that have lost their glow.",
+      },
+      {
+        id: "rejuran-s",
+        title: "Rejuran S | The Korean Scar Refinement Polynucleotide",
+        price: "£650",
+        duration: "30 min",
+        description:
+          "For scars that leave more than a mark. Rejuran S is the targeted treatment in the Korean Rejuran range, designed for indented scars, including atrophic acne scars. It supports renewal in the scarred area, helping uneven texture and visible depressions appear softer and smoother over time.",
+      },
+    ],
+  },
+
+  {
+    id: "prp",
+    title: "PRP",
+    description:
+      "A regenerative facial treatment harnessing your own platelet-rich plasma to revitalise skin quality, support collagen and reveal a smoother, firmer, more luminous complexion.",
+
+    rows: [
+      {
+        id: "prp-face",
+        title: "PRP Face",
+        price: "£500",
+        duration: "30 min",
+        description:
+          "Our PRP Face treatment harnesses your body’s own platelet-rich plasma, packed with natural growth factors to repair, renew, and rejuvenate the skin. PRP is injected into the skin to stimulates collagen and elastin production, improving texture, tone, and firmness. Ideal for dull, tired, or aging skin, it helps restore a fresher, smoother, and more radiant complexion over time.",
+      },
+    ],
+  },
+
 ];
 
 export const infoCards: InfoCard[] = [

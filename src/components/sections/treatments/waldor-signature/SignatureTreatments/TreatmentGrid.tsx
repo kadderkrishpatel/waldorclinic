@@ -13,7 +13,7 @@ export default function TreatmentGrid({ cards }: Props) {
           index === cards.length - 1 && cards.length % 2 !== 0;
 
         return (
-          <div key={card.id} className={isLastUnpaired ? "lg:col-span-2" : ""}>
+          <div key={card.id} className={isLastUnpaired ? "lg:col-span-2" : "h-full"}>
             <TreatmentCard card={card} />
           </div>
         );

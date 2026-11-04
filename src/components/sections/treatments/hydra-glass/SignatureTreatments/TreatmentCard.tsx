@@ -10,7 +10,7 @@ interface Props {
 
 export default function TreatmentCard({ card }: Props) {
   // First accordion open by default
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   const handleToggle = (index: number) => {
     setOpenIndex((prev) => (prev === index ? -1 : index));
