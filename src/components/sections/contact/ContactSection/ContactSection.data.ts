@@ -9,9 +9,10 @@ export const contactSectionData: ContactSectionData = {
   info: [
     {
       id: "phone",
-      icon: "phone",
+      icon: "whatsapp",
       title: "CALL US",
-      value: "07464 745 114",
+      value: "+44 7464 745114",
+      href: "https://wa.me/447464745114",
       description: "Mon - Sat, during clinic hours",
     },
 

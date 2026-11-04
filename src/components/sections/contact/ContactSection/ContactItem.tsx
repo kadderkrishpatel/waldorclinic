@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Description, Eyebrow } from "@/src/components/ui/Typography";
 import { ContactInfoItem } from "./ContactSection.types";
@@ -11,6 +12,9 @@ export default function ContactItem({ item }: Props) {
     switch (item.icon) {
       case "phone":
         return <Phone size={20} strokeWidth={1.8} className="text-[#C5A375]" />;
+
+      case "whatsapp":
+        return <FaWhatsapp size={20} className="text-[#C5A375]" />;
 
       case "mail":
         return <Mail size={20} strokeWidth={1.8} className="text-[#C5A375]" />;
@@ -27,6 +31,10 @@ export default function ContactItem({ item }: Props) {
         return null;
     }
   };
+
+  const linkClass = item.href
+    ? "transition-colors hover:text-[#C5A375]"
+    : undefined;
 
   return (
     <div className="flex items-start gap-5">
@@ -54,7 +62,18 @@ export default function ContactItem({ item }: Props) {
           </div>
         ) : (
           <h4 className="font-fraunces text-[20px] leading-tight text-[#ECE0D1] lg:text-[22px]">
-            {item.value}
+            {item.href ? (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                {item.value}
+              </a>
+            ) : (
+              item.value
+            )}
           </h4>
         )}
 

@@ -141,15 +141,15 @@ export const treatmentCards: TreatmentCard[] = [
   },
 
   {
-    id: "emerald-laser",
-    title: "Emerald Laser",
+    id: "10d-fat-loss-laser-itemm",
+    title: "10D Fat Loss Laser",
     description:
       "532nm green laser treatment designed to target localised fat, refine body contours and create a smoother, more sculpted silhouette.",
 
     rows: [
       {
-        id: "emerald-laser-item",
-        title: "Emerald Laser",
+        id: "10d-fat-loss-laser-item",
+        title: "10D Fat Loss Laser",
         price: "£495",
         duration: "35 min",
         description:

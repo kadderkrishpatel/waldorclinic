@@ -15,6 +15,8 @@ import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 import useMergedRefs from "@/src/components/hooks/useMergedRefs";
 
 export default function DoctorSection() {
+  // With only a couple of doctors a carousel looks empty — centre them instead.
+  const isCentered = doctorSectionData.doctors.length <= 2;
   const sectionRef = useRef<HTMLElement>(null);
   const sectionRevealRef = useSectionReveal();
   const mergedRef = useMergedRefs(sectionRef, sectionRevealRef);
@@ -65,7 +67,7 @@ export default function DoctorSection() {
           </div>
 
           {/* Nav Arrows */}
-          <div className="flex shrink-0 items-center gap-3 mt-6 lg:mt-0">
+          <div className={cn("flex shrink-0 items-center gap-3 mt-6 lg:mt-0", isCentered && "hidden")}>
             <button
               type="button"
               aria-label="Previous"
@@ -88,7 +90,15 @@ export default function DoctorSection() {
           </div>
         </div>
 
-        {/* Swiper */}
+        {isCentered ? (
+          <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
+            {doctorSectionData.doctors.map((doctor) => (
+              <div key={doctor.slug} className="w-full max-w-[411px]">
+                <DoctorCard {...doctor} />
+              </div>
+            ))}
+          </div>
+        ) : (
         <Swiper
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
@@ -128,6 +138,7 @@ export default function DoctorSection() {
             </SwiperSlide>
           ))}
         </Swiper>
+        )}
       </div>
     </section>
   );

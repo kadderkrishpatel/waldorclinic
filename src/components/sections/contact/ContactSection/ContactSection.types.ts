@@ -3,7 +3,8 @@ export interface ContactInfoItem {
   title: string;
   value: string | string[];
   description: string;
-  icon: "phone" | "mail" | "map" | "clock";
+  icon: "phone" | "whatsapp" | "mail" | "map" | "clock";
+  href?: string;
 }
 
 export interface ContactFormField {
