@@ -79,7 +79,7 @@ export const treatmentCards: TreatmentCard[] = [
 
     areas: ["Abs", "Glutes", "Thighs", "Biceps", "Triceps", "Calves"],
   },
-
+  
   {
     id: "23d-hifu",
     title: "23D HIFU",
