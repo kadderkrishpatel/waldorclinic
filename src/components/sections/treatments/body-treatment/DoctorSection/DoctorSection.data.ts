@@ -57,7 +57,7 @@ export const doctorSectionData: DoctorSectionProps = {
       role: "Front of House",
       image: asset("/assets/waldor/team/team-7.png"),
       slug: "team-member-7",
-      description: "Brooke excels in innovative lifting and tightening techniques, especially HIFU. With a keen focus on body transformation, she crafts tailored programs for clients addressing persistent concerns or skin firmness changes, particularly post-pregnancy. Her approach is phased, ensuring that results are long-lasting.",
+      description: "With a genuine passion for aesthetics and a natural ability to connect with people, Brooke plays an important role in creating the WALDOR experience. Managing our front of house, she oversees the daily operations of the clinic, ensuring everything runs efficiently while maintaining the highest standards of client care. Her interest in skincare and the latest aesthetic technologies allows her to guide clients through our treatments and answer their questions with confidence. Brooke takes pride in creating a welcoming atmosphere, paying attention to the smallest details and ensuring every client enjoys a personalised experience from start to finish.",
     },
     {
       name: "Emily",
