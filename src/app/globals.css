@@ -600,3 +600,55 @@
   width: 80px;
   background: #C6A26D;
 }
+
+/* Auto-gliding cocktail cards on concern pages (RelatedMicroneedling) */
+.related-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+}
+
+.related-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: related-marquee 55s linear infinite;
+}
+
+.related-marquee:hover .related-marquee-track,
+.related-marquee:focus-within .related-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes related-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* People who prefer less motion get a normal swipeable row instead. */
+@media (prefers-reduced-motion: reduce) {
+  .related-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .related-marquee-track {
+    animation: none;
+  }
+}

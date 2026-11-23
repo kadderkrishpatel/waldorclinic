@@ -5,6 +5,7 @@ interface Props {
   beforeImage: string;
   afterImage: string;
   objectPosition?: string;
+  stacked?: boolean;
 }
 
 export default function BeforeAfterSlider(props: Props) {

@@ -48,5 +48,15 @@ export const signatureTreatmentData: SignatureTreatmentSectionProps = {
       slug: "hair-growth-treatment",
       href: "/treatments/hair-growth",
     },
+    {
+      number: "05",
+      title: "Microneedling Cocktail Menu",
+      description:
+        "Peptide and exosome cocktails made in our own laboratories in Korea, delivered by our proprietary electroporation pen. Exceptional results with minimal downtime.",
+      // TODO: swap for a dedicated microneedling image once supplied.
+      image: asset("/assets/waldor/categories/dull-skin.jpg"),
+      slug: "microneedling",
+      href: "/treatments/microneedling",
+    },
   ],
 };

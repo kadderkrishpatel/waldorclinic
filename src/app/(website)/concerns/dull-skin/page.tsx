@@ -10,6 +10,7 @@ import {
   WhyChooseUs,
 } from "@/src/components/sections/concerns/dull-skin";
 import { serviceHeroData } from "@/src/components/sections/concerns/dull-skin/ServiceHero/ServiceHero.data";
+import RelatedMicroneedling from "@/src/components/sections/concerns/RelatedMicroneedling";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function WrinklesPage() {
     <>
       <ServiceHero />
       <SignatureTreatments />
+      <RelatedMicroneedling concern="dull-skin" />
       <PatientSafety />
       <TreatmentBenefits items="indications" />
       <WhyChooseUs />

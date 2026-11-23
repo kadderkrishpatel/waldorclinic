@@ -78,6 +78,12 @@ export const headerData: HeaderData = {
           description: "Deep hydration facial for glass-like skin",
           href: "/treatments/hydra-glass",
         },
+        {
+          id: 6,
+          label: "Microneedling",
+          description: "Exosome & peptide cocktails made in our Korean lab",
+          href: "/treatments/microneedling",
+        },
       ],
     },
 

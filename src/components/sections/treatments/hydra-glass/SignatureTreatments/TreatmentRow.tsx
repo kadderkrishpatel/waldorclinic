@@ -33,7 +33,7 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
           hasDescription && "cursor-pointer",
         )}
       >
-        <div className="flex flex-col gap-1.5">
+        <div className="flex min-w-0 flex-col gap-1.5">
           <h4
             className={clsx(
               "text-[20px] font-medium",
@@ -42,6 +42,12 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
           >
             {row.title}
           </h4>
+
+          {row.tag && (
+            <span className="inline-flex w-fit items-center whitespace-nowrap rounded-full border border-[#C5A375]/60 bg-[#C5A375]/15 px-2.5 py-0.5 text-[9px] font-semibold uppercase leading-4 tracking-[0.1em] text-[#C5A375] sm:text-[10px] sm:tracking-[0.14em]">
+              {row.tag}
+            </span>
+          )}
 
           {row.duration && (
             <span className="flex items-center gap-1.5 text-[13px] text-[#9EA3A1]">
@@ -53,7 +59,7 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
 
         <div
           className={clsx(
-            "flex items-center font-fraunces gap-2 text-[18px]",
+            "flex shrink-0 items-center font-fraunces gap-2 text-[18px]",
             isOpen ? "text-[#C5A375]" : "text-[#ECE0D1]",
           )}
         >
@@ -100,6 +106,19 @@ export default function TreatmentRow({ row, isOpen, onToggle }: Props) {
                 <p className="text-[15px] leading-5 text-[#BEC2C1]" style={{ width: "88%" }}>
                   {row.description}
                 </p>
+              )}
+
+              {row.options && row.options.length > 0 && (
+                <ul className="mt-4 flex flex-col gap-2 text-[15px] leading-5 text-[#BEC2C1]">
+                  {row.options.map((option) => (
+                    <li key={option.label}>
+                      <strong className="font-semibold text-[#ECE0D1]">
+                        {option.label}
+                      </strong>{" "}
+                      {option.text}
+                    </li>
+                  ))}
+                </ul>
               )}
             </motion.div>
           </motion.div>

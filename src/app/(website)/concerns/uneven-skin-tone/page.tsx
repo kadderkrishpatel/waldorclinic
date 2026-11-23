@@ -10,6 +10,7 @@ import {
   WhyChooseUs,
 } from "@/src/components/sections/concerns/uneven-skin-tone";
 import { serviceHeroData } from "@/src/components/sections/concerns/uneven-skin-tone/ServiceHero/ServiceHero.data";
+import RelatedMicroneedling from "@/src/components/sections/concerns/RelatedMicroneedling";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function unevenSkinTonePage() {
     <>
       <ServiceHero />
       <SignatureTreatments />
+      <RelatedMicroneedling concern="uneven-skin-tone" />
       <PatientSafety />
       <TreatmentBenefits items="indications" />
       <WhyChooseUs />

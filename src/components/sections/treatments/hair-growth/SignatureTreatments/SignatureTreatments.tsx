@@ -57,7 +57,7 @@ export default function SignatureTreatments() {
                 eyebrow="Treatment Course"
                 title="Course of 6 treatments"
                 description={`For optimal outcomes and consistent results, treatments are recommended as a course of six sessions.\n\nThese can be:\n• Six sessions of a single treatment.\n• A tailored combination based on your scalp condition and response.`}
-                offerDescription="Exclusive Discount Offer: Purchase a course of 5 treatments and enjoy your 6th session on us."
+                offerDescription="Exclusive Discount Offer: Purchase a course of 6 treatments and enjoy your 7th session on us."
                 buttonText="Start Your Hair Restoration Plan"
                 buttonHref="/contact-us"
               />

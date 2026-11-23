@@ -33,6 +33,10 @@ export const footerData: FooterDataProps = {
           label: "Injectables",
           href: "/treatments/injectables",
         },
+        {
+          label: "Microneedling",
+          href: "/treatments/microneedling",
+        },
       ],
     },
     {
