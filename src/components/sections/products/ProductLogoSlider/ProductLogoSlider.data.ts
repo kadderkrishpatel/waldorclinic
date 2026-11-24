@@ -132,5 +132,13 @@ export const productLogoSliderData: ProductLogoSliderData = {
       height: 120,
       containerClass: "max-w-[110px] sm:max-w-[130px] h-9 sm:h-10",
     },
+    {
+      id: 14,
+      name: "British Vogue",
+      logo: asset("/assets/waldor/product_logo_slider/slide_logo14.png"),
+      width: 512,
+      height: 120,
+      containerClass: "max-w-[130px] sm:max-w-[150px] h-8 sm:h-9",
+    },
   ],
 };

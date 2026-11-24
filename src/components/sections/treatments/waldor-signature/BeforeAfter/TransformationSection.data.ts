@@ -56,5 +56,87 @@ export const transformationData: TransformationSectionProps = {
       ),
       duration: "AFTER · WEEK 10",
     },
+    {
+      title: "Natural Facial Rejuvenation",
+      category: "INJECTABLES",
+      beforeImage: asset(
+        "/assets/waldor/before-after/Injectables-Treatment-Before.png",
+      ),
+      afterImage: asset(
+        "/assets/waldor/before-after/Injectables-Treatment-After-aligned.png",
+      ),
+      duration: "AFTER · 2 WEEKS",
+    },
+    {
+      title: "HydraGlass™ Skin Transformation",
+      category: "GLASS SKIN",
+      beforeImage: asset(
+        "/assets/waldor/before-after/Hydraglass-treatment-london-waldor-before.png",
+      ),
+      afterImage: asset(
+        "/assets/waldor/before-after/Hydraglass-treatment-london-waldor-after.png",
+      ),
+      duration: "AFTER · WEEK 12",
+    },
+    {
+      title: "23D HIFU Lifting Transformation",
+      category: "HIFU",
+      beforeImage: asset(
+        "/assets/waldor/before-after/Injectables-23D-HIFU-Before.jpg",
+      ),
+      afterImage: asset(
+        "/assets/waldor/before-after/Injectables-23D-HIFU-After.jpg",
+      ),
+      caption: "After 3 sessions of our 23D HIFU",
+      duration: "AFTER · 3 SESSIONS",
+    },
+    {
+      title: "HydraGlass™ Longevity Transformation",
+      category: "GLASS SKIN",
+      beforeImage: asset("/assets/waldor/before-after/HydraGlass-Before.png"),
+      afterImage: asset("/assets/waldor/before-after/HydraGlass-After.png"),
+      duration: "AFTER · 6 SESSIONS",
+    },
+    // Newly added results. The title is only used as a unique key (not shown).
+    {
+      title: "Neck and Jawline Tightening",
+      category: "SKIN TIGHTENING",
+      beforeImage: asset("/assets/waldor/before-after/Waldor-Signature-Neck-Jawline-Before.jpg"),
+      afterImage: asset("/assets/waldor/before-after/Waldor-Signature-Neck-Jawline-After.jpg"),
+      duration: "AFTER TREATMENT",
+    },
+    {
+      title: "Clinical Skincare Results",
+      category: "SKIN TEXTURE",
+      beforeImage: asset("/assets/waldor/before-after/Waldor-Signature-Clinical-Skincare-Before.jpg"),
+      afterImage: asset("/assets/waldor/before-after/Waldor-Signature-Clinical-Skincare-After.jpg"),
+      duration: "AFTER TREATMENT",
+    },
+    {
+      title: "23D HIFU Lifting Front View",
+      category: "HIFU",
+      beforeImage: asset("/assets/waldor/before-after/Waldor-Signature-23D-HIFU-Front-Before.jpg"),
+      afterImage: asset("/assets/waldor/before-after/Waldor-Signature-23D-HIFU-Front-After.jpg"),
+      caption: "After 2 sessions of our 23D HIFU",
+      duration: "AFTER · 2 SESSIONS",
+    },
+    {
+      title: "23D HIFU Lifting Side View",
+      category: "HIFU",
+      beforeImage: asset("/assets/waldor/before-after/Waldor-Signature-23D-HIFU-Side-Before.jpg"),
+      afterImage: asset("/assets/waldor/before-after/Waldor-Signature-23D-HIFU-Side-After.jpg"),
+      caption: "After 2 sessions of our 23D HIFU",
+      duration: "AFTER · 2 SESSIONS",
+    },
+    {
+      title: "CO2 Laser Eye Area",
+      category: "LASER",
+      beforeImage: asset("/assets/waldor/before-after/Waldor-Signature-CO2-Laser-Before.jpg"),
+      afterImage: asset("/assets/waldor/before-after/Waldor-Signature-CO2-Laser-After.jpg"),
+      // Wide photos: before on top, after below, so the whole eye area shows.
+      stacked: true,
+      objectPosition: "center 50%",
+      duration: "AFTER TREATMENT",
+    },
   ],
 };

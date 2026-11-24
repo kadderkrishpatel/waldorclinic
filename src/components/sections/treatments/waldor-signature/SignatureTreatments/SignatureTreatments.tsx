@@ -12,8 +12,12 @@ import { asset } from "@/src/lib/assets";
 import Button from "@/src/components/ui/Button";
 import useSectionReveal from "@/src/components/hooks/useSectionReveal";
 
+const topCardId = "ai-skin-analysis-consultation";
+
 export default function SignatureTreatments() {
   const sectionRef = useSectionReveal();
+  const topCard = infoCards.find((card) => card.id === topCardId);
+  const bottomCards = infoCards.filter((card) => card.id !== topCardId);
 
   return (
     <section ref={sectionRef} className="relative">
@@ -25,7 +29,7 @@ export default function SignatureTreatments() {
               src={asset("/assets/waldor/decorations/exp-leaf-top.png")}
               alt=""
               width={200}
-              height={200}
+              height={437}
               priority={false}
             />
           </div>
@@ -47,14 +51,21 @@ export default function SignatureTreatments() {
               </Description>
             </div>
 
+            {/* Featured consultation card */}
+            {topCard && (
+              <div className="mt-12">
+                <InfoCard card={topCard} />
+              </div>
+            )}
+
             {/* Cards */}
-            <div className="mt-16">
+            <div className="mt-8">
               <TreatmentGrid cards={treatmentCards} />
             </div>
 
             {/* Bottom Cards */}
-            <div className="mt-8 grid gap-6 lg:grid-cols-2">
-              {infoCards.map((card) => (
+            <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:[&>*:last-child:nth-child(odd)]:col-span-2">
+              {bottomCards.map((card) => (
                 <InfoCard key={card.id} card={card} />
               ))}
             </div>

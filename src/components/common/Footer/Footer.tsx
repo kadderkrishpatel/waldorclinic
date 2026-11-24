@@ -57,15 +57,52 @@ export default function Footer({
           <p
             data-reveal
             data-direction="left"
-            className="mt-8 max-w-[650px] font-hanken text-base font-normal leading-7 text-white/80"
+            className={cn(
+              "mt-8 max-w-[650px] font-hanken text-base font-normal leading-7 text-white/80",
+              cta.secondaryButton && "max-w-[760px] text-balance",
+            )}
           >
             {cta.description}
           </p>
 
           <div data-reveal data-direction="left">
-            <Button href={cta.button.href} variant="gold" className="mt-10">
-              {cta.button.label}
-            </Button>
+            {cta.secondaryButton ? (
+              <div className="mt-10 flex w-full flex-col items-center gap-8">
+                <div className="flex w-full flex-col items-stretch gap-4 sm:inline-grid sm:w-auto sm:grid-cols-2 sm:gap-5">
+                  <Button
+                    href={cta.button.href}
+                    variant="gold"
+                    target={cta.button.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      cta.button.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="w-full"
+                  >
+                    {cta.button.label}
+                  </Button>
+
+                  <Button
+                    href={cta.secondaryButton.href}
+                    variant="secondary"
+                    className="w-full whitespace-normal border-[#C6A26D]/70 bg-transparent text-center text-[#ECE0D1] hover:border-[#C6A26D] hover:bg-[#C6A26D]/15 sm:whitespace-nowrap"
+                  >
+                    {cta.secondaryButton.label}
+                  </Button>
+                </div>
+
+                {cta.note && (
+                  <p className="max-w-[520px] border-t border-white/15 pt-5 font-hanken text-[13px] leading-6 text-white/60">
+                    {cta.note}
+                  </p>
+                )}
+              </div>
+            ) : (
+              <Button href={cta.button.href} variant="gold" className="mt-10">
+                {cta.button.label}
+              </Button>
+            )}
           </div>
         </div>
 

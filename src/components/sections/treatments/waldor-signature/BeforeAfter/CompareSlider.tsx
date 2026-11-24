@@ -1,129 +1,62 @@
 "use client";
-import { useEffect, useState } from "react";
-import {
-  ReactCompareSlider,
-  ReactCompareSliderImage,
-  ReactCompareSliderHandle,
-} from "react-compare-slider";
 import { optimizedSrc, optimizedSrcSet } from "@/src/lib/optimizedImage";
 
 interface Props {
   beforeImage: string;
   afterImage: string;
   objectPosition?: string;
-  swiper: any;
+  /** Before on top, after below (for wide photos) instead of side by side */
+  stacked?: boolean;
 }
+
+const SIZES = "(max-width: 768px) 50vw, 400px";
+const STACKED_SIZES = "(max-width: 768px) 100vw, 800px";
 
 export default function CompareSlider({
   beforeImage,
   afterImage,
-  objectPosition = "center",
-  swiper,
+  objectPosition = "center 20%",
+  stacked = false,
 }: Props) {
-  const [mobile, setMobile] = useState(false);
-
-  useEffect(() => {
-    const update = () => {
-      setMobile(window.innerWidth < 768);
-    };
-
-    update();
-
-    window.addEventListener("resize", update);
-
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  const disableSwiper = () => {
-    if (swiper.current) {
-      swiper.current.allowTouchMove = false;
-    }
-  };
-
-  const enableSwiper = () => {
-    if (swiper.current) {
-      swiper.current.allowTouchMove = true;
-    }
-  };
-
   return (
     <div
-      className="relative h-full w-full"
-      onPointerDown={disableSwiper}
-      onPointerUp={enableSwiper}
-      onPointerLeave={enableSwiper}
-      onTouchStart={disableSwiper}
-      onTouchEnd={enableSwiper}
+      className={`relative grid h-full w-full ${stacked ? "grid-rows-2" : "grid-cols-2"}`}
     >
-      <ReactCompareSlider
-        defaultValue={50}
-        className="h-[650px]"
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
-        itemOne={
-          <ReactCompareSliderImage
-            src={optimizedSrc(beforeImage)}
-            srcSet={optimizedSrcSet(beforeImage)}
-            sizes="(max-width: 768px) 100vw, 650px"
-            loading="lazy"
-            decoding="async"
-            alt="Before"
-            style={{
-              objectFit: "cover",
-              objectPosition,
-              height: "100%",
-              aspectRatio: "1/1",
-            }}
-          />
-        }
-        itemTwo={
-          <ReactCompareSliderImage
-            src={optimizedSrc(afterImage)}
-            srcSet={optimizedSrcSet(afterImage)}
-            sizes="(max-width: 768px) 100vw, 650px"
-            loading="lazy"
-            decoding="async"
-            alt="After"
-            style={{
-              objectFit: "cover",
-              objectPosition,
-            }}
-          />
-        }
-        handle={
-          <ReactCompareSliderHandle
-            buttonStyle={{
-              width: mobile ? 42 : 56,
-              height: mobile ? 42 : 56,
-              borderRadius: 999,
-              background: "#C6A26D",
-              border: "2px solid #C6A26D",
-              color: "#C6A26D",
-              boxShadow: "0 10px 30px rgba(0,0,0,.12)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            linesStyle={{
-              background: "#C6A26D",
-              width: mobile ? "1px" : "2px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                gap: mobile ? 2 : 4,
-                fontSize: mobile ? 14 : 18,
-                fontWeight: 600,
-                color: "#C6A26D",
-              }}
-            >
-              <span>{"<"}</span>
-              <span>{">"}</span>
-            </div>
-          </ReactCompareSliderHandle>
+      <div className="relative h-full w-full">
+        <img
+          src={optimizedSrc(beforeImage)}
+          srcSet={optimizedSrcSet(beforeImage)}
+          sizes={stacked ? STACKED_SIZES : SIZES}
+          loading="lazy"
+          decoding="async"
+          alt="Before"
+          draggable={false}
+          className="absolute inset-0 h-full w-full select-none object-cover"
+          style={{ objectPosition }}
+        />
+      </div>
+
+      <div className="relative h-full w-full">
+        <img
+          src={optimizedSrc(afterImage)}
+          srcSet={optimizedSrcSet(afterImage)}
+          sizes={stacked ? STACKED_SIZES : SIZES}
+          loading="lazy"
+          decoding="async"
+          alt="After"
+          draggable={false}
+          className="absolute inset-0 h-full w-full select-none object-cover"
+          style={{ objectPosition }}
+        />
+      </div>
+
+      {/* Fixed center divider */}
+      <div
+        aria-hidden
+        className={
+          stacked
+            ? "pointer-events-none absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-[#C6A26D] md:h-[2px]"
+            : "pointer-events-none absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-[#C6A26D] md:w-[2px]"
         }
       />
     </div>

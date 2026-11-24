@@ -5,6 +5,10 @@ export interface TransformationItem {
   afterImage: string;
   duration: string;
   objectPosition?: string;
+  /** Optional line shown inside the card, at the bottom of the images */
+  caption?: string;
+  /** Wide photos: show before on top and after below instead of side by side */
+  stacked?: boolean;
 }
 
 export interface HeroHeading {

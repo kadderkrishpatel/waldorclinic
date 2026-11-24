@@ -34,6 +34,13 @@ export interface FooterCTA {
     label: string;
     href: string;
   };
+  /** Optional second button, shown beside the main one */
+  secondaryButton?: {
+    label: string;
+    href: string;
+  };
+  /** Optional small print shown under the buttons */
+  note?: string;
 }
 
 /**

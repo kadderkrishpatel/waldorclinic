@@ -11,25 +11,27 @@ interface TransformationCardProps {
   beforeImage: string;
   afterImage: string;
   objectPosition?: string;
-  swiper: MutableRefObject<SwiperType | null>;
+  caption?: string;
+  stacked?: boolean;
+  swiper?: MutableRefObject<SwiperType | null>;
 }
 
 export default function TransformationCard({
-  duration,
   beforeImage,
   afterImage,
   objectPosition,
-  swiper,
+  caption,
+  stacked,
 }: TransformationCardProps) {
   return (
     <div className="relative overflow-hidden rounded-[20px] md:rounded-[24px] lg:rounded-[32px] bg-[#F3ECE3] h-full">
       {/* Before / After Image */}
-      <div className="relative h-[650px] w-full aspect-[4/5] sm:aspect-[4/5] md:aspect-[2/3] lg:aspect-[3/2] xl:aspect-[3/2]">
+      <div className="relative w-full aspect-[4/3] md:aspect-[7/5]">
         <BeforeAfterSlider
           beforeImage={beforeImage}
           afterImage={afterImage}
           objectPosition={objectPosition}
-          swiper={swiper}
+          stacked={stacked}
         />
       </div>
 
@@ -42,9 +44,24 @@ export default function TransformationCard({
       )}
 
       {afterImage && (
-        <div className="absolute top-3 right-3 md:top-5 md:right-5 lg:top-6 lg:right-6 bg-[#F3ECE3] px-3 py-1.5 md:px-4 md:py-2 rounded-[8px]">
+        <div
+          className={
+            stacked
+              ? "absolute left-3 top-[calc(50%+0.75rem)] md:left-5 md:top-[calc(50%+1.25rem)] lg:left-6 lg:top-[calc(50%+1.5rem)] bg-[#F3ECE3] px-3 py-1.5 md:px-4 md:py-2 rounded-[8px]"
+              : "absolute top-3 right-3 md:top-5 md:right-5 lg:top-6 lg:right-6 bg-[#F3ECE3] px-3 py-1.5 md:px-4 md:py-2 rounded-[8px]"
+          }
+        >
           <Eyebrow className="text-[#997B4E] text-xs md:text-sm">
-            {duration}
+            After
+          </Eyebrow>
+        </div>
+      )}
+
+      {/* Optional caption, centred at the bottom of the images */}
+      {caption && (
+        <div className="absolute bottom-3 left-1/2 z-1 max-w-[88%] -translate-x-1/2 rounded-[8px] bg-[#F3ECE3] px-3 py-1.5 text-center md:bottom-5 md:px-4 md:py-2 lg:bottom-6">
+          <Eyebrow className="text-[#997B4E] text-[10px] leading-4 md:text-xs">
+            {caption}
           </Eyebrow>
         </div>
       )}

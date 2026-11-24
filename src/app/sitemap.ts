@@ -20,6 +20,7 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/treatments/body-treatment", priority: 0.9, changeFrequency: "monthly" },
   { path: "/treatments/injectables", priority: 0.9, changeFrequency: "monthly" },
   { path: "/treatments/hair-growth", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/treatments/microneedling", priority: 0.9, changeFrequency: "monthly" },
   { path: "/concerns/acne", priority: 0.7, changeFrequency: "monthly" },
   { path: "/concerns/acne-scarring", priority: 0.7, changeFrequency: "monthly" },
   { path: "/concerns/dull-skin", priority: 0.7, changeFrequency: "monthly" },

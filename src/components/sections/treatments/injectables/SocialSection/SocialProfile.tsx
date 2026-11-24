@@ -21,6 +21,7 @@ export default function SocialProfile({ profile }: Props) {
           src={profile.avatar}
           alt={profile.name}
           fill
+          sizes="72px"
           className="object-cover"
         />
       </div>

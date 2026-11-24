@@ -9,8 +9,41 @@ interface BlogDetailSectionProps {
   blog: Blog;
 }
 
+// Posts whose paragraphs should render as plain text instead of callout boxes.
+// Matched against the post title so no slug is needed.
+const PLAIN_PARAGRAPH_TITLES = ["is your facial stuck in 2015"];
+
+function removeCalloutClass(html: string): string {
+  return html.replace(/class="([^"]*)"/g, (_match, classes: string) => {
+    const kept = classes
+      .split(/\s+/)
+      .filter((name) => name && name !== "callout")
+      .join(" ");
+    return kept ? `class="${kept}"` : "";
+  });
+}
+
+// Drops table rows that have no text and no image (stray empty rows).
+function removeEmptyTableRows(html: string): string {
+  return html.replace(/<tr\b[^>]*>[\s\S]*?<\/tr>/gi, (row) => {
+    if (/<img\b/i.test(row)) return row;
+    const text = row
+      .replace(/<[^>]*>/g, "")
+      .replace(/&nbsp;|&#160;| /gi, "")
+      .trim();
+    return text ? row : "";
+  });
+}
+
 export default function BlogDetailSection({ blog }: BlogDetailSectionProps) {
   const sectionRef = useSectionReveal();
+
+  const fullTitle = `${blog.title} ${blog.subtitle ?? ""}`.toLowerCase();
+  const content = PLAIN_PARAGRAPH_TITLES.some((title) =>
+    fullTitle.includes(title),
+  )
+    ? removeEmptyTableRows(removeCalloutClass(blog.content))
+    : blog.content;
 
   return (
     <section
@@ -107,7 +140,7 @@ export default function BlogDetailSection({ blog }: BlogDetailSectionProps) {
           <div
             className="blog-content text-[#29302D]"
             dangerouslySetInnerHTML={{
-              __html: blog.content,
+              __html: content,
             }}
           />
         </div>

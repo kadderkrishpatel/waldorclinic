@@ -16,7 +16,7 @@ export const serviceHeroData: ServiceHeroData = {
   eyebrow: "HydraGlass™ Facial",
   before: "HydraGlass™ Facial For",
   highlight: "Glass-Like Skin",
-  video: asset("/assets/waldor/treatments/hydra_glass.mp4"),
+  video: asset("/assets/waldor/treatments/HydraGlassTM.mp4"),
   description:
     "What if a “good skin day” became your everyday? Meet Waldor’s HydraGlass™ Facial Treatment, combining considered exfoliation and layered hydration to reveal smoother, softer, naturally luminous-looking skin.",
   cta: {

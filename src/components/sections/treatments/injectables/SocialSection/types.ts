@@ -6,6 +6,8 @@ export interface SocialPost {
   image: string;
   thumbnail?: string;
   alt?: string;
+  /** CSS object-position, to keep the important part of an image visible when cropped. */
+  objectPosition?: string;
   href?: string;
 }
 

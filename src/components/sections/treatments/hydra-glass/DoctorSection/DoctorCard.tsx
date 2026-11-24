@@ -43,7 +43,13 @@ export default function DoctorCard({
       <div
         className={cn(
           "absolute inset-0 bg-gradient-to-t from-[#28302D] via-[#28302D]/10 to-transparent transition-opacity duration-300 flex flex-col justify-end p-6 overflow-y-auto",
-          isHovered ? "opacity-100" : "opacity-0",
+          // Mobile (small screens) and touch devices have no hover, so the
+          // description is shown by default there, with a stronger fade so it
+          // stays readable. On desktop it still appears only on hover.
+          "max-md:via-[#28302D]/50 [@media(hover:none)]:via-[#28302D]/50",
+          isHovered
+            ? "opacity-100"
+            : "opacity-0 max-md:opacity-100 [@media(hover:none)]:opacity-100",
         )}
       >
         <h3 className="font-fraunces text-2xl text-[#BEC2C0]">{name}</h3>

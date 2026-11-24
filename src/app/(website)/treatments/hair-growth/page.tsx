@@ -1,13 +1,10 @@
 import {
   BeforeAfter,
-  PatientSafety,
   Practitioners,
-  ServiceFAQ,
   ServiceHero,
   ServiceStats,
   VideoShowcase,
   SignatureTreatments,
-  SocialSection,
   SuccessStories,
   TreatmentApproach,
   TreatmentBenefits,
@@ -17,12 +14,13 @@ import ServiceSchema from "@/src/components/seo/ServiceSchema";
 import { treatmentData, treatmentCards } from "@/src/components/sections/treatments/hair-growth/SignatureTreatments/SignatureTreatments.data";
 import type { Metadata } from "next";
 
+
 export const metadata: Metadata = {
   title: "WALDOR CLINIC",
   description: treatmentData.description,
 };
 
-export default function HairGrowthPage() {
+export default async function HairGrowthPage() {
   return (
     <>
       <ServiceSchema
@@ -38,15 +36,12 @@ export default function HairGrowthPage() {
       <SignatureTreatments />
       <VideoShowcase />
       <ServiceStats />
-      <PatientSafety />
       <BeforeAfter />
       <WhyChooseUs />
       <TreatmentApproach />
       <TreatmentBenefits />
       <Practitioners />
       <SuccessStories />
-      <ServiceFAQ />
-      <SocialSection />
     </>
   );
 }

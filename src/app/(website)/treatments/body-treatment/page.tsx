@@ -1,12 +1,9 @@
 import {
   BeforeAfter,
-  PatientSafety,
   Practitioners,
-  ServiceFAQ,
   ServiceHero,
   ServiceStats,
   SignatureTreatments,
-  SocialSection,
   SuccessStories,
   TreatmentApproach,
   TreatmentBenefits,
@@ -16,12 +13,13 @@ import ServiceSchema from "@/src/components/seo/ServiceSchema";
 import { treatmentData, treatmentCards } from "@/src/components/sections/treatments/body-treatment/SignatureTreatments/SignatureTreatments.data";
 import type { Metadata } from "next";
 
+
 export const metadata: Metadata = {
   title: "WALDOR CLINIC",
   description: treatmentData.description,
 };
 
-export default function BodyTreatmentPage() {
+export default async function BodyTreatmentPage() {
   return (
     <>
       <ServiceSchema
@@ -36,15 +34,12 @@ export default function BodyTreatmentPage() {
       <ServiceHero />
       <SignatureTreatments />
       <ServiceStats />
-      <PatientSafety />
       <BeforeAfter />
       <WhyChooseUs />
       <TreatmentApproach />
       <TreatmentBenefits />
       <Practitioners />
       <SuccessStories />
-      <ServiceFAQ />
-      <SocialSection />
     </>
   );
 }

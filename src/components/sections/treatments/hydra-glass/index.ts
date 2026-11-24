@@ -2,6 +2,7 @@ export { default as ServiceHero } from "./ServiceHero";
 export { default as SignatureTreatments } from "./SignatureTreatments";
 export { default as ServiceStats } from "./ServiceStats";
 export { default as PatientSafety } from "./PatientSafety";
+export { default as International } from "./International";
 export { default as BeforeAfter } from "./BeforeAfter";
 export { default as WhyChooseUs } from "./WhyChooseUsSection";
 export { default as TreatmentApproach } from "./OurApproach";

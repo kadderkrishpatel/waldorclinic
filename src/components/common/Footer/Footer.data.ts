@@ -30,8 +30,12 @@ export const footerData: FooterDataProps = {
           href: "/treatments/hair-growth",
         },
         {
-          label: "Injectables Consultation",
+          label: "Injectables",
           href: "/treatments/injectables",
+        },
+        {
+          label: "Microneedling",
+          href: "/treatments/microneedling",
         },
       ],
     },

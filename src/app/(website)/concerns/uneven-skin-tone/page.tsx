@@ -2,7 +2,6 @@ import {
   BeforeAfter,
   PatientSafety,
   Practitioners,
-  ServiceFAQ,
   ServiceHero,
   SignatureTreatments,
   SuccessStories,
@@ -10,9 +9,8 @@ import {
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/concerns/uneven-skin-tone";
-import FAQSchema from "@/src/components/seo/FAQSchema";
-import { faqData } from "@/src/components/sections/concerns/uneven-skin-tone/FaqSection/FaqSection.data";
 import { serviceHeroData } from "@/src/components/sections/concerns/uneven-skin-tone/ServiceHero/ServiceHero.data";
+import RelatedMicroneedling from "@/src/components/sections/concerns/RelatedMicroneedling";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,9 +21,9 @@ export const metadata: Metadata = {
 export default function unevenSkinTonePage() {
   return (
     <>
-      <FAQSchema items={faqData} />
       <ServiceHero />
       <SignatureTreatments />
+      <RelatedMicroneedling concern="uneven-skin-tone" />
       <PatientSafety />
       <TreatmentBenefits items="indications" />
       <WhyChooseUs />
@@ -33,7 +31,6 @@ export default function unevenSkinTonePage() {
       <TreatmentApproach />
       <TreatmentBenefits items="preventions" />
       <SuccessStories />
-      <ServiceFAQ />
       <Practitioners />
     </>
   );

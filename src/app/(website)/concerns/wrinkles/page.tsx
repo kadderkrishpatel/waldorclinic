@@ -2,7 +2,6 @@ import {
   BeforeAfter,
   PatientSafety,
   Practitioners,
-  ServiceFAQ,
   ServiceHero,
   SignatureTreatments,
   SuccessStories,
@@ -10,9 +9,8 @@ import {
   TreatmentBenefits,
   WhyChooseUs,
 } from "@/src/components/sections/concerns/wrinkles";
-import FAQSchema from "@/src/components/seo/FAQSchema";
-import { faqData } from "@/src/components/sections/concerns/wrinkles/FaqSection/FaqSection.data";
 import { serviceHeroData } from "@/src/components/sections/concerns/wrinkles/ServiceHero/ServiceHero.data";
+import RelatedMicroneedling from "@/src/components/sections/concerns/RelatedMicroneedling";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,9 +21,9 @@ export const metadata: Metadata = {
 export default function WrinklesPage() {
   return (
     <>
-      <FAQSchema items={faqData} />
       <ServiceHero />
       <SignatureTreatments />
+      <RelatedMicroneedling concern="wrinkles" />
       <PatientSafety />
       <TreatmentBenefits items="indications" />
       <WhyChooseUs />
@@ -33,7 +31,6 @@ export default function WrinklesPage() {
       <TreatmentApproach />
       <TreatmentBenefits items="preventions" />
       <SuccessStories />
-      <ServiceFAQ />
       <Practitioners />
     </>
   );

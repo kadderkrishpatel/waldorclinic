@@ -4,6 +4,7 @@ export interface TransformationItem {
   beforeImage: string;
   afterImage: string;
   duration: string;
+  objectPosition?: string;
 }
 
 export interface HeroHeading {
